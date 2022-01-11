@@ -1,0 +1,48 @@
+{% load static	 %}
+<!-- BEGINS CONTENT NAVBAR -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'see_event' event.slug  %}">
+              <i class="fa fa-home text-muted"></i>
+              <span class="nav-link-text"> Lobby </span>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'Program'  event.slug  %}">
+              <i class="fa fa-calendar text-muted"></i>
+              <span class="nav-link-text"> Programme </span>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'rooms'  event.slug  %}">
+              <i class="fa fa-th-large text-muted"></i>
+              <span class="nav-link-text"> Rooms </span>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'speakers'  event.slug  %}">
+              <i class="fa fa-user text-muted"></i>
+              <span class="nav-link-text"> Speakers </span>
+            </a>
+          </li>
+            <li class="nav-item ">
+            <a class="nav-link" href="{% url 'recursos'  event.slug  %}">
+              <i class="fa fa-folder text-muted"></i>
+              <span class="nav-link-text"> Resources </span>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'notes'  event.slug  %}">
+              <i class="fa fa-file text-muted"></i>
+                <span class="nav-link-text"> Notes </span>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'support' event.slug %}">
+              <i class="fa fa-life-ring text-muted"></i>
+                <span class="nav-link-text">Support </span>
+            </a>
+          </li>
+        </ul>
+<hr class="my-2">
+<!-- BEGINS CONTENT NAVBAR -->

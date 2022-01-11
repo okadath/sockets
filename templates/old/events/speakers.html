@@ -1,0 +1,17 @@
+<p style="background-color:#edb59f;">
+	speakers  de ESTE EVENTO :
+	<ul>
+	{% for c in speakers%}
+	<li><a href="{% url 'speakers'  event.name c.name  %}">  {{ c.name }}  </a></li>
+	evento
+	<li> {{ c.event }}  </li>
+	text
+	<li> {{ c.text }}  </li>
+	thumbnail
+	<li> {{ c.thumbnail }}  </li> 
+		
+		{% endfor %}
+
+	<p>
+		
+		

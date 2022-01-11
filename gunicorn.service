@@ -1,0 +1,13 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/home/sockets
+ExecStart=/home/sockets/venv/bin/gunicorn  --access-logfile /home/sockets/gunicorn-access.log --error-logfile /home/sockets/gunicorn-error.log  --workers 3  --bind unix:/run/gunicorn.sock  Porsche.wsgi:application
+
+[Install]
+WantedBy=multi-user.target

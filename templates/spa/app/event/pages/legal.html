@@ -1,0 +1,48 @@
+{% extends './base/base.html' %}
+{% load static	 %}
+{% load widget_tweaks %}
+{% block title %} User Guide {% endblock %}
+{% block description %} REACH EVERY LEADER EVERYWHERE, ANYTIME.
+Expand the impact of the Summit.Features World Class speaker talks. {% endblock %}
+{% block content %}
+<!--
+BEGINS CONTENT
+-->
+<div class="container-fluid" style="margin-top: -20px">
+	<div class="row" style="width: 100%">
+		<!-- BEGINS SUPPORT -->
+		<div class="card col-lg-12" style="background-color: rgba(255,255,255,1;">
+			<div hidden class="card-header" style="padding-bottom: 0;">
+				<div  class="card-icon">
+					<h4 class="card-title text-dark"><i class="fa fa-file" style="padding-right: 10px;"></i> Legal</h4>
+				</div>
+			</div>
+			<div class="card-body">
+				<!-- BEGINS FORM -->
+
+				<div class="">
+					<div class="card-header card-header-danger card-header-icon" hidden>
+						<div class="card-icon" hidden>
+							<i class="material-icons">icono</i>
+						</div>
+						<h4 class="card-title text-dark"> <b>{{ title }}</b></h4>
+					</div>
+					<div class="card-body">
+						<h2 class="card-title text-center"> <b>{{ title }}</b></h2>
+						<br>
+						<!-- {{ content_url }} -->
+						{% autoescape off %}
+						{{ content_string }}
+						{% endautoescape %}
+					</div>
+				</div>
+				<!-- ENDS FORM -->
+			</div>
+		</div>
+		<!-- ENDS SUPPORT -->
+	</div>
+</div>
+<!--
+ENDS CONTENT
+-->
+{% endblock %}

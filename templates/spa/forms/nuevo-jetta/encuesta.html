@@ -1,0 +1,189 @@
+{% extends './base/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block title %} Nuevo Jetta {% endblock %}
+{% block description %} Bienvenidos a Nuevo Jetta {% endblock %}
+{% block content %}
+    <div class="page-header register-page header-filter" filter-color="black" style=" padding-bottom: 50px;">
+        <div class="container">
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-lg-8 col-md-8 ml-auto mr-auto mx-3 mt-6 mb-6">
+                    <div class="card card-login card-hidden">
+                        <div class="card-body">
+                            <section class="">
+                                <div class="">
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-md-8">
+                                            <div class="wizard">
+                                                <div HIDDEN class="wizard-inner">
+                                                    <div class="connecting-line"></div>
+                                                    <ul class="nav nav-tabs" role="tablist">
+                                                        <li role="presentation" class="active">
+                                                            <a href="#step1" data-toggle="tab" aria-controls="step1"
+                                                               role="tab" aria-expanded="true"><span
+                                                                    class="round-tab">1 </span> <i>Step 1</i></a>
+                                                        </li>
+                                                        <li role="presentation" class="disabled">
+                                                            <a href="#step2" data-toggle="tab" aria-controls="step2"
+                                                               role="tab" aria-expanded="false"><span class="round-tab">2</span>
+                                                                <i>Step 2</i></a>
+                                                        </li>
+                                                        <li role="presentation" class="disabled">
+                                                            <a href="#step3" data-toggle="tab" aria-controls="step3"
+                                                               role="tab"><span class="round-tab">3</span> <i>Step 3</i></a>
+                                                        </li>
+                                                        <li role="presentation" class="disabled">
+                                                            <a href="#step4" data-toggle="tab" aria-controls="step4"
+                                                               role="tab"><span class="round-tab">4</span> <i>Step 4</i></a>
+                                                        </li>
+                                                        <li role="presentation" class="disabled">
+                                                            <a href="#step5" data-toggle="tab" aria-controls="step5"
+                                                               role="tab"><span class="round-tab">4</span> <i>Step 5</i></a>
+                                                        </li>
+                                                        <li role="presentation" class="disabled">
+                                                            <a href="#step6" data-toggle="tab" aria-controls="step6"
+                                                               role="tab"><span class="round-tab">4</span> <i>Step 6</i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <form role="form" action="" method="post">
+                                                    {% csrf_token %}
+                                                    <div class="tab-content" id="main_form">
+                                                        <div class="tab-pane active" role="tabpanel" id="step1">
+                                                            <h5 class="text-center">
+                                                                ¿Cómo calificas el formato de este evento?
+                                                            </h5>
+                                                            <div class="row pt-5" style="display: flex; justify-content: center; align-items: center;">
+                                                                {% for radio in form.q1_calificacion_del_formato %}
+                                                                    <label for="{{ radio.id_for_label }}" class="p-0">
+                                                                        <div class="radio col-up">
+                                                                            <span class="radio col-up">
+                                                                                <input style="background-color: #0b7abb !important; color: red" class="radio-vw" id="{{ radio.id_for_label }}" name="q1_calificacion_del_formato" type="radio" value="{{ radio.choice_label }}" />{{ radio.choice_label }}
+                                                                            </span>
+                                                                        </div>
+                                                                    </label>
+                                                                {% endfor %}
+                                                            </div>
+                                                            <br>
+                                                            <div class="pt-3 mx--1 px--1">
+                                                                    <span class="font-weight-bold">1/6</span>
+                                                                    <button type="button" class="btn text-vw font-weight-bolder float-right next-step" style="margin-top: 0; padding-top: 0; right: -5%;">Siguiente</button>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="tab-pane" role="tabpanel" id="step2">
+                                                            <h5 class="text-center">
+                                                                ¿Cómo calificas las medidas de sanidad del evento?
+                                                            </h5>
+                                                            <div class="row pt-5" style="display: flex; justify-content: center; align-items: center;">
+                                                                {% for radio in form.q2_calificacion_de_medidas_sanidad %}
+                                                                    <label for="{{ radio.id_for_label }}" class="p-0">
+                                                                        <div class="radio col-up">
+                                                                            <span class="radio col-up">
+                                                                                <input style="background-color: #0b7abb !important; color: red" class="radio-vw" id="{{ radio.id_for_label }}" name="q2_calificacion_de_medidas_sanidad" type="radio" value="{{ radio.choice_label }}" />{{ radio.choice_label }}
+                                                                            </span>
+                                                                        </div>
+                                                                    </label>
+                                                                {% endfor %}
+                                                            </div>
+                                                            <br>
+                                                            <div class="pt-3 mx--1 px--1">
+                                                                    <span class="font-weight-bold">2/6</span>
+                                                                    <button type="button" class="btn text-vw font-weight-bolder float-right next-step" style="margin-top: 0; padding-top: 0; right: -5%;">Siguiente</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane" role="tabpanel" id="step3">
+                                                            <h5 class="text-center">
+                                                                ¿Cómo calificas la duración del evento?
+                                                            </h5>
+                                                            <div class="row pt-5" style="display: flex; justify-content: center; align-items: center;">
+                                                                {% for radio in form.q3_calificacion_de_duracion %}
+                                                                    <label for="{{ radio.id_for_label }}" class="p-0">
+                                                                        <div class="radio col-up">
+                                                                            <span class="radio col-up">
+                                                                                <input style="background-color: #0b7abb !important; color: red" class="radio-vw" id="{{ radio.id_for_label }}" name="q3_calificacion_de_duracion" type="radio" value="{{ radio.choice_label }}" />{{ radio.choice_label }}
+                                                                            </span>
+                                                                        </div>
+                                                                    </label>
+                                                                {% endfor %}
+                                                            </div>
+                                                            <br>
+                                                            <div class="pt-3 mx--1 px--1">
+                                                                    <span class="font-weight-bold">3/6</span>
+                                                                    <button type="button" class="btn text-vw font-weight-bolder float-right next-step" style="margin-top: 0; padding-top: 0; right: -5%;">Siguiente</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane" role="tabpanel" id="step4">
+                                                            <h5 class="text-center">
+                                                                ¿Cómo consideras la presentación del producto?                                                            </h5>
+                                                            <div class="row pt-5" style="display: flex; justify-content: center; align-items: center;">
+                                                                {% for radio in form.q4_calificacion_de_presentacion_producto %}
+                                                                    <label for="{{ radio.id_for_label }}" class="p-0">
+                                                                        <div class="radio col-up">
+                                                                            <span class="radio col-up">
+                                                                                <input style="background-color: #0b7abb !important; color: red" class="radio-vw" id="{{ radio.id_for_label }}" name="q4_calificacion_de_presentacion_producto" type="radio" value="{{ radio.choice_label }}" />{{ radio.choice_label }}
+                                                                            </span>
+                                                                        </div>
+                                                                    </label>
+                                                                {% endfor %}
+                                                            </div>
+                                                            <br>
+                                                            <div class="pt-3 mx--1 px--1">
+                                                                    <span class="font-weight-bold">4/6</span>
+                                                                    <button type="button" class="btn text-vw font-weight-bolder float-right next-step" style="margin-top: 0; padding-top: 0; right: -5%;">Siguiente</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane" role="tabpanel" id="step5">
+                                                            <h5 class="text-center">
+                                                                ¿Cómo calificas tu experiencia?
+                                                            </h5>
+                                                            <div class="row pt-5" style="display: flex; justify-content: center; align-items: center;">
+                                                                {% for radio in form.q5_calificacion_general_experiencia %}
+                                                                    <label for="{{ radio.id_for_label }}" class="p-0">
+                                                                        <div class="radio col-up">
+                                                                            <span class="radio col-up">
+                                                                                <input style="background-color: #0b7abb !important; color: red" class="radio-vw" id="{{ radio.id_for_label }}" name="q5_calificacion_general_experiencia" type="radio" value="{{ radio.choice_label }}" />{{ radio.choice_label }}
+                                                                            </span>
+                                                                        </div>
+                                                                    </label>
+                                                                {% endfor %}
+                                                            </div>
+                                                            <br>
+                                                            <div class="pt-3 mx--1 px--1">
+                                                                    <span class="font-weight-bold">5/6</span>
+                                                                    <button type="button" class="btn text-vw font-weight-bolder float-right next-step" style="margin-top: 0; padding-top: 0; right: -5%;">Siguiente</button>
+                                                            </div>
+                                                            <br>
+                                                        </div>
+                                                        <div class="tab-pane" role="tabpanel" id="step6">
+                                                            <br>
+                                                            <small>Déjanos tus comentarios:</small>
+                                                            <center>
+                                                                {{ form.q6_comentarios |add_class:"form-control form-control-alternative" |attr:"rows:4" }}
+                                                            </center>
+                                                            <br>
+                                                            <div class="pt-3 mx--1 px--1">
+                                                                    <span class="font-weight-bold">6/6</span>
+                                                                    <button type="submit" class="btn text-vw font-weight-bolder float-right next-step" style="margin-top: 0; padding-top: 0; right: -5%;">ENVIAR</button>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

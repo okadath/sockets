@@ -1,0 +1,56 @@
+{% load static	 %}
+<!--
+BEGINS SIDEBAR
+-->
+<style>
+    .item {
+    position:relative;
+    padding-top:20px;
+    display:inline-block;
+}
+.notify-badge{
+    position: absolute;
+    right:-25px;
+    top:15px;
+    background:darkgrey;
+    text-align: center;
+    color:white;
+    padding:5px 10px;
+    font-size:10px;
+}
+</style>
+  <!-- Sidenav -->
+  <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+    <div class="scrollbar-inner">
+      <!-- Brand -->
+      <div class="sidenav-header d-flex align-items-center">
+        <a class="navbar-brand item" href="">
+            <span HIDDEN class="notify-badge">Beta</span>
+          <img src="{% static 'assets/img/logo.png' %}" class="navbar-brand-img" style="margin-left:10px; min-height: 40px" alt="...">
+        </a>
+        <div class="ml-auto">
+          <!-- Sidenav toggler -->
+          <div class="sidenav-toggler d-none d-xl-block" data-action="sidenav-unpin" data-target="#sidenav-main">
+            <div class="sidenav-toggler-inner">
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar-inner">
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+          <!-- Nav items -->
+          {% include './sidebar-content.html' %}
+          <!-- Divider -->
+          <hr hidden class="my-3">
+          {% include './sidebar-user.html' %}
+        </div>
+      </div>
+    </div>
+  </nav>
+<!--
+ENDS SIDEBAR
+-->

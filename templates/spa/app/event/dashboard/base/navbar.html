@@ -1,0 +1,108 @@
+{% load static	 %}
+{% load widget_tweaks %}
+<!--
+    BEGINS Navbar
+-->
+    <nav class="navbar navbar-top navbar-expand navbar-light navbar-transparent pb-0">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Brand logo -->
+            <img src="{% static 'assets/img/juntavp/LOGOS.png' %}">
+            <h2 class=" d-none d-md-block text-dark">&nbsp;&nbsp;{% if lobby_message %}{{ lobby_message }}{% else %}JUNTA VP{% endif %} </h2>
+            <!-- BEGINS SEARCH -->
+            <!-- Search form -->
+            {% include './navbar-search.html' %}
+            <!-- ENDS SEARCH -->
+            <!-- Begins Navbar links -->
+          <ul class="navbar-nav align-items-center ml-md-auto">
+            <li class="nav-item d-xl-none">
+              <!-- Sidenav toggler -->
+              <div class="pr-3 sidenav-toggler sidenav-toggler-light" data-action="sidenav-pin" data-target="#sidenav-main" >
+                <div class="sidenav-toggler-inner" style="background-color: white">
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                </div>
+              </div>
+            </li>
+              <li class="nav-item"></li>
+            <li hidden class="nav-item d-sm-none">
+              <a class="nav-link" href="#" data-action="search-show" data-target="#navbar-search-main">
+                <i class="ni ni-zoom-split-in"></i>
+              </a>
+            </li>
+              <li>
+                   {% if request.user.last_name == "11" %}
+                      <a class="btn btn-warning" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_MzU2ZTk3YjAtNTA2Mi00YWQ1LWEzMzAtYWJkOWVjZTc1MmFi%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Enter to your meeting: TEAM 1 - Standar Profil (PUE)</a>
+                   {% elif request.user.last_name == "12" %}
+                      <a class="btn btn-warning" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzVkYzZiMTAtN2Q4NS00MmE3LWE0MmYtYzUxOTQyNWRiNWI4%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Enter to your meeting: TEAM 1 - TB&C (PUE)</a>
+                   {% elif request.user.last_name == "13" %}
+                      <a class="btn btn-warning" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_MzU2ZTk3YjAtNTA2Mi00YWQ1LWEzMzAtYWJkOWVjZTc1MmFi%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Enter to your meeting: TEAM 1 - Faurecia Seats Struct (PUE & CHA)</a>
+                   {% elif request.user.last_name == "14" %}
+                      <a class="btn btn-warning" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzVkYzZiMTAtN2Q4NS00MmE3LWE0MmYtYzUxOTQyNWRiNWI4%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Enter to your meeting: TEAM 1 - Vitro (PUE)</a>
+                   {% elif request.user.last_name == "21" %}
+                      <a class="btn btn-warning" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_MTZlODM4ZDMtMTgyNy00ODBiLTgxMzMtNGIxNTM4Y2I3ZWI2%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Enter to your meeting: TEAM 2 - ERAE (CHA & PUE)</a>
+                   {% elif request.user.last_name == "22" %}
+                      <a class="btn btn-warning" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzQ5OWZlNjItMjExOC00OTk2LWJiYmItYWUzODc3Yzc5ODhh%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Enter to your meeting: TEAM 2 - Hitachi Metals Effingham (CHA)</a>
+                   {% elif request.user.last_name == "23" %}
+                      <a class="btn btn-warning" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_MTZlODM4ZDMtMTgyNy00ODBiLTgxMzMtNGIxNTM4Y2I3ZWI2%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Enter to your meeting: TEAM 2 - Gestamp Chatt 1 & 2 (CHA)</a>
+                   {% elif request.user.last_name == "24" %}
+                      <a class="btn btn-warning" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzQ5OWZlNjItMjExOC00OTk2LWJiYmItYWUzODc3Yzc5ODhh%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Enter to your meeting: TEAM 2 - Grupo Antolin (CHA & PUE)</a>
+                   {% elif request.user.last_name == "31" %}
+                      <a class="btn btn-warning" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_YTk5ZmFhMGYtZTkyNC00ZGU4LTk1NjctMzU2ZmU0NTRjMTZi%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Enter to your meeting: TEAM 3 - Plastic Omnium (PUE VW371)</a>
+                   {% elif request.user.last_name == "32" %}
+                      <a class="btn btn-warning" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_Nzk0OGU1YjQtNTQ3Yi00NDZkLWJmY2QtMmUyNjVmMGNhYWQ0%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Enter to your meeting: TEAM 3 - Gedia Michigan, LP (CHA)</a>
+                   {% elif request.user.last_name == "33" %}
+                      <a class="btn btn-warning" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_YTk5ZmFhMGYtZTkyNC00ZGU4LTk1NjctMzU2ZmU0NTRjMTZi%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Enter to your meeting: TEAM 3 - Magneti Marelli (PUE VW326PA)</a>
+                   {% elif request.user.last_name == "34" %}
+                      <a class="btn btn-warning" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_Nzk0OGU1YjQtNTQ3Yi00NDZkLWJmY2QtMmUyNjVmMGNhYWQ0%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Enter to your meeting: TEAM 3 - Montaplast (CHA)</a>
+                   {% elif request.user.last_name == "41" %}
+                      <a class="btn btn-warning" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_NjhlMjdmZWItMjFkNi00YTZkLWIwNTktMTkzMDE0Y2M4MjQ5%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Enter to your meeting: TEAM 4 - Linamar (SILAO)</a>
+                   {% elif request.user.last_name == "42" %}
+                      <a class="btn btn-warning" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_NTRkOWE5ZTMtYzA3ZS00YjllLWE0MTktNjNkMDk3NjdiNTIw%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Enter to your meeting: TEAM 4 - Borgwarner (SILAO)</a>
+                   {% elif request.user.last_name == "43" %}
+                      <a class="btn btn-warning" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_NjhlMjdmZWItMjFkNi00YTZkLWIwNTktMTkzMDE0Y2M4MjQ5%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Enter to your meeting: TEAM 4 - Teklas (PUE)</a>
+                   {% elif request.user.last_name == "44" %}
+                      <a class="btn btn-warning" target="_blank" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_NTRkOWE5ZTMtYzA3ZS00YjllLWE0MTktNjNkMDk3NjdiNTIw%40thread.v2/0?context=%7b%22Tid%22%3a%220a639cef-3452-4d82-8a6f-11f49ee14751%22%2c%22Oid%22%3a%2299dc5c82-d81c-4d92-9d97-ecb11bf453cc%22%7d">Enter to your meeting: TEAM 4 - SEG Automotive (PUE)</a>
+                   {% elif request.user.last_name == "all" %}
+                      <a class="btn btn-warning" href="" data-toggle="modal" data-target="#todaslasreuniones">Enter to the Meetings: See list</a>
+                  {% endif %}
+              </li>
+              <!--
+              BEGINS NOTIFICATIONS MENU
+              -->
+              {% include './navbar-notifications.html' %}
+              <!--
+              ENDS NOTIFICATIONS MENU
+              -->
+              <!--
+              BEGINS MINI ICON MENU
+              -->
+              {% include './navbar-shortcuts.html' %}
+              <!--
+              ENDS MINI ICON MENU
+              -->
+          </ul>
+          <ul class="navbar-nav align-items-center ml-auto ml-md-0">
+              <!--
+              BEGINS LANGUAGES
+              -->
+              {% include './navbar-languages.html' %}
+              <!--
+              ENDSS LANGUAGES
+              -->
+              <!--
+              BEGINS USER DROPDOWN MENU
+              -->
+              {% include './navbar-user.html' %}
+              <!--
+              ENDSS USER DROPDOWN MENU
+              -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+<!--
+    ENDS Navbar
+-->

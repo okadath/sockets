@@ -1,0 +1,36 @@
+<p style="background-color:#df9fed;">
+	anuncions disponibles para el evento
+		<ul> 
+	{% for a in announce %}
+	evento del chat
+	<li> {{ a.event }}  </li>
+	texto
+	<li> {{ a.name }}  </li>
+	horizontal_banner 
+		<li> {{ a.name }}  </li>
+	horizontal_banner_title 
+		<li> {{ a.horizontal_banner_title }}  </li>
+	horizontal_banner_link  
+		<li> {{ a.horizontal_banner_link }}  </li>
+	vertical_banner  
+		<li> {{ a.vertical_banner }}  </li>
+	vertical_banner_title 
+		<li> {{ a.vertical_banner_title }}  </li>
+	vertical_banner_link  
+		<li> {{ a.vertical_banner_link }}  </li>
+	link_1 
+		<li> {{ a.link_1 }}  </li>
+	link_title_1 
+		<li> {{ a.link_title_1 }}  </li>
+	link_2 
+		<li> {{ a.link_2 }}  </li>
+	link_title_2 
+		<li> {{ a.link_title_2 }}  </li>
+	description 
+		<li> {{ a.description }}  </li> 
+		{% endfor %}
+	</ul> 
+	<p>
+		
+		
+

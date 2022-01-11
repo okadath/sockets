@@ -1,0 +1,43 @@
+{% extends './base/base.html' %}
+{% load static	 %}
+{% load widget_tweaks %}
+{% block title %} Speakers {% endblock %}
+{% block description %} NAVIDAD NATURA{% endblock %}
+{% block content %}
+          <!--
+          BEGINS CONTENT
+          -->
+          <div class="container-fluid" style="margin-top: -20px">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- BEGINS Speakers -->
+                    <div class="card">
+                        <div class="card-header card-header-danger card-header-icon">
+                          <div class="card-icon">
+                            <i class="material-icons">supervised_user_circle</i>
+                          </div>
+                          <h4 class="card-title text-dark">Speakers</h4>
+                        </div>
+                        <div class="card-body">
+                        </div>
+                  </div>
+                    <!--ENDS Speakers -->
+                </div>
+            </div>
+          <div class="row" style="margin-top: -20px;">
+              {% for speaker in speakers %}
+                  <div class="col-lg-4">
+                    <div class="card" style="width: 100%;">
+                      <img class="card-img-top" src="{{ speaker.thumbnail.url }}" alt="Card image cap">
+                      <div class="card-body">
+                        <p class="card-text" style="height: 50px">{{ speaker.text }}</p>
+                      </div>
+                    </div>
+                  </div>
+              {% endfor %}
+          </div>
+          </div>
+          <!--
+          ENDS CONTENT
+          -->
+{% endblock %}

@@ -1,0 +1,179 @@
+{% extends './base/base.html' %}
+{% load static	 %}
+{% load widget_tweaks %}
+{% block title %} Login {% endblock %}
+{% block description %} Welcome to JUNTA VP {% endblock %}
+{% block content %}
+<!--
+BEGINS CONTENT
+-->
+<div class="page-header register-page header-filter" filter-color="black" style=" padding-bottom: 50px;">
+    <div class="container-fluid">
+        <br class="d-none d-sm-block">
+                <img class="img-fluid d-none d-lg-block" src="{% static 'assets/img/juntavp/JUNTA-LOGO-LARGE.png' %}" style="max-height: 80px; min-height: 50px; z-index: 100; position: absolute; top: 10px; right: 5%">
+        <div class="row">
+            <br>
+            <center class="ml-auto mr-auto">
+            <img class="img-fluid" src="{% static 'assets/img/juntavp/LOGOS.png' %}" style="max-height: 100px;">
+            <br>
+            <br>
+            </center>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 ml-auto mr-auto" style="padding-top: 5%; padding-left: 5%;">
+                <form class="form" method="POST" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <div class="card card-hidden"
+                         style="background: none; border: 2px solid white; border-radius: 0; padding: 10px; ">
+                        <div style="background-color: rgba(255, 255, 255, 0); border-radius: 0;">
+                            {% if error_messages %}
+                            <br>
+                            <div class="alert alert-warning">
+                                {% autoescape off %}
+                                <center>
+                                    <strong>{{mail}}<br>{{ error_messages }}</strong>
+                                </center>
+                                {% endautoescape %}
+                            </div>
+                            {% endif %}
+                            {% if time_messages %}
+                            <br>
+                            <div class="alert alert-warning" center>
+                                <strong>{{ time_messages }}</strong>
+                            </div>
+                            {% endif %}
+                            <div class="card-body ">
+                                <br>
+                                <h3 class="text-center text-white"><b class="text-bold">INICIO DE SESIÓN</b></h3>
+                                <br>
+                                <span class="bmd-form-group">
+                      <div class="input-group">
+                      <!-- <input type="email" class="form-control" placeholder="Email"> -->
+                      <input type="text" name="username" id="id_username" class="form-control" placeholder="Número de Control"
+                             required>
+                    </div>
+                  </span>
+                                <br>
+                                <span class="bmd-form-group">
+                    <div class="input-group">
+                      <!-- <input type="email" class="form-control" placeholder="Email"> -->
+                      <input type="text" name="usuario" id="id_usuario" class="form-control"
+                             placeholder="Contraseña" required>
+                    </div>
+                  </span>
+                                <br>
+                            <div class="custom-control custom-checkbox mb-3 ml-3 text-white">
+                                  <input type="checkbox" name="acepto_terminos_privacidad" checked class="custom-control-input" id="id_acepto_terminos_privacidad">
+                                <label class="custom-control-label text-white" for="customCheck1"><small><a href="https://elasticbeanstalk-us-west-2-400284180722.s3.us-west-2.amazonaws.com/Aviso+De+Privacidad+2a.+Junta+Informativa+NSO+2021.pdf" target="_blank" class="text-white">Acepto <b class="text-bold">aviso de privacidad</b></a></small></label>
+                                  <br>
+                                  <input type="checkbox" name="acepto_uso_imagen" checked class="custom-control-input" id="id_acepto_uso_imagen">
+                                <label class="custom-control-label text-white" for="customCheck1"><small><a href="https://elasticbeanstalk-us-west-2-400284180722.s3.us-west-2.amazonaws.com/Convenio+de+confidencialidad+2a+Junta+Informativa+NSO+2021.pdf" target="_blank" class="text-white">Acepto <b class="text-bold">aviso de confidencialidad</b></a></small></label>
+                              </div>
+                                <!--                   <span class="bmd-form-group">
+                                                    <div class="input-group">
+                                                      <div class="input-group-prepend">
+                                                        <span class="input-group-text">
+                                                          <i class="material-icons">mail</i>
+                                                        </span>
+                                                      </div>
+                                                      <input type="text" name="password" required id="id_password" placeholder="Email" class="form-control" required>
+                                                    </div>
+                                                  </span> -->
+                                <center>
+                                    <button class="btn btn-lg btn-white mt-1" style="border-radius: 25px" type="submit"><b class="text-bold">&nbsp; &nbsp; &nbsp; &nbsp; ENTRAR &nbsp; &nbsp;  &nbsp; &nbsp; </b></button>
+                                    <button HIDDEN type="button" class="btn btn-lg btn-transparent" style="border-radius: 25px;" data-toggle="modal" data-target="#exampleModal">
+  <img HIDDEN src="{% static 'assets/img/natura/Icon-awesome-question-circle.svg' %}"/>
+</button>
+                                    <br>
+                                    <br>
+                                    <small class="text-white">
+                                        <span class="text-bold">¿No puedes ingresar?</span>
+                                        <br>
+                                        <a class="text-white" target="_blank" href="https://api.whatsapp.com/send?phone=5512429155">
+                                        Escribenos por Whatsapp
+                                        <br>
+                                        (55) 1242 9155
+                                        </a>
+                                    </small>
+                                </center>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">El usuario es: Celebra Navidad</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+                                {% if error_messages %}
+                                <center>
+                                    <a HIDDEN href="{% url 'register' %}" class="btn btn-lg btn-success">Click here to
+                                        Register today</a>
+                                    <br>
+                                    <br>
+                                </center>
+
+                                {% endif %}
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+                <style>
+                    @media (max-width: 990px) {
+                        .card-hidden {
+                            margin: 0 auto;
+                        }
+                    }
+
+                    @media (min-width: 990px) {
+                        .card-hidden {
+                            margin-right: 10%;
+                        }
+                    }
+
+                    @media screen and (max-width: 640px) {
+                              body {
+                                background-color:black;
+                                background-image: url('{% static 'assets/img/juntavp/BACK_large.jpg' %}') !important;
+                                background-size: 100%;
+                                background-attachment: fixed;
+                                background-position: center top;
+                                background-repeat: repeat;
+                            }
+                          }
+                </style>
+            </div>
+        </div>
+    </div>
+</div>
+<!--modal-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ejemplo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img class="img-fluid" src="{% static 'assets/img/ejemplo-pedido-2.jpeg' %}">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--
+ENDS CONTENT
+-->
+{% endblock %}

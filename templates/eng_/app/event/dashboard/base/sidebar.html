@@ -1,0 +1,113 @@
+{% load static	 %}
+<div class="sidebar" data-color="danger" data-background-color="white" data-image="" >
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+      <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-mini">
+          <img class="img-fluid" src="https://images.squarespace-cdn.com/content/v1/528f4dc0e4b09ee35b2107d7/1471968355142-4RX5FMN50O2WAI6TDTAD/ke17ZwdGBToddI8pDm48kNjpXgdB2GQ4GXsvq_1og8aoCXeSvxnTEQmG4uwOsdIceAoHiyRoc52GMN5_2H8Wp6_MLhNeL9yWw1amyLjdgohmCNS_LeH4t9qD0d_SmSPc_VumPslpQQgM4-VHAcYf4g/favicon.ico?format=">
+        </a>
+        <a href="" class="simple-text logo-normal">
+            <b>ALPHA </b>
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'see_event' event.name  %}">
+              <i class="material-icons">home</i>
+              <p> Lobby </p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'Program'  event.name  %}">
+              <i class="material-icons">date_range</i>
+              <p> Program </p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'rooms'  event.name  %}">
+              <i class="material-icons">dashboard</i>
+              <p> Rooms </p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'speakers'  event.name  %}">
+              <i class="material-icons">supervised_user_circle</i>
+              <p> Speakers </p>
+            </a>
+          </li>
+            <li class="nav-item ">
+            <a class="nav-link" href="{% url 'recursos'  event.name  %}">
+              <i class="material-icons">folder</i>
+              <p> Resources </p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'notes'  event.name  %}">
+              <i class="material-icons">notes</i>
+              <p> Notes </p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'support' event.name %}">
+              <i class="material-icons">support</i>
+              <p> Support </p>
+            </a>
+          </li>
+        </ul>
+          <div class="user">
+          </div>
+          <div class="user">
+              <div class="photo">
+                  <img class="img-fluid" src="https://images.squarespace-cdn.com/content/v1/528f4dc0e4b09ee35b2107d7/1471968355142-4RX5FMN50O2WAI6TDTAD/ke17ZwdGBToddI8pDm48kNjpXgdB2GQ4GXsvq_1og8aoCXeSvxnTEQmG4uwOsdIceAoHiyRoc52GMN5_2H8Wp6_MLhNeL9yWw1amyLjdgohmCNS_LeH4t9qD0d_SmSPc_VumPslpQQgM4-VHAcYf4g/favicon.ico?format=">
+              </div>
+              <div class="user-info">
+                <a class="username">
+                  <span style="font-weight: bold">
+                      <b>#AlphaEnCasa</b>
+                  </span>
+                </a>
+              </div>
+          </div>
+          <ul class="nav">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://latam.alpha.org/dar" target="_blank">
+              <i class="material-icons" style="font-size: 16px;">link</i>
+              <p><small>Dona en Alpha</small> </p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="https://www.instagram.com/alphalatam/" target="_blank">
+              <i class="fa fa-twitter" style="font-size: 16px;"></i>
+              <p><small>Instagram</small> </p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="https://www.youtube.com/user/Alphalatinamerica/" target="_blank">
+              <i class="fa fa-youtube" style="font-size: 16px;"></i>
+              <p><small>Youtube</small> </p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="https://www.facebook.com/alphalatinoamerica" target="_blank">
+              <i class="fa fa-facebook" style="font-size: 16px;"></i>
+              <p><small>Facebook</small> </p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="https://latam.alpha.org/organiza" target="_blank">
+              <i class="material-icons" style="font-size: 16px;">link</i>
+              <p><small>Descubre Alpha</small> </p>
+            </a>
+          </li>
+              <li class="nav-item ">
+            <a class="nav-link" href="http://mialpha.org/" target="_blank">
+              <i class="material-icons" style="font-size: 16px;">link</i>
+              <p><small>Mi Alpha</small> </p>
+            </a>
+          </li>
+        </ul>
+        </div>
+      </div>

@@ -1,0 +1,59 @@
+{% load static	 %}
+{% load widget_tweaks %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Global Leadership Network">
+        <!-- BEGINS description -->
+        <meta name="description" content="{% block description %}  {% endblock %}">
+        <!-- ENDS description -->
+        <!-- BEGINS Favicon -->
+        <link rel="apple-touch-icon" sizes="76x76" href="https://globalleadership.org/wp-content/themes/JointsWP-CSS-master/assets/images/logo_summit_mountain_white.png" />
+        <link rel="icon" href="https://globalleadership.org/wp-content/themes/JointsWP-CSS-master/assets/images/logo_summit_mountain_white.png" type="image/png">
+        <!-- ENDS Favicon -->
+        <!-- BEGINS title -->
+        <title>{% block title %} {% endblock %}</title>
+        <!-- ENDS title -->
+        <!-- BEGINS STYLES -->
+        <!-- Argon CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/argon.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'assets/css/custom-styles.css' %}" type="text/css">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+        <!-- Icons -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+        <link rel="stylesheet" href="{% static 'assets/vendor/nucleo/css/nucleo.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'assets/vendor/fontawesome/fontawesome-free/css/all.min.css' %}" type="text/css">
+        <!-- ENDS STYLES -->
+    </head>
+    <!-- BEGINS BODY -->
+    <body class="bg-white" style="background-image: url('{% static 'assets/img/1x/MUNDO.jpg' %}');" style="background-image: url('{% static 'assets/img/1x/MUNDO.jpg' %}');">
+        <!-- BEGINS navbar -->
+        {% include './navbar.html' %}
+        <!-- ENDS navbar -->
+        <!-- BEGINS CONTENT-->
+        {% block content %}
+        {% endblock %}
+        <!-- ENDS CONTENT-->
+        <!-- BEGIN footer-->
+        {% include './footer.html' %}
+        <!-- END footer-->
+        <!-- BEGIN lang-->
+{#        {% include './languages.html' %}#}
+        <!-- END lang-->
+        <!-- BEGINS JS -->
+          <!-- Argon Scripts -->
+          <!-- Core -->
+          <script src="{% static 'assets/vendor/jquery/dist/jquery.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/js-cookie/js.cookie.js' %}"></script>
+          <script src="{% static 'assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js' %}"></script>
+          <!-- Argon JS -->
+          <script src="{% static 'assets/js/argon.js?v=1.1.0' %}"></script>
+        <!-- ENDS JS -->
+    </body>
+    <!-- ENDS BODY -->
+</html>

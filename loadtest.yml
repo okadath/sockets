@@ -1,0 +1,19 @@
+config:
+    target: "ws://127.0.0.1:8000/test_ws_preguntas/"
+    ensure:
+      maxErrorRate: 5
+    phases:
+      - duration: 30
+        arrivalRate: 1
+        rampTo: 10
+        name: "Warming up"
+      - duration: 50
+        arrivalRate: 3
+        rampTo: 200
+        name: "Max load"
+scenarios:
+  - engine: "ws"
+    flow:
+      - send: "hello"
+      - think: 2
+      - send: "how are you?"

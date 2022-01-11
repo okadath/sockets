@@ -1,0 +1,43 @@
+{% extends './base/base.html' %}
+{% load static	 %}
+{% load widget_tweaks %}
+{% block title %} Rooms {% endblock %}
+{% block description %} NAVIDAD NATURA{% endblock %}
+{% block content %}
+          <!--
+          BEGINS CONTENT
+          -->
+          <div class="container-fluid" style="margin-top: -20px">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- BEGINS Rooms -->
+                    <div class="card">
+                        <div class="card-header card-header-danger card-header-icon">
+                          <div class="card-icon">
+                            <i class="material-icons">dashboard</i>
+                          </div>
+                          <h4 class="card-title text-dark">Rooms</h4>
+                        </div>
+                        <div class="card-body">
+                        </div>
+                  </div>
+                    <!--ENDS Rooms -->
+                </div>
+            </div>
+          <div class="row" style="margin-top: -20px;">
+              {% for room in my_rooms %}
+                  <div class="col-lg-3">
+                    <div class="card" style="width: 100%;">
+                      <img class="card-img-top" src="{{ room.thumbnail.url }}" alt="Card image cap">
+                      <div class="card-body">
+                        <p class="card-text"><a class="text-danger" href="{% url 'room'  event.name room.name  %}"><b><u>{{ room.name }} </u></b></a> </p>
+                      </div>
+                    </div>
+                  </div>
+              {% endfor %}
+            </div>
+          </div>
+          <!--
+          ENDS CONTENT
+          -->
+{% endblock %}

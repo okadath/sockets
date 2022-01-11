@@ -1,0 +1,93 @@
+{% load static	 %}
+<!-- BEGINS CONTENT NAVBAR -->
+        <ul class="navbar-nav" style="margin-top: -10px">
+
+            <li class="nav-item" HIDDEN>
+            <a class="nav-link" href="{% url 'see_event' event.slug  %}">
+              <i class="fa fa-home text-dark"></i>
+              <span class="nav-link-text"> Lobby </span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'room' event.slug "main" %}">
+              <i class="fa fa-home text-dark"></i>
+              <span class="nav-link-text"> Main Room </span>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'Program'  event.slug  %}">
+              <i class="ni ni-single-copy-04 text-dark"></i>
+              <span class="nav-link-text"> Program </span>
+            </a>
+          </li>
+          <li class="nav-item" HIDDEN>
+            <a class="nav-link" href="{% url 'rooms'  event.slug  %}">
+              <i class="fa fa-th-large text-dark"></i>
+              <span class="nav-link-text"> Rooms </span>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'speakers'  event.slug  %}">
+              <i class="fa fa-user text-dark"></i>
+              <span class="nav-link-text"> Directory </span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a HIDDEN class="nav-link" href="{% url 'recursos'  event.slug  %}">
+              <i class="fa fa-folder text-dark"></i>
+              <span class="nav-link-text"> Resources </span>
+            </a>
+          </li>
+          <li hidden class="nav-item " HIDDEN>
+            <a class="nav-link" href="{% url 'notes'  event.slug  %}">
+              <i class="fa fa-file text-dark"></i>
+                <span class="nav-link-text"> Notes </span>
+            </a>
+          </li>
+          <!-- recien agregado -->
+          <li class="nav-item " HIDDEN>
+            <a class="nav-link" href="{% url 'sponsors' event.slug %}">
+                <i class="ni ni-building text-dark"></i>
+                <span class="nav-link-text">Sponsors</span>
+            </a>
+          </li>
+          <li hidden class="nav-item ">
+            <a class="nav-link" href="{% url 'supportspiritual' event.slug  %}">
+              <i class="material-icons text-dark">pan_tool</i>
+                <span class="nav-link-text">Peticiones de Oración</span>
+            </a>
+          </li>
+          <li hidden class="nav-item ">
+            <a class="nav-link" href="{% url 'teamedition' event.slug  %}">
+              <i class="fa fa-users text-dark"></i>
+                <span class="nav-link-text">Team Edition</span>
+            </a>
+          </li>
+            <li class="nav-item ">
+            <a class="nav-link" href="{% url 'support' event.slug %}">
+              <i class="fa fa-life-ring text-dark"></i>
+                <span class="nav-link-text">Support </span>
+            </a>
+          </li>
+            <!--
+            VENTANAS DE DONATIVOS
+            -->
+            <li hidden id="linkDonativoMexicoNorte" class="nav-item">
+              <a class="nav-link" href="" data-toggle="modal" data-target="#donativoMexicoNorte">
+                <i class="fa fa-money-bill text-dark"></i>
+                <span class="nav-link-text">Donativos</span>
+              </a>
+            </li>
+            <!-- -->
+
+            <!--
+            LINKS DE CGL 2021
+            -->
+            <li hidden id="linkEventosLaCumbre" class="nav-item">
+              <a class="nav-link" href="https://mexico2020.gls.events" TARGET="_blank">
+                <i class="fa fa-globe text-dark"></i>
+                <span class="nav-link-text font-weight-bold">Inscríbete a La Cumbre en tu Ciudad - CGL 2021</span>
+              </a>
+            </li>
+        </ul>
+<!-- BEGINS CONTENT NAVBAR -->

@@ -1,0 +1,57 @@
+{% extends './base/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block title %} Nuevo Jetta {% endblock %}
+{% block description %} Bienvenidos a Nuevo Jetta {% endblock %}
+{% block content %}
+    <div class="page-header" filter-color="black" style=" padding-bottom: 50px;">
+        <div class="container">
+            <div class="row">
+                <BR>
+                <BR>
+                <BR>
+                <BR>
+                <div HIDDEN class="col-lg-8 col-md-10 ml-auto mr-auto px-5 mt-5 mb-4 scroll-bar">
+                    {% autoescape off %}
+                        <h2>{{ article.titulo }}</h2>
+                        <br>
+                        {{ article.contenido }}
+                    {% endautoescape %}
+                </div>
+            </div>
+            <form role="form" action="" method="post">
+                {% csrf_token %}
+              <div class="row px-4">
+                <div class="col-md-6">
+                  <div class="form-group">
+                      {{ form.nombre |add_class:"form-control form-control-alternative" |attr:"placeholder:Nombre" }}
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                      {{ form.apellido |add_class:"form-control form-control-alternative" |attr:"placeholder:Apellido" }}
+                  </div>
+                </div>
+                  <div class="custom-control custom-checkbox mb-3 ml-3">
+                      {{ form.acepto_terminos_privacidad |add_class:"custom-control-input" |attr:"checked" }}
+                      <label class="custom-control-label" for="customCheck1"><a href="{% url 'avisos' %}" target="_blank" class="text-darker">Acepto aviso de privacidad</a></label>
+                      <br>
+                      {{ form.acepto_recepcion_giveaway |add_class:"custom-control-input" |attr:"checked" }}
+                      <label class="custom-control-label" for="customCheck1"><a href="{% url 'avisos' %}" target="_blank" class="text-darker">Acepto recepción de give away</a></label>
+                      <br>
+                      {{ form.acepto_uso_imagen |add_class:"custom-control-input" |attr:"checked" }}
+                      <label class="custom-control-label" for="customCheck1"><a href="{% url 'avisos' %}" target="_blank" class="text-darker">Acepto aviso de Uso de Imagen</a></label>
+                  </div>
+              </div>
+                <br>
+                <center>
+                    <button type="submit" class="btn text-white pt-2" style="background-color: #011E54 !important; border-radius: 30px; width: 200px;">Enviar</button>
+                </center>
+            </form>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends './base/base.html' %}
+{% load static	 %}
+{% load widget_tweaks %}
+{% block title %} JUNTA VP {% endblock %}
+{% block description %} Welcome to JUNTA VP {% endblock %}
+{% block content %}
+
+<div class="page-header register-page header-filter" filter-color="black" style=" padding-bottom: 50px;">
+	<div class="container">
+		<br>
+		<div class="row">
+			<div class="col-lg-7 col-md-6 col-sm-8 ml-auto mr-auto m-4">
+				<div class="card card-login card-hidden ">
+					<div class="card-body text-center">
+						<h3 hidden class="card-title">Welcome</h3>
+						 <img class="img-fluid p-3" src="{% static 'assets/img/Registro_V4.jpeg' %}" style="max-height: 300px">
+                        <!-- register control -->
+                        {% if user.is_authenticated %}
+	                        <div class="container alert alert-success">
+	                        <center> 	                           
+	                         <strong> Muchas gracias por volver con nosotros {{ user.email }}<br>
+                            	{% autoescape off %} 
+                                {{control.mess_landing_acceso}}
+                                {% endautoescape %}
+	                         </strong> 
+	                        </center>
+	                        </div>  
+	                     {% endif %}
+						{% if control.allow_register %}
+                            <hr class="mb-3">
+                            <small>¿Aún no te registras para asistir al evento?</small>
+                            <br>
+						  <a href= "{% url 'register' %}" class="btn btn-warning  mt-4">Da click aquí para Registrarte</a>
+                            <br>
+                            <br>
+						{% endif %}
+                        <div class="card-footer justify-content-center pt-1">
+                            <!-- login control -->
+                            {% if control.allow_login%}
+                              <a href= "{% url 'login' %}" class="btn btn-warning  mt-4">Ingresa con tu correo electrónico</a>
+                                <br>
+                            {% else %}
+                                <br>
+                                <h2>
+                                    {% autoescape off %}
+                                    {{control.mess_landing_acceso}}
+                                    {% endautoescape %}
+                                </h2>
+                            {% endif %}
+                            <br>
+                            <small class=""><b>Conoce nuestras <a href="{% static 'assets/AVISO_DE_PRIVACIDAD_Proveedores_marzo2021eng.pdf' %}" target="_blank">Politicas de Privacy</a> </b></small>
+                        </div>
+                    </div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

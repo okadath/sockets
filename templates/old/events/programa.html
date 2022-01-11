@@ -1,0 +1,32 @@
+<p style="background-color:#ed9fbd;">
+	Program  de ESTE EVENTO :
+	<ul>
+	{% for c in program%}
+	evento del video
+	<li> {{ c.event }}  </li>
+	texto
+	<li> {{ c.title }}  </li>
+	speaker
+	<li> {{ c.speaker }}  </li>
+	room
+	<li> {{ c.room }}  </li>
+	start_date
+	<li> {{ c.start_date }}  </li>
+	end_date
+	<li> {{ c.end_date }}  </li>
+	video
+	<li> {{ c.video }}  </li>
+	resource
+	<li> {{ c.resource }}  </li>
+	thumbnail
+	<li> {{ c.thumbnail }}  </li>
+	description
+	<li> {{ c.description }}  </li>
+		{% endfor %}
+	</ul> 
+ 
+
+	<p>
+		
+		
+		

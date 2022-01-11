@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+esta vista es forzosa como dummy trap para loguearse por codigos al evento, como sea el evento posee un dummy code :v
+<h2>Event: {{ event.name }}</h2>
+<ul>
+ 	<li>slug:{{ event.slug }}</li>
+ 	<li>client:{{ event.client.name }}</li>
+ 	<li>description:{{ event.description }}</li>
+</ul>
+    <h2> <a href="{% url 'join_event' event.name  %}">join</a></li>
+
+{% endblock %}

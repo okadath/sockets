@@ -1,0 +1,66 @@
+{% extends './base/base.html' %}
+{% load static	 %}
+{% load widget_tweaks %}
+{% block title %} Programme {% endblock %}
+{% block description %} GLS Online Event {% endblock %}
+{% block content %}
+          <!--
+          BEGINS CONTENT
+          -->
+          <div class="container-fluid" style="margin-top: -20px">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- BEGINS SCHEDULE -->
+                    <div class="card" style="background-color: rgba(255,255,255,0.75);">
+                        <div class="card-header" style="padding-bottom: 0;">
+                          <div class="card-icon">
+                              <h4 class="card-title text-dark"><i class="fa fa-calendar" style="padding-right: 10px;"></i> Programme</h4>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                  <th hidden class="text-center">#</th>
+                                  <th>Description</th>
+                                  <th>Date</th>
+                                  <th>Time</th>
+                                  <th class="">Room</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              {% for pe in programme_elements %}
+                                <tr>
+                                  <td hidden class="text-center">1</td>
+                                  <td>
+                                      {{ pe.title }}
+                                  </td>
+                                  <td>{{ pe.date }}</td>
+                                  <td>
+                                      {% autoescape off %}
+                                          {{ pe.time }}
+                                      {% endautoescape %}
+                                  </td>
+                                    <td class="">
+                                        <b><u>
+                                            <a href="{% url 'room' pe.programme.event.slug pe.room.slug %}" class="text-dark">
+                                                {{ pe.room.name }}
+                                            </a>
+                                        </u></b>
+                                    </td>
+                                </tr>
+                              {% endfor %}
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                  </div>
+                    <!--ENDS SCHEDULE -->
+                </div>
+            </div>
+          </div>
+          <!--
+          ENDS CONTENT
+          -->
+{% endblock %}

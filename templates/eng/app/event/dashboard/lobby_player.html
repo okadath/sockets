@@ -1,0 +1,28 @@
+                                    {% if live.use_live_video == True and live.use_placeholder_video == True %}
+                                        {% if live.simulated_live_start > date_now %}
+                                            {% autoescape off %}
+                                            {{ live.placeholder_video }}
+                                            {% endautoescape %}
+                                        {% else %}
+                                            {% autoescape off %}
+                                            {{ live.live_video }}
+                                            {% endautoescape %}
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if live.use_simulated_live == True and live.use_placeholder_video == True %}
+                                        {% if live.simulated_live_start.time > date_now.time %}
+                                            {% autoescape off %}
+                                            {{ live.placeholder_video }}
+                                            {% endautoescape %}
+                                        {% else %}
+                                            {% autoescape off %}
+                                            {{ live.simulated_live }}
+                                            {% endautoescape %}
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if live.use_placeholder_video and live.use_simulated_live == False and live.use_live_video == False %}
+                                        {% autoescape off %}
+                                        {{ live.placeholder_video }}
+                                        {% endautoescape %}
+                                    {% endif %}
+                        <div id="timer"></div>

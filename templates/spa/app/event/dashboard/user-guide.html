@@ -1,0 +1,64 @@
+{% extends './base/base.html' %}
+{% load static	 %}
+{% load widget_tweaks %}
+{% block title %} Guia DE Usuario {% endblock %}
+{% block description %} REACH EVERY LEADER EVERYWHERE, ANYTIME.
+    Expand the impact of the Summit.Features World Class speaker talks. {% endblock %}
+{% block content %}
+         <!--
+          BEGINS CONTENT
+          -->
+    <!-- BEGINS floating player -->
+    <div data-notify="container" class="alert alert-dismissible alert-info alert-notify animated fadeInDown" role="alert" data-notify-position="top-center"
+         style=" display: inline-block; margin: 0px auto; position: fixed;
+         transition: all 0.5s ease-in-out 0s; z-index: 1080;  animation-iteration-count: 1;
+         max-width: 250px; right: 20px; bottom:10px; padding: 0; background-color: rgba(0,0,0,0.1);
+         border-color: rgba(0,0,0,0.1)"
+    >
+        <span hidden class="alert-icon ni ni-bell-55" data-notify="icon"></span>
+        <div class="alert-text" <="" div="">
+        <span  class="alert-title" data-notify="title" style="width: 250px;"></span>
+        <span data-notify="message">
+            {% autoescape off %}
+                {{ live.live_video }}
+            {% endautoescape %}
+        </span>
+    </div>
+    <button hidden type="button" class="close" data-notify="dismiss" aria-label="Close" style="position: absolute; right: 10px; top: 5px; z-index: 1082;">
+        <span aria-hidden="true">x</span>
+    </button>
+    </div>
+    <!-- ENDS floating player -->
+    <div class="container-fluid" style="margin-top: -20px">
+            <div class="row" style="width: 100%">
+                   <!-- BEGINS SUPPORT -->
+            <div class="col-lg-1"></div>
+              <div class="card col-lg-10" style="background-color: rgba(255,255,255,0.75);">
+                <div class="card-header" style="padding-bottom: 0;">
+                  <div class="card-icon">
+                    <h4 class="card-title text-dark"><i class="fa fa-file" style="padding-right: 10px;"></i> Guia de Usuario </h4>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <!-- BEGINS FORM -->
+                        <h4 hidden class="card-title text-center"> <b>{{ title }}</b></h4>
+                          <br>
+                           <!-- {{ content_url }} -->
+                                {% autoescape off %}
+                                    {{ content_string }}
+                                {% endautoescape %}
+                   <!-- ENDS FORM -->
+                 </div>
+               </div>
+               <!-- ENDS SUPPORT -->
+            </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+        <!--
+          ENDS CONTENT
+          -->
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'events/event.html' %}
+{% block content %}
+ {% if error_messages %}
+                        <div class="alert alert-danger">
+                            <strong>{{ error_messages }}</strong>
+                        </div>
+              {% endif %}
+unete al evento {{ event }} ingresando el codigo del evento:
+
+<br>datos demo evento1 codigo:	code_event_demo1
+si no tiene codigo usa: CODIGO_MASTER_ONLINEEXP
+ <form method="post">
+    {% csrf_token %}
+      <p>
+        <label for="id_code">Code:</label><br>
+        <input name="code" maxlength="200" required="" id="id_code">
+           Required 
+      </p>
+      <!-- se que hay formas mas elegantes de pasar este valor pero no se me ocurre al momento una mas que pasar el nombre del evento en un hidden -->
+      <input name="event"  value="{{event}}" id="id_event" type="hidden">
+          <button type="submit">usuario {{user.username}} unete al evento {{event}}</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,141 @@
+<div class="row">
+    <div class="col-lg-8">
+        <!-- #### begins THEOPLAYER SETUP -- DONT TOUCH #### -->
+        <div class="nav-wrapper p-0">
+            <ul class="nav nav-pills bg-white nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link bg-white mb-sm-3 mb-md-0 active text-dark" id="tabs-icons-text-1-tab"
+                       data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1"
+                       aria-selected="true"><i class="ni ni-button-play"></i> Reproductor 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bg-white mb-sm-3 mb-md-0 text-dark" id="tabs-icons-text-2-tab" data-toggle="tab"
+                       href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i
+                            class="ni ni-button-play"></i> Reproductor Alternativo</a>
+                </li>
+            </ul>
+        </div>
+        <div class="">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel"
+                     aria-labelledby="tabs-icons-text-1-tab">
+                    <!-- #### begins THEOPLAYER SETUP -- DONT TOUCH #### -->
+                    <div class="theoplayer-container video-js theoplayer-skin vjs-16-9"></div>
+                    <script>
+                        var element = document.querySelector(".theoplayer-container");
+                        var player = new THEOplayer.Player(element, {
+                            libraryLocation: "https://cdn.myth.theoplayer.com/591eb373-a225-467e-9960-bbb2f5db6342",
+                            pip: {"visibility": 0.7,}
+                        });
+                        player.autoplay = true;
+                        player.preload = 'auto';
+                    </script>
+                    <!-- #### ends THEOPLAYER SETUP #### -->
+                    <!-- #### begins THEOPLAYER SOURCE #### -->
+                    <script>
+                        player.source = {
+                            sources: [{
+                                "src":
+                                    "https://cdn3.wowza.com/1/c1dpd09tZno4ZHN1/M3dJQlJR/hls/live/playlist.m3u8"
+                            }]
+                        };
+                    </script>
+                    <!-- #### ends THEOPLAYER SOURCE #### -->
+                </div>
+                <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel"
+                     aria-labelledby="tabs-icons-text-2-tab">
+                    <!-- BEGINS VIMEO -->
+                    <div style="padding:56.25% 0 0 0;position:relative;">
+                        <iframe src="https://player.vimeo.com/video/524336757?title=0&byline=0&portrait=0&muted=1"
+                                style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0"
+                                allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <!-- ENDS VIMEO -->
+                    <script src="https://player.vimeo.com/api/player.js"></script>
+                </div>
+            </div>
+            <!-- banner 1 -->
+            <img class="img-fluid" src="https://vwsupplierqualityday2021.com/static/assets/img/BANNER_vw.jpeg"/>
+        </div>
+        <!-- #### ends THEOPLAYER SOURCE #### -->
+    </div>
+    <div class="col-lg-4 pl-0">
+        <!--  #### begins SLIDO EMBEDED #### --->
+        <iframe src="https://app.sli.do/event/qnwhkph9" height="100%" width="100%" frameBorder="0"
+                style="min-height: 500px;" title="Slido"></iframe>
+        <!-- #### ends SLIDO #### -->
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-lg-8">
+        <!-- #### begins THEOPLAYER SETUP -- DONT TOUCH #### -->
+        <div class="nav-wrapper p-0">
+            <ul class="nav nav-pills bg-white nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link bg-white mb-sm-3 mb-md-0 active text-dark" id="tabs-icons-text-1-tab"
+                       data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1"
+                       aria-selected="true"><i class="ni ni-button-play"></i> Reproductor 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bg-white mb-sm-3 mb-md-0 text-dark" id="tabs-icons-text-2-tab" data-toggle="tab"
+                       href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i
+                            class="ni ni-button-play"></i> Reproductor Alternativo</a>
+                </li>
+            </ul>
+        </div>
+        <div class="">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel"
+                     aria-labelledby="tabs-icons-text-1-tab">
+                    <!-- BEGINS VIMEO -->
+                    <div style="padding:56.25% 0 0 0;position:relative;">
+                        <iframe src="https://player.vimeo.com/video/524336757?title=0&byline=0&portrait=0&muted=1"
+                                style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0"
+                                allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <script src="https://player.vimeo.com/api/player.js"></script>
+                    <!-- ENDS VIMEO -->
+                </div>
+                <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel"
+                     aria-labelledby="tabs-icons-text-2-tab">
+                    <!-- #### begins THEOPLAYER SETUP -- DONT TOUCH #### -->
+                    <div class="theoplayer-container video-js theoplayer-skin vjs-16-9"></div>
+                    <script>
+                        var element = document.querySelector(".theoplayer-container");
+                        var player = new THEOplayer.Player(element, {
+                            libraryLocation: "https://cdn.myth.theoplayer.com/591eb373-a225-467e-9960-bbb2f5db6342",
+                            pip: {"visibility": 0.7,}
+                        });
+                        player.autoplay = true;
+                        player.preload = 'auto';
+                    </script>
+                    <!-- #### ends THEOPLAYER SETUP #### -->
+                    <!-- #### begins THEOPLAYER SOURCE #### -->
+                    <script>
+                        player.source = {
+                            sources: [{
+                                "src": "https://cdn3.wowza.com/1/Q1MrMEpSOTFTRU5q/cW9NQ1VE/hls/live/playlist.m3u8"
+                            }]
+                        };
+                    </script>
+                    <!-- #### ends THEOPLAYER SOURCE #### -->
+                </div>
+            </div>
+            <!-- banner 1 -->
+            <img class="img-fluid" src="https://vwsupplierqualityday2021.com/static/assets/img/BANNER_vw.jpeg"/>
+        </div>
+        <!-- #### ends THEOPLAYER SOURCE #### -->
+    </div>
+    <div class="col-lg-4 pl-0">
+        <!--  #### begins SLIDO EMBEDED #### --->
+        <iframe src="https://app.sli.do/event/qnwhkph9" height="100%" width="100%" frameBorder="0"
+                style="min-height: 500px;" title="Slido"></iframe>
+        <!-- #### ends SLIDO #### -->
+    </div>
+</div>

@@ -1,0 +1,47 @@
+{% load static	 %}
+<!--
+BEGINS SHORTCUTS ICONS
+-->
+<li class="nav-item dropdown">
+              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="ni ni-ungroup text-dark"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-dark bg-light-gray dropdown-menu-right">
+                <div class="row shortcuts px-4">
+                    <a hidden href="{% url 'see_event' "gls-online" %}" class="col-4 shortcut-item">
+                    <span class="shortcut-media avatar rounded-circle bg-gradient-default">
+                      <i class="fa fa-home text-white"></i>
+                    </span>
+                    <small class="text-muted">Lobby</small>
+                  </a>
+                  <a HIDDEN href="{% url 'room' event.slug "main" %}" class="col-4 shortcut-item">
+                    <span class="shortcut-media avatar rounded-circle bg-gradient-warning">
+                      <i class="fa fa-th-large text-white"></i>
+                    </span>
+                    <small class="text-muted">Main Room</small>
+                  </a>
+                    <a hidden href="{% url 'room' event.slug "english" %}" class="col-4 shortcut-item">
+                    <span class="shortcut-media avatar rounded-circle bg-gradient-default">
+                      <i class="fa fa-th-large text-white"></i>
+                    </span>
+                    <small class="text-muted">English Session</small>
+                  </a>
+                    </a>
+                    <a hidden href="https://mexico2020.gls.events" class="col-4 shortcut-item">
+                    <span class="shortcut-media avatar rounded-circle bg-gradient-success">
+                      <i class="fa fa-calendar text-white"></i>
+                    </span>
+                    <small class="text-muted">Ver Eventos</small>
+                  </a>
+                    <a HIDDEN href="{% url 'user_guide' event.slug %}" class="col-4 shortcut-item">
+                    <span class="shortcut-media avatar rounded-circle bg-gradient-dark">
+                      <i class="fa fa-user text-white"></i>
+                    </span>
+                    <small class="text-muted">User Guide</small>
+                  </a>
+                </div>
+              </div>
+</li>
+<!--
+ENDS SHORTCUTS ICONS
+-->

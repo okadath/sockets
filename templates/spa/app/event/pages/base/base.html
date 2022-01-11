@@ -1,0 +1,164 @@
+{% load static	 %}
+{% load widget_tweaks %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="JUNTA VP">
+        <!-- BEGINS description -->
+        <meta name="description" content="{% block description %}  {% endblock %}">
+        <!-- ENDS description -->
+        <!-- BEGINS Favicon -->
+        <link rel="apple-touch-icon" sizes="76x76" href="https://www.vw.com.mx/idhub/etc/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/favicons/favicon-32x32.png" />
+        <link rel="icon" href="https://www.vw.com.mx/idhub/etc/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/favicons/favicon-32x32.png" type="image/png">
+        <!-- ENDS Favicon -->
+        <!-- BEGINS title -->
+        <title>{% block title %} {% endblock %}</title>
+        <!-- ENDS title -->
+        <!-- BEGINS STYLES -->
+        <!-- Argon CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/argon.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'assets/css/custom-styles.css' %}" type="text/css">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+        <!-- Icons -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+        <link rel="stylesheet" href="{% static 'assets/vendor/nucleo/css/nucleo.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'assets/vendor/fontawesome/fontawesome-free/css/all.min.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'assets/font-awesome.css' %}">
+        <!-- ENDS STYLES -->
+    </head>
+    <!-- BEGINS BODY -->
+    <body class="" style=" background-color:black; background-image: url('{% static 'assets/img/juntavp/BACK_large.jpg' %}'); background-size: 100%; background-attachment: fixed; background-position: center top; background-repeat: repeat;">
+        <style>
+            @font-face {
+              font-family: 'Montserrat';
+              src: url({% static 'assets/fonts/Montserrat-Regular.ttf' %});
+            }
+            @font-face {
+              font-family: 'Montserrat-Bold';
+              src: url({% static 'assets/fonts/Montserrat-Bold.ttf' %});
+            }
+            * {
+                font-family: 'Montserrat' !important;
+            }
+            .text-bold {
+                font-family: 'Montserrat-Bold' !important;
+            }
+            .text-white {
+                color: #B3B6B7 !important;
+            }
+            .radio.col-up {
+              display: inline-flex;
+              flex-direction: column-reverse;
+              align-items: center;
+                font-size: 12px;
+                font-weight: bold;
+            }
+            input[type="radio" i]{
+                background-color: white !important;
+                color: white !important;
+                cursor: default;
+                margin: 15px 5px 5px 10px;
+                padding: initial;
+            }
+            input[type="email"], input[type="password"], input[type="text"], textarea {
+                border: 2px solid white;
+                border-radius: 0;
+                background-color: rgba(0, 0, 0, 0.1);
+                box-sizing: border-box;
+                color: white;
+            }
+
+            input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus, textarea:focus {
+                border-radius: 0;
+                background-color: rgba(0, 0, 0, 0.1);
+                box-sizing: border-box;
+            }
+
+
+            .input-group-text {
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+            @media screen and (max-width: 640px) {
+                              body {
+                                background-color:black;
+                                background-image: url('{% static 'assets/img/juntavp/BACK_large.jpg' %}') !important;
+                                background-size: 100%;
+                                background-attachment: fixed;
+                                background-position: center top;
+                                background-repeat: repeat;
+                            }
+                          }
+        </style>
+        <!-- BEGINS navbar -->
+        {% include './navbar.html' %}
+        <!-- ENDS navbar -->
+         <!-- BEGINS support alert -->
+        <div HIDDEN class="alert float-right alert-secondary col-sm-2 px-2 py-1 m-0" style="max-width: 160px; position: absolute; top:0; right:0;" role="alert">
+            <a class="text-dark" data-toggle="modal" data-target="#supportModal" href="">
+            <span class="alert-icon"><i class="ni ni-support-16"></i></span>
+            <small><strong class="pl-0">Support</strong></small>
+            </a>
+        </div>
+        <!-- ENDS support alert -->
+        <!-- BEGINS CONTENT-->
+        {% block content %}
+        {% endblock %}
+            <style>
+                #content1 {
+                    position: fixed;
+            }
+                #content img {
+                    position: fixed;
+                    bottom: 30px;
+                    right: 0px;
+            }
+            </style>
+        <div id="">
+            <center>
+                <img class="img-fluid mx-auto my-2 d-md-block d-lg-none" src="{% static 'assets/img/juntavp/JUNTA-LOGO-LARGE.png' %}" style="max-height: 100px; min-height: 30px;">
+            </center>
+        </div>
+        <!-- ENDS CONTENT-->
+        <!-- BEGIN footer-->
+        {% include './footer.html' %}
+        <!-- END footer-->
+        <!-- BEGINS support modal -->
+        <!-- Modal -->
+        <div class="modal fade" id="supportModal"  tabindex="-1" role="dialog" aria-labelledby="supportModal" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Support</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <iframe src="https://www6.cbox.ws/box/?boxid=845254&boxtag=UjbNZc&tid=48&tkey=363a91e63e28a243" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>                </div>
+            </div>
+          </div>
+        </div>
+        <!-- ENDS support modal -->
+        <!-- BEGIN lang-->
+{#        {% include './languages.html' %}#}
+        <!-- END lang-->
+        <!-- BEGINS JS -->
+          <!-- Argon Scripts -->
+          <!-- Core -->
+          <script src="{% static 'assets/vendor/jquery/dist/jquery.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/js-cookie/js.cookie.js' %}"></script>
+          <script src="{% static 'assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js' %}"></script>
+          <!-- Argon JS -->
+          <script src="{% static 'assets/js/argon.js?v=1.1.0' %}"></script>
+        <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js" crossorigin="anonymous"></script>
+
+        <!-- Animated Background -->
+        <!-- ENDS JS -->
+    </body>
+    <!-- ENDS BODY -->
+</html>

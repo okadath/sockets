@@ -1,0 +1,102 @@
+{% extends './base/base.html' %}
+{% load static	 %}
+{% load widget_tweaks %}
+{% block title %} Program {% endblock %}
+{% block description %} JUNTA VP   {% endblock %}
+{% block content %}
+          <!--
+          BEGINS CONTENT
+          -->
+        <!-- BEGINS floating player -->
+        <div data-notify="container" class="alert alert-dismissible alert-info alert-notify animated fadeInDown" role="alert" data-notify-position="top-center"
+             style=" display: inline-block; margin: 0px auto; position: fixed;
+             transition: all 0.5s ease-in-out 0s; z-index: 1080;  animation-iteration-count: 1;
+             max-width: 250px; right: 20px; bottom:10px; padding: 0; background-color: rgba(0,0,0,0.1);
+             border-color: rgba(0,0,0,0.1)"
+        >
+            <span hidden class="alert-icon ni ni-bell-55" data-notify="icon"></span>
+            <div class="alert-text" <="" div="">
+            <span  class="alert-title" data-notify="title" style="width: 250px;"></span>
+            <span data-notify="message">
+                {% autoescape off %}
+                    {{ live.live_video }}
+                {% endautoescape %}
+            </span>
+        </div>
+        <button hidden type="button" class="close" data-notify="dismiss" aria-label="Close" style="position: absolute; right: 10px; top: 5px; z-index: 1082;">
+            <span aria-hidden="true">x</span>
+        </button>
+        </div>
+        <!-- ENDS floating player -->
+          <div class="container-fluid" style="margin-top: -20px">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- BEGINS SCHEDULE -->
+                    <div class="card" style="background-color: rgba(255,255,255,0.75);">
+                        <div class="card-header" style="padding-bottom: 0;">
+                          <div class="card-icon">
+                              <h4 class="card-title text-dark"><i class="fa fa-calendar" style="padding-right: 10px;"></i> Program</h4>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                  <th hidden class="text-center">#</th>
+                                  <th>Description</th>
+                                  <th>Date</th>
+                                  <th>US Time</th>
+                                  <th class="">Room</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              {% for pe in programme_elements %}
+                                <tr>
+                                  <td hidden class="text-center">1</td>
+                                  <td>
+                                      {{ pe.title }}
+                                  </td>
+                                  <td>{{ pe.date }}</td>
+                                  <td>
+                                      {% autoescape off %}
+                                          {{ pe.time }}
+                                      {% endautoescape %}
+                                  </td>
+                                    <td class="">
+                                        <b><u>
+                                            {% if pe.has_external_link %}
+                                                <a href="{{ pe.external_link_url }}" class="text-dark">
+                                                    {{ pe.link_text }}
+                                                </a>
+                                            {% else %}
+                                                <a href="{% url 'room' pe.programme.event.slug pe.room.slug %}" class="text-dark">
+                                                    {{ pe.room.name }}
+                                                </a>
+                                            {% endif %}
+                                        </u></b>
+                                    </td>
+                                </tr>
+                              {% endfor %}
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                  </div>
+                    <!--ENDS SCHEDULE -->
+                </div>
+            </div>
+          </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+          <!--
+          ENDS CONTENT
+          -->
+{% endblock %}

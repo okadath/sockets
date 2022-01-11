@@ -1,0 +1,247 @@
+{% extends './base/base.html' %}
+{% load static	 %}
+{% load widget_tweaks %}
+{% block title %} Registro {% endblock %}
+{% block description %} Welcome to JUNTA VP {% endblock %}
+{% block content %}
+    <!--
+    BEGINS CONTENT
+    -->
+    <div class="page-header register-page header-filter" filter-color="black" style=" padding-bottom: 50px;">
+      <div class="container">
+      <br>
+        <div class="row">
+          <div class="col-lg-7 col-md-6 col-sm-8 ml-auto mr-auto m-4"> 
+            <form  class="form" method="POST" action="{% url 'register' %}">  
+              {% csrf_token %}
+              <div class="card card-login card-hidden">
+                <div class="card-header card-header-danger text-center">
+                    <h3 class="card-title">Welcome</h3>
+                    <img hidden class="img-fluid p-2" src="https://www.redviva.com/lacumbreglobal/wp-content/uploads/sites/2/2019/10/logo.png">
+                    <img class="img-fluid p-2" src="{% static 'assets/img/Registro_V4.jpeg' %}">
+                    <br>
+                    <br>
+                    <p>
+<!--                         Para ingresar a la plataforma necesitaras tu <b>Número de Pedido (# Order)</b> y el <b>Email</b>
+                        que fue utilizado para la compra del boleto en Evenbrite -->
+                         {% if not mensaje %}
+                        Registra tus datos en el formulario
+                        <a hidden href="" data-toggle="modal" data-target="#exampleModal"><span style="background-color: #2696C2; padding:0 6px; border-radius: 30%; color: white;">&#63;</span></a>
+                        {% endif %}
+                    </p>
+                </div>
+                  {% if error_messages %}
+                      <br>
+                        <div class="container alert alert-warning">
+                        <center>
+                          {% autoescape off %}
+                            <strong>{{mail}}<br>{{ error_messages }}</strong>
+                            {% endautoescape %}
+                        </center>
+                        </div>
+                        <br>
+                        {% endif %}
+                  {% if  mensaje %}
+                      <br>
+                        <div class="container alert alert-success">
+                        <center>
+                            {% autoescape off %}
+                            <strong>{{mail}}<br> {{  mensaje }} </strong>
+                                <br>
+                                <br>
+                                <a href= "{% url 'login' %}" class="btn btn-warning  mt-4">Ingresa con tu correo electrónico</a>
+                            {% endautoescape %}
+                        </center>
+                        </div>  
+                        <br>
+                  {% else %}
+                <div class="card-body ">
+                  <span class="bmd-form-group">
+                  </span>
+                  <span class="bmd-form-group">
+<!--                     <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="material-icons">filter_9_plus</i>
+                        </span>
+                      </div>
+                      <input  name="username" id="id_username" class="form-control" placeholder="Número de Pedido" required>
+                    </div>
+                  </span>
+                    <br> -->
+                 <span class="bmd-form-group">
+                      <div class="form-group has-default">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="material-icons">face</i>
+                            </span>
+                          </div>
+                          <input type="text" name="first_name" id="id_first_name" class="form-control" placeholder="Nombre" required>
+                        </div>
+                      </div>
+                       <div class="form-group has-default">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="material-icons">face</i>
+                            </span>
+                          </div>
+                          <input type="text" name="last_name" id="id_last_name" class="form-control" placeholder="Apellido">
+                        </div>
+                      </div>
+                      <div class="form-group has-default">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="material-icons">mail</i>
+                            </span>
+                          </div>
+                          <input type="text" name="email" id="id_email" class="form-control" placeholder="Email" required> 
+                        </div>
+                      </div>
+                     <div class="form-group has-default">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="material-icons">room</i>
+                            </span>
+                          </div>
+<!--                           <input type="text" name="state" id="id_state" class="form-control" placeholder="Estado" required> -->
+<select name="state" id="id_state" class="form-control" value="Estado" required>
+  <option selected="tlaxcala no existe, son actores, es una conspiracion"  disabled>  Elige un estado</option>  
+  <option value="0">Aguascalientes</option>
+  <option value="1">Baja California</option>
+  <option value="2">Baja California Sur</option>
+  <option value="3">Campeche</option>
+  <option value="4">Chiapas</option>
+  <option value="5">Chihuahua</option>
+  <option value="6">Coahuila</option>
+  <option value="7">Colima</option>
+  <option value="8">Distrito Federal</option>
+  <option value="9">Durango</option>
+  <option value="10">Guanajuato</option>
+  <option value="11">Guerrero</option>
+  <option value="12">Hidalgo</option>
+  <option value="13">Jalisco</option>
+  <option value="14">Estado de M&eacute;xico</option>
+  <option value="15">Michoac&aacute;n</option>
+  <option value="16">Morelos</option>
+  <option value="17">Nayarit</option>
+  <option value="18">Nuevo Le&oacute;n</option>
+  <option value="19">Oaxaca</option>
+  <option value="20">Puebla</option>
+  <option value="21">Quer&eacute;taro</option>
+  <option value="22">Quintana Roo</option>
+  <option value="23">San Luis Potos&iacute;</option>
+  <option value="24">Sinaloa</option>
+  <option value="25">Sonora</option>
+  <option value="26">Tabasco</option>
+  <option value="27">Tamaulipas</option>
+  <option value="28">Tlaxcala</option>
+  <option value="29">Veracruz</option>
+  <option value="30">Yucat&aacute;n</option>
+  <option value="31">Zacatecas</option>
+</select>             
+      
+
+
+                        </div>
+                      </div>
+                     <div class="form-group has-default">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="material-icons">room</i>
+                            </span>
+                          </div>
+                          <input type="text" name="city" id="id_city" class="form-control" placeholder="Ciudad" required>
+                        </div>
+                      </div>
+                     <div class="form-group has-default">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="material-icons">phone</i>
+                            </span>
+                          </div>
+                          <input type="text" name="phone" id="id_phone" class="form-control" placeholder="Telefono">
+                        </div>
+                      </div>
+                     <div class="form-group has-default">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="material-icons">work</i>
+                            </span>
+                          </div>
+                          <input type="text" name="work" id="id_work" class="form-control" placeholder="Ocupación" required>
+                        </div>
+                      </div>
+                      <div hidden class="form-group has-default">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="material-icons">vpn_key</i>
+                            </span>
+                          </div>
+                          <input type="text" name="password" id="id_password" class="form-control" placeholder="Password" > 
+                        </div>
+                      </div>
+
+                  </span> 
+                </div>
+                <div class="card-footer justify-content-center">
+                  <!-- ponerle type="submit" es importante! -->
+                       <!--  <a href="#pablo" class="btn btn-danger mt-4">INGRESAR</a> -->
+                    <center>
+                        <button class="btn btn-warning mt-1" type="submit" > Registrar </button>
+                    </center>
+                </div>
+              <div class="card-footer justify-content-center">
+                  <!-- ponerle type="submit" es importante! -->
+                       <!--  <a href="#pablo" class="btn btn-danger mt-4">INGRESAR</a> -->
+                    <center>
+                        <small>
+                            Entendemos que la Privacy de los datos de nuestros usuarios es de suma importancia y nos comprometemos a no compartir ni vender tus datos a terceros. Los datos que proporciones serán de uso exclusivo para JUNTA VP.. Estamos comprometidos a proteger tus datos y valoramos tu Privacy y tu confianza.
+                            <br>
+                        </small>
+                        <small hidden>
+                            Entendemos que la Privacy de los datos de nuestros usuarios es de suma importancia y nos comprometemos a no compartir ni vender tus datos a terceros. Los datos que proporciones serán de uso exclusivo para JUNTA VP.. Estamos comprometidos a proteger tus datos y valoramos tu Privacy y tu confianza.
+                            <br>
+                            Al registrar y hacer uso de la plataforma
+                            <br>
+                            Acepto la <a class="font-weight-bold text-primary" target="_blank" href="{% static 'assets/AVISO_DE_PRIVACIDAD_Proveedores_marzo2021eng.pdf' %}"><u>Politica de Privacy</u></a> de la misma</small>
+                    </center>
+                </div>
+              </div>
+            </form>
+          </div>
+            </div>
+          </div>
+        </div>
+        <!--modal-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ejemplo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img class="img-fluid" src="{% static 'assets/img/ejemplo-pedido-2.jpeg' %}">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    <!--
+    ENDS CONTENT
+    -->
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,140 @@
+{% load static %}
+{% load widget_tweaks %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Nuevo Jetta">
+        <!-- BEGINS description -->
+        <meta name="description" content="{% block description %}  {% endblock %}">
+        <!-- ENDS description -->
+        <!-- BEGINS Favicon -->
+        <link rel="apple-touch-icon" sizes="76x76" href="https://www.vw.com.mx/idhub/etc/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/favicons/favicon-32x32.png" />
+        <link rel="icon" href="https://www.vw.com.mx/idhub/etc/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/favicons/favicon-32x32.png" type="image/png">
+        <!-- ENDS Favicon -->
+        <!-- BEGINS title -->
+        <title>{% block title %} {% endblock %}</title>
+        <!-- ENDS title -->
+        <!-- BEGINS STYLES -->
+        <!-- Argon CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/argon.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'assets/css/custom-styles.css' %}" type="text/css">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+        <!-- Icons -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+        <link rel="stylesheet" href="{% static 'assets/vendor/nucleo/css/nucleo.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'assets/vendor/fontawesome/fontawesome-free/css/all.min.css' %}" type="text/css">
+        <!-- ENDS STYLES -->
+    </head>
+    <!-- BEGINS BODY -->
+    <body class="bg-white" style="background-color: white;">
+        <style>
+            hr.hr--logo {
+              border-top: solid #000 1px;
+              margin: 50px 0;
+            }
+            hr.hr--logo:after {
+              content: url( "{% static 'assets/img/icon-vw.png' %}" );
+              /* Controls the position of the logo */
+              left: 50%;
+              position: absolute;
+              transform: translateY(-50%) translateX(-50%);
+              /* Controls the whitespace around the symbol */
+              padding: 20px;
+              background: #fff;
+            }
+            .card {
+                border-radius: .875rem;
+                box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+            }
+            .text-vw {
+                color: #02A1E1 !important;
+            }
+            .radio.col-up {
+              display: inline-flex;
+              flex-direction: column-reverse;
+              align-items: center;
+                font-size: 12px;
+                font-weight: bold;
+            }
+            input[type="radio" i]{
+                background-color: #02A1E1 !important;
+                color: #02A1E1 !important;
+                cursor: default;
+                margin: 15px 5px 5px 10px;
+                padding: initial;
+            }
+        </style>
+        <!-- BEGINS navbar -->
+        {% include './navbar.html' %}
+        <!-- ENDS navbar -->
+        <!-- BEGINS CONTENT-->
+        {% block content %}
+        {% endblock %}
+        <!-- ENDS CONTENT-->
+        <!-- BEGIN footer-->
+        {% include './footer.html' %}
+        <!-- END footer-->
+        <!-- BEGIN lang-->
+{#        {% include './languages.html' %}#}
+        <!-- END lang-->
+        <!-- BEGINS JS -->
+          <!-- Argon Scripts -->
+          <!-- Core -->
+          <script src="{% static 'assets/vendor/jquery/dist/jquery.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/js-cookie/js.cookie.js' %}"></script>
+          <script src="{% static 'assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js' %}"></script>
+          <!-- Argon JS -->
+          <script src="{% static 'assets/js/argon.js?v=1.1.0' %}"></script>
+        <!-- -->
+        <script>
+            // ------------step-wizard-------------
+        $(document).ready(function () {
+            $('.nav-tabs > li a[title]').tooltip();
+
+            //Wizard
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+
+                var target = $(e.target);
+
+                if (target.parent().hasClass('disabled')) {
+                    return false;
+                }
+            });
+
+            $(".next-step").click(function (e) {
+
+                var active = $('.wizard .nav-tabs li.active');
+                active.next().removeClass('disabled');
+                nextTab(active);
+
+            });
+            $(".prev-step").click(function (e) {
+
+                var active = $('.wizard .nav-tabs li.active');
+                prevTab(active);
+
+            });
+        });
+
+        function nextTab(elem) {
+            $(elem).next().find('a[data-toggle="tab"]').click();
+        }
+        function prevTab(elem) {
+            $(elem).prev().find('a[data-toggle="tab"]').click();
+        }
+
+        $('.nav-tabs').on('click', 'li', function() {
+            $('.nav-tabs li.active').removeClass('active');
+            $(this).addClass('active');
+        });
+
+        </script>
+        <!-- ENDS JS -->
+    </body>
+    <!-- ENDS BODY -->
+</html>

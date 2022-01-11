@@ -1,0 +1,88 @@
+{% load static	 %}
+{% load widget_tweaks %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TG2GT2G4B"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-8TG2GT2G4B');
+        </script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Global Leadership Network">
+        <!-- BEGINS description -->
+        <meta name="description" content="{% block description %}  {% endblock %}">
+        <!-- ENDS description -->
+        <!-- BEGINS Favicon -->
+        <link rel="apple-touch-icon" sizes="76x76" href="https://globalleadership.org/wp-content/themes/JointsWP-CSS-master/assets/images/logo_summit_mountain_white.png" />
+        <link rel="icon" href="https://globalleadership.org/wp-content/themes/JointsWP-CSS-master/assets/images/logo_summit_mountain_white.png" type="image/png">
+        <!-- ENDS Favicon -->
+        <!-- BEGINS title -->
+        <title>{% block title %} {% endblock %}</title>
+        <!-- ENDS title -->
+        <!-- BEGINS STYLES -->
+        <!-- Argon CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/argon.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'assets/css/custom-styles.css' %}" type="text/css">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+        <!-- Icons -->
+        <link rel="stylesheet" href="{% static 'assets/vendor/nucleo/css/nucleo.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'assets/vendor/fontawesome/fontawesome-free/css/all.min.css' %}" type="text/css">
+        <!-- ENDS STYLES -->
+    </head>
+    <!-- BEGINS BODY -->
+    <body>
+        <style>
+            .itemsContainer{float:left;position:relative}.itemsContainer:hover .play{display:block}.play{position:absolute;display:none;top:20%;width:40px;margin:0 auto;left:0;right:0;z-index:100}
+        </style>
+        <!-- BEGINS SIDEBAR -->
+         
+        <!-- ENDS SIDEBAR -->
+        <!-- BEGINS Main content -->
+        <div class="main-content" id="panel">
+            <!-- BEGINS navbar -->
+           
+            <!-- ENDS navbar -->
+            <!-- BEGINS dashboard header -->
+           
+            <!-- ENDS dashboard header -->
+            <!-- BEGINS CONTENT-->
+            <div class="container-fluid mt--6">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <!-- ENDS CONTENT-->
+            <!-- BEGIN footer-->
+             
+            <!-- END footer-->
+        </div>
+        <!-- ENDS Main content -->
+        <!-- BEGIN lang-->
+        
+        <!-- END lang-->
+        <!-- BEGINS JS -->
+          <!-- Argon Scripts -->
+          <!-- Core -->
+          <script src="{% static 'assets/vendor/jquery/dist/jquery.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/js-cookie/js.cookie.js' %}"></script>
+          <script src="{% static 'assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js' %}"></script>
+          <!-- Optional JS -->
+          <script src="{% static 'assets/vendor/chart.js/dist/Chart.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/chart.js/dist/Chart.extension.js' %}"></script>
+          <script src="{% static 'assets/vendor/jvectormap-next/jquery-jvectormap.min.js' %}"></script>
+          <script src="{% static 'assets/js/vendor/jvectormap/jquery-jvectormap-world-mill.js' %}"></script>
+          <!-- Argon JS -->
+          <script src="{% static 'assets/js/argon.js' %}"></script>
+          <!-- Demo JS - remove this in your project -->
+        <!-- ENDS JS -->
+    </body>
+    <!-- ENDS BODY -->
+</html>

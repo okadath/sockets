@@ -1,0 +1,24 @@
+server {
+    listen 80;
+    server_name   143.244.180.108;
+    
+    #esto es para permitir archivos de maximo de 100 MB
+    client_max_body_size 100M;
+
+    
+    #location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        autoindex on;
+        alias /home/juntavp/static/;#el nombre al final debe ir con /
+    }
+
+
+    location /files/ {
+        autoindex on;
+        alias /home/juntavp/files/;
+    }
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/gunicorn.sock;
+    }
+}

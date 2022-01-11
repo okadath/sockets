@@ -1,0 +1,52 @@
+{% load static	 %}
+<!--
+BEGINS SHORTCUTS ICONS
+-->
+<li class="nav-item dropdown">
+              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="ni ni-ungroup text-white"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-dark bg-light-gray dropdown-menu-right">
+                <div class="row shortcuts px-4">
+                    <a href="{% url 'see_event' "gls-online" %}" class="col-4 shortcut-item">
+                    <span class="shortcut-media avatar rounded-circle bg-gradient-default">
+                      <i class="fa fa-home text-white"></i>
+                    </span>
+                    <small class="text-muted">Lobby</small>
+                  </a>
+                  <a href="{% url 'room' "gls-online" "1-Programming" %}" class="col-4 shortcut-item">
+                    <span class="shortcut-media avatar rounded-circle bg-gradient-default">
+                      <i class="fa fa-th-large text-white"></i>
+                    </span>
+                    <small class="text-muted">Main Session</small>
+                  </a>
+                  <a href="{% url 'room' "gls-online" "2-Sessions" %}" class="col-4 shortcut-item">
+                    <span class="shortcut-media avatar rounded-circle bg-gradient-default">
+                      <i class="fa fa-th-large text-white"></i>
+                    </span>
+                    <small class="text-muted">Breakout Room 1</small>
+                  </a>
+                  <a href="{% url 'room' "gls-online" "3-GranderVision" %}" class="col-4 shortcut-item">
+                    <span class="shortcut-media avatar rounded-circle bg-gradient-default">
+                      <i class="fa fa-th-large text-white"></i>
+                    </span>
+                    <small class="text-muted">Breakout Room 2</small>
+                  </a>
+                  <a href="{% url 'room' "gls-online" "4-Sponsors" %}" target="_blank" class="col-4 shortcut-item">
+                    <span class="shortcut-media avatar rounded-circle bg-gradient-default">
+                      <i class="fa fa-th-large text-white"></i>
+                    </span>
+                    <small class="text-muted">Sponsors</small>
+                  </a>
+                  <a href="#!" class="col-4 shortcut-item" hidden>
+                    <span class="shortcut-media avatar rounded-circle bg-gradient-yellow">
+                      <i class="ni ni-basket"></i>
+                    </span>
+                    <small>Shop</small>
+                  </a>
+                </div>
+              </div>
+</li>
+<!--
+ENDS SHORTCUTS ICONS
+-->

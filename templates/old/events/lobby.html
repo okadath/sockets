@@ -1,0 +1,64 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+videos del evento
+
+<h2>Evento: {{ event.name }}</h2>
+
+
+<ul>
+	datos evento
+ 	<li>slug:{{ event.slug }}</li>
+ 	<li>client:{{ event.client.name }}</li>
+ 	<li>description:{{ event.description }}</li>
+</ul>
+
+si no aparece alguno es por que no tiene asociado algun elemento, para iterar usar for y acceder a los elementos de cada tipo
+ contexto de emergencia:
+ si accedes a este contexto desde otro lugar pues se pierden todos y solo se carga la variable del boton que oprimiste, por ej. Notes o rooms
+ rooms:{{my_rooms}}
+  chat:{{chat}}
+ anunciois:{{announce}}
+ Programs:{{prog}}
+ speakers:{{spek}}
+ notes:{{notes}}
+
+
+<!-- aqui van los nombres que les puse en las urls -->
+<li><a href="{% url 'Program'  event.name  %}">Program</a></li>
+<li><a href="{% url 'room'  event.name   %}">Rooms</a></li>
+<li><a href="{% url 'speakers'  event.name   %}">speakers</a></li>
+<li><a href="{% url 'recursos'  event.name   %}">Resources</a></li>
+<li><a href="{% url 'notes'  event.name   %}">notes</a></li>
+<li><a href="{% url 'anuncios'  event.name  %}"> anuncios</a></li>
+
+
+
+
+
+{% include 'events/video.html' %}
+{% include 'events/chat.html' %}
+
+
+{% ifequal token "notes" %}
+ {% include 'events/notes.html' %}
+{% endifequal %}
+{% ifequal token 'anuncios' %}
+ {% include 'events/anuncios.html' %}
+{% endifequal %}
+{% ifequal token 'Program' %}
+ {% include 'events/Program.html' %}
+{% endifequal %}
+{% ifequal token 'Resources' %}
+ {% include 'events/Resources.html' %}
+{% endifequal %}
+{% ifequal token 'room' %}
+ {% include 'events/room.html' %}
+{% endifequal %}
+{% ifequal token 'speakers' %}
+ {% include 'events/speakers.html' %}
+{% endifequal %}
+
+ 
+{% endblock %}

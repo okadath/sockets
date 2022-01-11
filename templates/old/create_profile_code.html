@@ -1,0 +1,25 @@
+{% block content %}
+ {% if error_messages %}
+                        <div class="alert alert-danger">
+                            <strong>{{ error_messages }}</strong>
+                        </div>
+              {% endif %}
+  <h2>Agrega tu codigo</h2>
+  <form method="post">
+    {% csrf_token %}
+      
+      <p>
+      ingresa tu codigo proporcionado por el creador del evento para crear tu cuenta:
+      <br>
+      codigo para testing: code_user_demo1
+      <p>
+        <label for="id_code">Code:</label><br>
+        <input name="code" maxlength="200" required="" id="id_code">
+           Required 
+      </p>
+        
+        
+      </p>
+          <button type="submit">Add code</button>
+  </form>
+{% endblock %}

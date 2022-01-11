@@ -1,0 +1,372 @@
+{% load static	 %}
+{% load widget_tweaks %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="JUNTA VP">
+        <!-- BEGINS description -->
+        <meta name="description" content="{% block description %}  {% endblock %}">
+        <!-- ENDS description -->
+        <!-- BEGINS Favicon -->
+        <link rel="apple-touch-icon" sizes="76x76" href="https://www.vw.com.mx/idhub/etc/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/favicons/favicon-32x32.png" />
+        <link rel="icon" href="https://www.vw.com.mx/idhub/etc/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/favicons/favicon-32x32.png" type="image/png">
+        <!-- ENDS Favicon -->
+        <!-- BEGINS title --> 
+        <title>{% block title %} {% endblock %}</title>
+        <!-- ENDS title -->
+        <!-- BEGINS STYLES -->
+        <!-- Argon CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/argon.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'assets/css/custom-styles.css' %}" type="text/css">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+        <!-- Icons -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+        <link rel="stylesheet" href="{% static 'assets/vendor/nucleo/css/nucleo.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'assets/vendor/fontawesome/fontawesome-free/css/all.min.css' %}" type="text/css">
+        <!-- ENDS STYLES -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src='https://www.googletagmanager.com/gtag/js?{{ gtag | safe}}'></script>
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '{{ gtag | safe}}');
+        </script>
+    </head>
+    <!-- BEGINS BODY -->
+    <body style="background-image: url('{% static 'assets/img/juntavp/BACK_large.jpg' %}') !important; background-size: 100%; background-attachment: fixed; background-position: center top; background-repeat: repeat; ">
+        <style>
+            .itemsContainer{float:left;position:relative}.itemsContainer:hover .play{display:block}.play{position:absolute;display:none;top:20%;width:40px;margin:0 auto;left:0;right:0;z-index:100}
+        </style>
+        <style>
+            .nav-link-text {
+                font-size: 16px;
+            }
+            .card-title {
+                font-size: 16px;
+            }
+            @font-face {
+              font-family: 'Montserrat';
+              src: url({% static 'assets/fonts/Montserrat-Regular.ttf' %});
+            }
+            @font-face {
+              font-family: 'Montserrat-Bold';
+              src: url({% static 'assets/fonts/Montserrat-Bold.ttf' %});
+            }
+            * {
+                font-family: 'Montserrat' !important;
+            }
+            .text-bold {
+                font-family: 'Montserrat-Bold' !important;
+            }
+            .text-white {
+                color: #B3B6B7 !important;
+            }
+            input[type="email"], input[type="password"], input[type="text"], textarea {
+                border: 2px solid white !important;
+                border-radius: 0 !important;
+                background-color: rgba(0, 0, 0, 0.1) !important;
+                box-sizing: border-box;
+                color: white;
+            }
+
+            input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus, textarea:focus {
+                border-radius: 0 !important;
+                background-color: rgba(0, 0, 0, 0.1) !important;
+                box-sizing: border-box;
+            }
+
+
+            .input-group-text {
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+            .dropdown-select {
+                border: 2px solid #fff;
+                border-radius: 0;
+                background-color: rgba(255,255,255,0);
+                padding: 5px;
+                color: #B3B6B7 !important;
+            }
+        </style>
+        <!-- Chromecast SDK -->
+            <script type="text/javascript" src="//www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+            <!-- THEOplayer library and css -->
+            <script type="text/javascript" src="https://cdn.myth.theoplayer.com/591eb373-a225-467e-9960-bbb2f5db6342/THEOplayer.js"></script>
+            <link rel="stylesheet" type="text/css" href="https://cdn.myth.theoplayer.com/591eb373-a225-467e-9960-bbb2f5db6342/ui.css" />
+            <!-- Customization Theoplayer css styles -->
+            <style>
+                .theo-primary-color,
+                .vjs-selected {
+                    color: #ffffff !important;
+                }
+                .theo-primary-background {
+                    color: #000000 !important;
+                    background-color: #4a90e2 !important;
+                }
+                .theo-secondary-color {
+                    color: #ffffff !important;
+                }
+                .theo-secondary-background {
+                    color: #000000 !important;
+                    background-color: #ffffff !important;
+                }
+                .theo-tertiary-color {
+                    color: #000000 !important;
+                }
+                .theo-tertiary-background {
+                    color: #ffffff !important;
+                    background-color: #000000 !important;
+                }
+                .vjs-play-control {
+                    display: none !important;
+                }
+            </style>
+        <!-- BEGINS SIDEBAR -->
+        {% comment %}
+        {% include './sidebar.html' %}
+        {% endcomment %}
+        <!-- ENDS SIDEBAR -->
+        <!-- BEGINS Main content -->
+        <div class="main-content" id="panel" >
+            <!-- BEGINS navbar -->
+            {% comment %}
+            {% include './navbar.html' %}
+            {% endscomment %}
+            <!-- ENDS navbar -->
+            <!-- BEGINS dashboard header -->
+            {% comment %}
+            {% include './dashboard-header.html' %}
+            {% endcomment %}
+            <!-- ENDS dashboard header -->
+            <!-- BEGINS CONTENT-->
+            <div class="container-fluid" style="padding-left:0px; margin-left:0px; padding-right:0px; margin-right:0px; max-height: 100%">
+                {% block content %}
+                {% endblock %}
+            <style>
+                #content1 {
+                    position: fixed;
+            }
+                #content img {
+                    position: fixed;
+                    bottom: 10px;
+                    left: 30%;
+            }
+            </style>
+            <div id="">
+                <br>
+            <center>
+                <img class="img-fluid mx-auto my-2 d-md-block d-lg-none" src="{% static 'assets/img/juntavp/JUNTA-LOGO-LARGE.png' %}" style="max-height: 80px; min-height: 30px;">
+            </center>
+        </div>
+        </div>
+            </div>
+            <!-- ENDS CONTENT-->
+            <!-- BEGIN footer-->
+            {% comment %}
+            {% include './footer.html' %}
+            {% endcomment %}
+            <!-- END footer-->
+            <!-- Modal -->
+            <div class="modal fade" id="todaslasreuniones" tabindex="-1" role="dialog" aria-labelledby="donativosMexicoNorte" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-justify py-1">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!---->
+
+        </div>
+        <!-- ENDS Main content -->
+        <!-- BEGIN lang-->
+{#        {% include './languages.html' %}#}
+        <!-- END lang-->
+        <!-- BEGINS JS -->
+          <!-- Argon Scripts -->
+          <!-- Core -->
+          <script src="{% static 'assets/vendor/jquery/dist/jquery.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/js-cookie/js.cookie.js' %}"></script>
+          <script src="{% static 'assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js' %}"></script>
+          <!-- Optional JS -->
+          <script src="{% static 'assets/vendor/chart.js/dist/Chart.min.js' %}"></script>
+          <script src="{% static 'assets/vendor/chart.js/dist/Chart.extension.js' %}"></script>
+          <script src="{% static 'assets/vendor/jvectormap-next/jquery-jvectormap.min.js' %}"></script>
+          <script src="{% static 'assets/js/vendor/jvectormap/jquery-jvectormap-world-mill.js' %}"></script>
+          <!-- Argon JS -->
+          <script src="{% static 'assets/js/argon.js' %}"></script>
+          <!--BEGINS timer-->
+
+            {% if control %}
+
+        <script>
+            // var end = new Date('12/03/2021 05:25 PM');
+
+                var end = new Date('{{ control.fecha_inicio_jsform  }}');
+                
+                var _second = 1000;
+                var _minute = _second * 60;
+                var _hour = _minute * 60;
+                var _day = _hour * 24;
+                var timer;
+
+                function showRemaining() {
+                    var now = new Date();
+                    var distance = end - now;
+                    if (distance < 0) {
+
+                        clearInterval(timer);
+                        //document.getElementById('countdown').innerHTML = 'INICIAMOS!';
+                        document.getElementById("countdown").style.display="none";
+                        //document.getElementById("showContent").style.display="none";
+                        document.getElementById("showContent").classList.remove('hideClass');
+                        return;
+                    }
+                    var days = Math.floor(distance / _day);
+                    var hours = Math.floor((distance % _day) / _hour);
+                    var minutes = Math.floor((distance % _hour) / _minute);
+                    var seconds = Math.floor((distance % _minute) / _second);
+
+                    //document.getElementById("countdown").innerHTML = "<img class=\"img-fluid\" src=\"../../../static/assets/img/natura/Arbol_Deskto.png\" style=\"position:absolute;left:0px;bottom:0px;\" />"
+                    document.getElementById('countdown').style.display="block";
+                    document.getElementById('countdown-text').innerHTML = "LA TRANSMISIÓN COMIENZA EN:";
+                    //document.getElementById('countdown-hour1').innerHTML = days + ' dias, ';
+                    //document.getElementById('countdown-hour1').innerHTML += hours + ' horas, ';
+                    //document.getElementById('countdown-hour1').innerHTML += minutes + ' minutos y ';
+                    //document.getElementById('countdown-hour1').innerHTML += seconds + ' segundos';
+
+                    function minTwoDigits(n) {
+                      return (n < 10 ? '0' : '') + n;
+                    }
+
+                    document.getElementById('days').innerHTML = minTwoDigits(days);
+                    document.getElementById('hours').innerHTML = minTwoDigits(hours);
+                    document.getElementById('minutes').innerHTML = minTwoDigits(minutes);
+                    document.getElementById('seconds').innerHTML = minTwoDigits(seconds);
+
+                }
+
+                timer = setInterval(showRemaining, 1000);
+            </script>
+            {%  endif %}
+        <!--ENDS timer-->
+        <!--BEGINS timer 2-->
+
+            {% if control %}
+        <script>
+            // var end2 = new Date('12/03/2021 05:30 PM');
+                var end2 = new Date('{{ control.fecha_fin_jsform  }}');
+                var _second = 1000;
+                var _minute = _second * 60;
+                var _hour = _minute * 60;
+                var _day = _hour * 24;
+                var timer2;
+
+                function showRemaining2() {
+                    var now = new Date();
+                    var distance2 = end2 - now;
+                    if (distance2 < 0) {
+
+                        clearInterval(timer2);
+                        //document.getElementById('countdown').innerHTML = 'INICIAMOS!';
+                        document.getElementById("countdown").style.display="none";
+                        document.getElementById("showContent").style.display="none";
+                        //document.getElementById("showContent").style.display="none";
+                        document.getElementById("showContent").classList.add('hideClass');
+                        document.getElementById("gracias").classList.remove('hideClass2');
+                        console.log("holi");
+                        return;
+                    }
+                    var days = Math.floor(distance2 / _day);
+                    var hours = Math.floor((distance2 % _day) / _hour);
+                    var minutes = Math.floor((distance2 % _hour) / _minute);
+                    var seconds = Math.floor((distance2 % _minute) / _second);
+
+                    //document.getElementById("countdown").innerHTML = "<img class=\"img-fluid\" src=\"../../../static/assets/img/natura/Arbol_Deskto.png\" style=\"position:absolute;left:0px;bottom:0px;\" />"
+                    //document.getElementById('gracias').style.display="block";
+                    //document.getElementById('countdown-text').innerHTML = "LA TRANSMISIÓN COMIENZA EN:";
+                    //document.getElementById('countdown-hour1').innerHTML = days + ' dias, ';
+                    //document.getElementById('countdown-hour1').innerHTML += hours + ' horas, ';
+                    //document.getElementById('countdown-hour1').innerHTML += minutes + ' minutos y ';
+                    //document.getElementById('countdown-hour1').innerHTML += seconds + ' segundos';
+
+                    function minTwoDigits(n) {
+                      return (n < 10 ? '0' : '') + n;
+                    }
+
+                    document.getElementById('days2').innerHTML = minTwoDigits(days);
+                    document.getElementById('hours2').innerHTML = minTwoDigits(hours);
+                    document.getElementById('minutes2').innerHTML = minTwoDigits(minutes);
+                    document.getElementById('seconds2').innerHTML = minTwoDigits(seconds);
+
+                }
+
+                timer2 = setInterval(showRemaining2, 1500);
+            </script>
+                        {%  endif %}
+        <!--ENDS timer2 -->
+        <!--BEGINS wizard-->
+        <script>
+            // ------------step-wizard-------------
+        $(document).ready(function () {
+            $('.nav-tabs > li a[title]').tooltip();
+
+            //Wizard
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+
+                var target = $(e.target);
+
+                if (target.parent().hasClass('disabled')) {
+                    return false;
+                }
+            });
+
+            $(".next-step").click(function (e) {
+
+                var active = $('.wizard .nav-tabs li.active');
+                active.next().removeClass('disabled');
+                nextTab(active);
+
+            });
+            $(".prev-step").click(function (e) {
+
+                var active = $('.wizard .nav-tabs li.active');
+                prevTab(active);
+
+            });
+        });
+
+        function nextTab(elem) {
+            $(elem).next().find('a[data-toggle="tab"]').click();
+        }
+        function prevTab(elem) {
+            $(elem).prev().find('a[data-toggle="tab"]').click();
+        }
+
+        $('.nav-tabs').on('click', 'li', function() {
+            $('.nav-tabs li.active').removeClass('active');
+            $(this).addClass('active');
+        });
+
+        </script>
+        <!--ENDS wizard-->
+
+        <!-- ENDS JS -->
+    </body>
+    <!-- ENDS BODY -->
+</html>

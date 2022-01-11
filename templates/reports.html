@@ -1,0 +1,25 @@
+{% extends 'admin/change_list.html' %}
+
+{% block object-tools %}
+    <div>
+        Reporte en formato csv
+        <form action="logged/1" method="POST">
+            {% csrf_token %}
+                <button type="submit">No logueados</button>
+        </form>
+    </div>
+    <div>
+        <form action="logged/0" method="POST">
+            {% csrf_token %}
+                <button type="submit">Logueados</button>
+        </form>
+    </div>
+    <div>
+        <form action="logged/2" method="POST">
+            {% csrf_token %}
+                <button type="submit">Users Registrados</button>
+        </form>
+    </div>
+    <br />
+    {{ block.super }}
+{% endblock %}

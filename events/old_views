@@ -1,0 +1,157 @@
+#aqui ya hay token que indica que subventana se abre
+# def event_nested_views(request,name_event,token): 
+# 	datos_evento=get_object_or_404(Event, name=name_event)
+# 	live_del_evento=LivePlayer.objects.filter(event=datos_evento) 
+# 	chat_event=Chat.objects.filter(event=datos_evento) 
+# 	if token=="notes":
+# 		return render(request, 'spa/app/event/dashboard/lobby.html', {"event":datos_evento,"token":"notes","lives":live_del_evento,"chat":chat_event} )
+# 	if token=="anuncios":
+# 		return render(request, 'spa/app/event/dashboard/lobby.html',  {"event":datos_evento,"token":"anuncios","lives":live_del_evento,"chat":chat_event} )
+# 	if token=="Program":
+# 		return render(request, 'spa/app/event/dashboard/lobby.html',  {"event":datos_evento,"token":"Program","lives":live_del_evento,"chat":chat_event} )
+# 	if token=="recursos":
+# 		return render(request, 'spa/app/event/dashboard/lobby.html', {"event":datos_evento,"token":"recursos","lives":live_del_evento,"chat":chat_event} )
+# 	if token=="room":
+# 		return render(request, 'spa/app/event/dashboard/lobby.html', {"event":datos_evento,"token":"room","lives":live_del_evento,"chat":chat_event} )
+
+
+
+# devuelve los datos de un solo room si hay name room
+
+# def room_borra_nota(request,name_event,name_room=""):
+# 	try:
+# 		datos_evento=get_object_or_404(Event, name=name_event)
+# 	except Exception as e:
+# 		return render(request, 'events/lobby.html', {"event":datos_evento,"token":"room"} )
+# 	if name_room=="" :
+# 		rooms_del_evento=Room.objects.filter(event=datos_evento)
+# 	else:
+# 		room_del_evento=Room.objects.get(name=name_room)
+# 	live_del_evento=LivePlayer.objects.filter(event=datos_evento)
+# 	notes=Note.objects.filter(user=request.user) 
+# 	chat_event=Chat.objects.get(event=datos_evento)
+# 	print(notes)
+# 	if request.method == "POST":
+# 		Note.objects.create(title=request.POST["title"],text=request.POST["text"],user=request.user) 
+# 		notes=Note.objects.filter(user=request.user) 
+# 		print('guardado')
+# 		return render(request, 'spa/app/event/dashboard/room.html', {'event': datos_evento, "token":"room","my_room":room_del_evento, "lives":live_del_evento,"chat":chat_event ,"notes":notes,} )
+# 	else:
+# 		notes=Note.objects.filter(user=request.user) 
+
+# # si necesitas pasarle los videos descomenta esto, agregale al render la key "videos":prog, y usa el html de program
+# 	# prog=Video.objects.filter(event=datos_evento)
+
+
+# 	return render(request, 'spa/app/event/dashboard/room.html', {'event': datos_evento, "token":"room","my_room":room_del_evento, "lives":live_del_evento,"chat":chat_event ,"notes":notes,} )
+
+
+
+
+# def room_edita_nota(request,name_event,name_room=""):
+# 	try:
+# 		datos_evento=get_object_or_404(Event, name=name_event)
+# 	except Exception as e:
+# 		return render(request, 'events/lobby.html', {"event":datos_evento,"token":"room"} )
+# 	if name_room=="" :
+# 		rooms_del_evento=Room.objects.filter(event=datos_evento)
+# 	else:
+# 		room_del_evento=Room.objects.get(name=name_room)
+# 	live_del_evento=LivePlayer.objects.filter(event=datos_evento)
+# 	notes=Note.objects.filter(user=request.user) 
+# 	chat_event=Chat.objects.get(event=datos_evento)
+# 	print(notes)
+# 	if request.method == "POST":
+# 		Note.objects.create(title=request.POST["title"],text=request.POST["text"],user=request.user) 
+# 		notes=Note.objects.filter(user=request.user) 
+# 		print('guardado')
+# 		return render(request, 'spa/app/event/dashboard/room.html', {'event': datos_evento, "token":"room","my_room":room_del_evento, "lives":live_del_evento,"chat":chat_event ,"notes":notes,} )
+# 	else:
+# 		notes=Note.objects.filter(user=request.user) 
+
+# # si necesitas pasarle los videos descomenta esto, agregale al render la key "videos":prog, y usa el html de program
+# 	# prog=Video.objects.filter(event=datos_evento)
+
+
+# 	return render(request, 'spa/app/event/dashboard/room.html', {'event': datos_evento, "token":"room","my_room":room_del_evento, "lives":live_del_evento,"chat":chat_event ,"notes":notes,} )
+
+
+	# notes=Note.objects.filter(user=request.user) 
+	# print(request.POST)
+	# if request.method == "POST":
+	# 	Note.objects.create(title=request.POST["title"],text=request.POST["text"],user=request.user) 
+	# 	notes=Note.objects.filter(user=request.user) 
+	# 	print('guardado')
+	# 	return render(request, 'spa/app/event/dashboard/notes.html', {'notes': notes, "event":datos_evento,"token":"notes","lives":live_del_evento,"chat":chat_event} ) 
+	# else:
+	# 	notes=Note.objects.filter(user=request.user) 
+		
+
+
+ # not verified! 
+# def anuncios(request,slug,slug_ann=""):
+# 	try:
+# 		datos_evento=get_object_or_404(Event, name=slug)
+# 	except Exception as e: 
+# 		return render(request, 'events/lobby.html', {"event":datos_evento,"token":"anuncios"})#, "lives":live_del_evento,"chat":chat_event} ) 
+# 	live_del_evento=LivePlayer.objects.filter(event=datos_evento)  
+# 	chat_event=Chat.objects.filter(event=datos_evento) 
+# 	if slug_ann=="" :
+# 		anunc=Announcement.objects.filter(event=datos_evento)  
+# 	else:
+# 		anunc=Announcement.objects.filter(name=slug_ann) 
+# 	# print(anunc)
+# 	return render(request, 'events/lobby.html', {'event': datos_evento, "token":"anuncios","announce":anunc, "lives":live_del_evento,"chat":chat_event} ) 
+
+# def unregistry_event(request,name_event):
+# 	evento=get_object_or_404(Event ,  name=name_event)
+# 	registro_a_eliminar=get_object_or_404(Event_User, user=request.user, event=evento)
+# 	# print(registro_a_eliminar)
+# 	registro_a_eliminar.delete()
+# 	ev = Event.objects
+# 	# print(ev.all)
+# 	# print(request.user)
+# 	try:
+# 		my_events=Event_User.objects.filter (user=request.user ) 
+# 	except Exception as e:
+# 		my_events="" 
+# 	return render(request, 'events/all_events.html', {'events': ev, "my_events":my_events} )
+
+
+
+# def join_event(request,name_event): 
+# 	if request.method == "POST":
+# 		print(request.POST) 
+# 		# code = request.POST.get('code')
+# 		try:
+# 			event_to_join=get_object_or_404(Event, name=name_event) 
+# 		except Exception as e:
+# 			print("evento no existe")
+# 			return render(request, 'events/join_event.html',{"event":name_event, "error_messages":"no existe el evento"} )
+# 		try:
+# 			if event_to_join.code.code==request.POST["code"]: 
+# 				u_c=Event_User.objects.get_or_create(user=request.user,event=event_to_join)
+# 				print(u_c)
+# 				return HttpResponseRedirect(reverse('see_event', args=[name_event]))
+# 			else:
+# 				return render(request, 'events/join_event.html',{"event":name_event, "error_messages":"codigo incorrecto"} )
+# 		except Exception as e:
+# 			print("shitty way")
+# 			u_c=Event_User.objects.get_or_create(user=request.user,event=event_to_join)
+# 			# esto va aqui como valvula de escape para estupideces
+# 			# codigo master: CODIGO_MASTER_ONLINEEXP
+# 			# print("Evento sin codigo, pasa todos")
+# 			return HttpResponseRedirect(reverse('see_event', args=[name_event]))
+
+# 	else:
+# 		# hay que mantener el nombre del evento en el contexto 
+# 		return render(request, 'events/join_event.html',{"event":name_event} )
+
+		
+
+
+
+# def event(request,name_event):
+# 	# aqui si no existe el nombre del evento te llevara a la pagina 404
+# 	asd=get_object_or_404(Event, name=name_event)
+# 	return render(request, 'events/event.html', {"event":asd} )

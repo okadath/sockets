@@ -1,0 +1,16 @@
+{% block content %}
+<body><h2>ingresa tu codigo</h2>
+  datos demo: code:code_event_demo1
+  <form method="post">
+    {% csrf_token %}
+      
+      <p>
+        <label for="id_username">code:</label><br>
+        <input name="username" maxlength="200" required="" id="id_username">
+           Required 
+      </p>
+          <button type="submit">Sign up</button>
+  </form>
+</body>
+
+{% endblock %}

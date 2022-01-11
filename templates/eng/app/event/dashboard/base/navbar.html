@@ -1,0 +1,70 @@
+{% load static	 %}
+{% load widget_tweaks %}
+<!--
+    BEGINS Navbar
+-->
+    <nav class="navbar navbar-top navbar-expand navbar-light navbar-transparent border-bottom" >
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Brand logo -->
+            <img hidden src="{% static 'assets/img/TGLSLogo01Black.png' %}" style="height: 30px; margin-right: 20px;">
+            <h2 class="text-white">{% if lobby_message %}{{ lobby_message }}{% else %}Global Leadership Summit{% endif %} </h2>
+            <!-- BEGINS SEARCH -->
+            <!-- Search form -->
+            {% include './navbar-search.html' %}
+            <!-- ENDS SEARCH -->
+            <!-- Begins Navbar links -->
+          <ul class="navbar-nav align-items-center ml-md-auto">
+            <li class="nav-item d-xl-none">
+              <!-- Sidenav toggler -->
+              <div class="pr-3 sidenav-toggler sidenav-toggler-light" data-action="sidenav-pin" data-target="#sidenav-main">
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                </div>
+              </div>
+            </li>
+              <li class="nav-item"></li>
+            <li hidden class="nav-item d-sm-none">
+              <a class="nav-link" href="#" data-action="search-show" data-target="#navbar-search-main">
+                <i class="ni ni-zoom-split-in"></i>
+              </a>
+            </li>
+              <!--
+              BEGINS NOTIFICATIONS MENU
+              -->
+              {% include './navbar-notifications.html' %}
+              <!--
+              ENDS NOTIFICATIONS MENU
+              -->
+              <!--
+              BEGINS MINI ICON MENU
+              -->
+              {% include './navbar-shortcuts.html' %}
+              <!--
+              ENDS MINI ICON MENU
+              -->
+          </ul>
+          <ul class="navbar-nav align-items-center ml-auto ml-md-0">
+              <!--
+              BEGINS LANGUAGES
+              -->
+              {% include './navbar-languages.html' %}
+              <!--
+              ENDSS LANGUAGES
+              -->
+              <!--
+              BEGINS USER DROPDOWN MENU
+              -->
+              {% include './navbar-user.html' %}
+              <!--
+              ENDSS USER DROPDOWN MENU
+              -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+<!--
+    ENDS Navbar
+-->

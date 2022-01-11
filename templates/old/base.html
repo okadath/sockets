@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}events{% endblock %}</title>
+  </head>
+  <body>
+    <header>
+      <h1>My Site</h1>
+      <input type=button value="Previous Page" onClick="javascript:history.go(-1);">
+        {% if user.is_authenticated %} 
+            <li><a href="{% url 'all_events' %}">accede a un evento</a></li> 
+            <li><a href="{% url 'logout' %}">logout</a></li>
+        {% else %}
+            <li><a href="{% url 'login_mail' %}">Login</a></li> 
+            <li><a href="{% url 'register_user' %}">Registrate</a></li>
+        {% endif %}
+      <hr>
+    </header>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+  </body>
+</html>
+

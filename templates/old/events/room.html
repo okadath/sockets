@@ -1,0 +1,68 @@
+<p style="background-color:#ddeb96;">
+	todos los room del evento:
+	<!-- si necesitas quitar los lives de esta template quita esta parte -->
+	LIVES EXISTENTES EN ESTE EVENTO(al aprecer no hay relacion entre lives y rooms):
+	<ul>
+	{% for live in lives%}
+	nombre live 
+	<li> {{ live.event }}  </li>
+	type live 
+	<li> {{ live.live_video }}  </li>
+	video live 
+	<li> {{ live.live_video }}  </li>
+	simulated live 
+	<li> {{ live.simmulated_live }}  </li>
+	thumbnail
+	<li> {{ live.thumbnail }}  </li>
+	pre_live_video
+	<li> {{ live.pre_live_video }}  </li>
+
+		{% endfor %}
+<!-- aqui acaban los lives -->
+	<br>
+	todas las Notes de este usuario:
+	si no hay Notes pues aqui no aparecera nada :v
+	no hay filtro de Notes por evento por que no le agregue la FK del evento a la nota, ya esta bastante complicado el crud de notes
+	<!-- si necesitas quitar las Notes de esta template quita esta parte -->
+<br>
+el link del titulo lleva al editor de Notes abandonando el room y iendo al url /notes ...
+<ul>
+	{% for not in notes%}
+	titulo nota
+	<li>  <a href="{% url 'notes'  event.name  not.title  %}">{{ not.title }}  </a></li>
+	texto nota
+	<li> {{ not.text }}  </li>
+	<a href="{% url 'create_pdf'  not.title %}">imprimir</a></li>
+		{% endfor %}
+<!-- aqui acaban los lives -->
+<br>
+<br>
+ROOMS EXISTENTES EN ESTE EVENTO:
+ 	{% for room in my_rooms.all%}
+
+		<li> <a href="{% url 'room'  event.name room.name  %}"> link al room {{ room.event }} </a>  </li>
+		<li> datos del room llamado {{ room.event }}  </li>
+		<li>  {{ room.name }}  </li>
+		thumb:
+		<li>  {{ room.thumbnai }}  </li>
+		banner:
+		<li>  {{ room.banner }}  </li>
+		icon:
+		<li>  {{ room.icon }}  </li>
+		descripcion:
+		<li>   {{ room.description }}  </li>
+		tiene live_player:
+		<li>   {{ room.own_liveplayer }}  </li>
+		supongo que tu reproductor pregutara si las siguientes condiciones son false o true
+		tiene chat:
+		<li>  {{ room.own_chat }}  </li>
+		liveplayer:
+		<li>  {{ room.live_video }}  </li>
+		chat:
+		<li>  {{ room.chat }}  </li>
+
+	{% endfor %}
+</ul>
+	<p>
+		
+		

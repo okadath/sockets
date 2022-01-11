@@ -1,0 +1,388 @@
+{% extends './base/base.html' %}
+{% load static	 %}
+{% load widget_tweaks %}
+{% block title %} Adquiere el Team Edition {% endblock %}
+<!-- {% block description %}  {% endblock %} -->
+{% block content %}
+    <!-- Chromecast SDK -->
+            <script type="text/javascript" src="//www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+            <!-- THEOplayer library and css -->
+            <script type="text/javascript" src="https://cdn.myth.theoplayer.com/591eb373-a225-467e-9960-bbb2f5db6342/THEOplayer.js"></script>
+            <link rel="stylesheet" type="text/css" href="https://cdn.myth.theoplayer.com/591eb373-a225-467e-9960-bbb2f5db6342/ui.css" />
+            <!-- Customization Theoplayer css styles -->
+            <style>
+                .theo-primary-color,
+                .vjs-selected {
+                    color: #ffffff !important;
+                }
+                .theo-primary-background {
+                    color: #000000 !important;
+                    background-color: #4a90e2 !important;
+                }
+                .theo-secondary-color {
+                    color: #ffffff !important;
+                }
+                .theo-secondary-background {
+                    color: #000000 !important;
+                    background-color: #ffffff !important;
+                }
+                .theo-tertiary-color {
+                    color: #000000 !important;
+                }
+                .theo-tertiary-background {
+                    color: #ffffff !important;
+                    background-color: #000000 !important;
+                }
+            </style>
+          <!--
+          BEGINS CONTENT
+          -->
+            <!-- BEGINS floating player -->
+            <div data-notify="container" class="alert alert-dismissible alert-info alert-notify animated fadeInDown" role="alert" data-notify-position="top-center"
+                 style=" display: inline-block; margin: 0px auto; position: fixed;
+                 transition: all 0.5s ease-in-out 0s; z-index: 1080;  animation-iteration-count: 1;
+                 max-width: 250px; right: 20px; bottom:10px; padding: 0; background-color: rgba(0,0,0,0.1);
+                 border-color: rgba(0,0,0,0.1)"
+            >
+                <span hidden class="alert-icon ni ni-bell-55" data-notify="icon"></span>
+                <div class="alert-text" <="" div="">
+                <span  class="alert-title" data-notify="title" style="width: 250px;"></span>
+                <span data-notify="message">
+                    {% autoescape off %}
+                        {{ live.live_video }}
+                    {% endautoescape %}
+                </span>
+            </div>
+            <button hidden type="button" class="close" data-notify="dismiss" aria-label="Close" style="position: absolute; right: 10px; top: 5px; z-index: 1082;">
+                <span aria-hidden="true">x</span>
+            </button>
+            </div>
+            <!-- ENDS floating player -->
+<!--
+BEGINS CONTENT
+-->
+<div class="container-fluid" style="margin-top: -20px">
+	<div class="row">
+		<div class="col-lg-12">
+
+			<!-- BEGINS SUPPORT -->
+			<div class="card" style="background-color: rgba(255,255,255,0.75);">
+				<div class="card-header" style="padding-bottom: 0;">
+					<div class="card-icon">
+						<h4 class="card-title text-dark"><i class="fa fa-file" style="padding-right: 10px;"></i>Adquiere tu licencia del Team Edition</h4>
+					</div>
+				</div>
+				<div class="card-body">
+					<!-- BEGINS FORM -->
+
+					<div class="container">
+                        <div hidden id="TeamEditionMexicoNorte" class="card-body"  style="background-color: white; padding-bottom: 10px;">
+                            <p>
+                                    <center class="text-center">
+                                    <span class="h3">Nos complace presentarles la nueva versión del <b>Team Edition</b></span>
+                                    <br>
+                                    <br>
+                                    <a href="https://glsteamedition.com" target="_blank">
+                                    <img class="img-fluid" style="max-height: 200px;" src="{% static 'assets/img/teamedition-web-preview.jpeg' %}">
+                                    </a>
+                                    <br>
+                                    <br>
+                                   Una aplicación de Video-OnDemand disponible para todas las plataformas.
+                                    <br>
+                                        Disfruta del contenido de <strong>JUNTA VP</strong> en tu Smartphone, Tablet y Computadora.
+                                    <br>
+                                    </center>
+                                    <br>
+                                    Para adquirir tu licencia sigue los siguientes pasos:
+                                    <br>
+                                    <br>
+                                    <b>1.</b>Realiza tu depósito o tranferencia por $1,000.00mn a la cuenta:
+                                    <br>
+                                    <br>
+                                    <b>BANAMEX</b>
+                                    <br>
+                                    <b>Beneficiario:</b> Primera Iglesia Bautista de Ciudad Satélite AR
+                                    <br>
+                                    <b>Cuenta:</b> 101272
+                                    <br>
+                                    <b>Sucursal:</b> 4153
+                                    <br>
+                                    <b>Clabe Interbancaria:</b> 002180415301012721
+                                    <br>
+                                    <br>
+                                    <b>2.</b> Reportar su depósito a través de esta forma, déjanos tus datos y adjunta la imagen o el documento del comprobante de pago.
+                                    <br>
+                                    Puedes enviar también un correo a <span class="text-primary">lucyere.garcia@prodigy.net.mx</span> con tus datos y la imagen o el documento del comprobante de pago. 
+                                    <br>
+                                    <br>
+                                    <b>3.</b>  Si presentas dudas puedes llamar al teléfono: <b>55 3988 8077</b>
+                            </p>
+                        </div>
+                        <div hidden id="TeamEditionMexicoOriente" class="card-body"  style="background-color: white; padding-bottom: 10px;">
+                            <p>
+                                    <center class="text-center">
+                                    <span class="h3">Nos complace presentarles la nueva versión del <b>Team Edition</b></span>
+                                    <br>
+                                    <br>
+                                    <a href="https://glsteamedition.com" target="_blank">
+                                    <img class="img-fluid" style="max-height: 200px;" src="{% static 'assets/img/teamedition-web-preview.jpeg' %}">
+                                    </a>
+                                    <br>
+                                    <br>
+                                   Una aplicación de Video-OnDemand disponible para todas las plataformas.
+                                    <br>
+                                        Disfruta del contenido de <strong>JUNTA VP</strong> en tu Smartphone, Tablet y Computadora.
+                                    <br>
+                                    </center>
+                                    <br>
+                                    Para adquirir tu licencia sigue los siguientes pasos:
+                                    <br>
+                                    <br>
+                                    <b>1.</b>Realiza tu depósito o tranferencia por $1,000.00mn a la cuenta:
+                                    <br>
+                                    <br>
+                                    <b>BANCO SANTANDER </b>
+                                    <br>
+                                    <b>Beneficiario:</b> COMUNIDAD CRISTIANA CONQUISTANDO FRONTERAS A.R.
+                                    <br>
+                                    <b>Cuenta:</b> 65-50390066-1
+                                    <br>
+                                    <b>Referencia:</b> CGL2020-C
+                                    <br>
+                                    <b>Clabe Interbancaria:</b> 014180655039006611
+                                    <br>
+                                    <br>
+                                    <b>2.</b> Reportar su depósito a través de esta forma, déjanos tus datos y adjunta la imagen o el documento del comprobante de pago.
+                                    <br>
+                                    Puedes enviar también un correo a <span class="text-primary">adriandelacallejagonzalez@gmail.com</span> con tus datos y la imagen o el documento del comprobante de pago. 
+                                    <br>
+                                    <br>
+                                    <b>3.</b>  Si presentas dudas puedes llamar al teléfono: <b>55 3988 8077</b>
+                            </p>
+                        </div>
+                        <div hidden id="TeamEditionGuadalajara" class="card-body"  style="background-color: white; padding-bottom: 10px;">
+                            <p>
+                                    <center class="text-center">
+                                    <span class="h3">Nos complace presentarles la nueva versión del <b>Team Edition</b></span>
+                                    <br>
+                                    <br>
+                                    <a href="https://glsteamedition.com" target="_blank">
+                                    <img class="img-fluid" style="max-height: 200px;" src="{% static 'assets/img/teamedition-web-preview.jpeg' %}">
+                                    </a>
+                                    <br>
+                                    <br>
+                                   Una aplicación de Video-OnDemand disponible para todas las plataformas.
+                                    <br>
+                                        Disfruta del contenido de <strong>JUNTA VP</strong> en tu Smartphone, Tablet y Computadora.
+                                    <br>
+                                    </center>
+                                    <br>
+                                    Para adquirir tu licencia sigue los siguientes pasos:
+                                    <br>
+                                    <br>
+                                    <b>1.</b>Realiza tu depósito o tranferencia por $1,000.00mn a la cuenta o realiza tu pago a traves de Paypal:
+                                    <br>
+                                    <br>
+                                    <a class="btn btn-info" href="paypal.me/robbierembao" target="_blank">Ir a Paypal</a>
+                                    <br>
+                                    <br>
+                                    <b>BANCOMER</b>
+                                    <br>
+                                    <b>Beneficiario:</b> Roberto Rembao
+                                    <br>
+                                    <b>Cuenta:</b> 294 218 3668
+                                    <br>
+                                    <b>Referencia:</b> Team Edition CGL 2020
+                                    <br>
+                                    <b>Clabe Interbancaria:</b> 012 320 02942183668 3
+                                    <br>
+                                    <br>
+                                    <b>2.</b> Reportar su depósito a través de esta forma, déjanos tus datos y adjunta la imagen o el documento del comprobante de pago.
+                                    <br>
+                                    Puedes enviar también un correo a <span class="text-primary">palisyeyo28@gmail.com</span> con tus datos y la imagen o el documento del comprobante de pago. 
+                                    <br>
+                                    <br>
+                                    <b>3.</b>  Si presentas dudas puedes llamar a los teléfonos: <b>33 2903 8971 / 33 3634 7604</b>
+                            </p>
+                        </div>
+                        <div hidden id="TeamEditionMonterrey" class="card-body"  style="background-color: white; padding-bottom: 10px;">
+                            <p>
+                                    <center class="text-center">
+                                    <span class="h3">Nos complace presentarles la nueva versión del <b>Team Edition</b></span>
+                                    <br>
+                                    <br>
+                                    <a href="https://glsteamedition.com" target="_blank">
+                                    <img class="img-fluid" style="max-height: 200px;" src="{% static 'assets/img/teamedition-web-preview.jpeg' %}">
+                                    </a>
+                                    <br>
+                                    <br>
+                                   Una aplicación de Video-OnDemand disponible para todas las plataformas.
+                                    <br>
+                                        Disfruta del contenido de <strong>JUNTA VP</strong> en tu Smartphone, Tablet y Computadora.
+                                    <br>
+                                    </center>
+                                    <br>
+                                    Para adquirir tu licencia sigue los siguientes pasos:
+                                    <br>
+                                    <br>
+                                     <b>1.</b>Realiza tu pago por $1,000.00mn a través de Paypal:
+                                    <br>
+                                    <br>
+                                    <a class="btn btn-info" href="https://paypal.me/cglmty" target="_blank">Ir a Paypal</a>
+                                    <br>
+                                    <br>
+                                    <b>2.</b> Reportar su depósito a través de esta forma, déjanos tus datos y adjunta la imagen o el documento del comprobante de pago.
+                                    <br>
+                                    Puedes enviar también un correo a <span class="text-primary">administracion@diosestaaqui.net</span> con tus datos y la imagen o el documento del comprobante de pago. 
+                                    <br>
+                                    <br>
+                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                    Si lo prefieres puedes enviar tu comprobante via <b><i class="fa fa-whatsapp text-black"></i>Whatsapp</b> al teléfono: <b>8131 16 6461</b>
+                            </p>
+                        </div>
+                        <div id="TeamEditionDurango" class="card-body"  style="background-color: white; padding-bottom: 10px;">
+                            <p>
+                                    <center class="text-center">
+                                    <span class="h3">Nos complace presentarles la nueva versión del <b>Team Edition</b></span>
+                                    <br>
+                                    <br>
+                                    <a href="https://glsteamedition.com" target="_blank">
+                                    <img class="img-fluid" style="max-height: 200px;" src="{% static 'assets/img/teamedition-web-preview.jpeg' %}">
+                                    </a>
+                                    <br>
+                                    <br>
+                                   Una aplicación de Video-OnDemand disponible para todas las plataformas.
+                                    <br>
+                                        Disfruta del contenido de <strong>JUNTA VP</strong> en tu Smartphone, Tablet y Computadora.
+                                    <br>
+                                    </center>
+                                    <br>
+                                    Para adquirir tu licencia sigue los siguientes pasos:
+                                    <br>
+                                    <br>
+                                     <b>1.</b>Realiza tu pago por $1,000.00mn a la siguiente cuenta:
+                                    <br>
+                                    <br>
+                                    <b>Banco Afirme</b>
+                                    <br>
+                                    <b>Beneficiario:</b> José Luis Sáenz Ceniceros
+                                    <br>
+                                    <b>Cuenta:</b> 827989533
+                                    <br>
+                                    <b>Clabe Interbancaria:</b> 062190008279895336
+                                    <br>
+                                    <b>Num. de Tarjeta:</b>  5359 4304 0232 3278
+                                    <br>
+                                    <br>
+                                    <b>2.</b> Reportar su depósito a través de esta forma, déjanos tus datos y adjunta la imagen o el documento del comprobante de pago.
+                                    <br>
+                                    Puedes enviar también un correo a <span class="text-primary">luisdgo70@gmail.com</span> con tus datos y la imagen o el documento del comprobante de pago. 
+                                    <br>
+                                    <br>
+                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                    Si tienes alguna duda favor de comunicarse al teléfono: <b>6181345321</b>
+                            </p>
+                        </div>
+                        <div id="TeamEditionCancunToluca" class="card-body"  style="background-color: white; padding-bottom: 10px;">
+                            <p>
+                                    <center class="text-center">
+                                    <span class="h3">Nos complace presentarles la nueva versión del <b>Team Edition</b></span>
+                                    <br>
+                                    <br>
+                                    <a href="https://glsteamedition.com" target="_blank">
+                                    <img class="img-fluid" style="max-height: 200px;" src="{% static 'assets/img/teamedition-web-preview.jpeg' %}">
+                                    </a>
+                                    <br>
+                                    <br>
+                                    Una aplicación de Video-OnDemand disponible para todas las plataformas.
+                                    <br>
+                                        Disfruta del contenido de <strong>JUNTA VP</strong> en tu Smartphone, Tablet y Computadora.
+                                    <br>
+                                    </center>
+                                    <br>
+                                    Para adquirir tu licencia sigue los siguientes pasos:
+                                    <br>
+                                    <br>
+                                    <b>1.</b>Realiza tu pago por $1,000.00mn a través de los siguientes links:
+                                    <br>
+                                    <br>
+                                    Si estás en CANCÚN puedes adquirir tu Team Edition CGL 2020 en línea aquí:
+                                    <br>
+                                    <br>
+                                    <a class="btn btn-info" href="https://www.eventbrite.com.mx/e/team-edition-la-cumbre-global-de-liderazgo-cancun-tickets-129427090913" target="_blank">Comprar Team Edition</a>
+                                    <br>
+                                    <br>
+                                    Si estás en TOLUCA puedes adquirir tu Team Edition CGL 2020 en línea aquí:
+                                    <br>
+                                    <br>
+                                    <a class="btn btn-info" href="https://www.eventbrite.com.mx/e/la-cumbre-global-de-liderazgo-toluca-2020-tickets-123233900915?ref=" target="_blank">Comprar Team Edition</a>
+                                    <br>
+                                    <br>
+                                    Si tienes dudas o comentarios puedes enviarlos a través de esta forma. 
+                                    <br>
+                                    <br>
+                            </p>
+                        </div>
+                        <br>
+						{% if error_messages %} 
+						<div class="alert alert-danger">
+							<strong>{{ error_messages }}</strong>
+						</div>  
+						{% endif %} 
+						{% if messages %} 
+						<div class="alert alert-success">
+							<strong>{{ messages }}</strong>
+						</div>  
+						{% endif %}
+						<form enctype="multipart/form-data" method="POST" action="{% url 'teamedition' event.slug  %}">
+							{% csrf_token %} 
+							<!-- {{ form.as_p }} -->
+
+							<!--    <p><label for="id_contact_email" class="col-md-2 col-form-label form-control-label">Email:</label><br>
+							<input class="form-control" type="email" name="contact_email" maxlength="128" id="id_contact_email" required/></p> -->
+
+							<p><label for="id_subject" class="col-md-2 col-form-label form-control-label">Nombre:</label> <br>
+							<input class="form-control" type="text" name="title" maxlength="149" id="id_title" required /></p>
+
+							<p><label for="id_content" class="col-md-2 col-form-label form-control-label">Mensaje:</label><br>
+
+							<script type="text/javascript" src="/static/ckeditor/ckeditor-init.js" data-ckeditor-basepath="/static/ckeditor/ckeditor/" id="ckeditor-init-script"></script>
+							<script type="text/javascript" src="/static/ckeditor/ckeditor/ckeditor.js"></script>
+							<div class="django-ckeditor-widget" data-field-id="id_content" style="width: auto !important;">
+								<textarea style="width: 100%;min-height: 75px;outline: none;resize: none;" id="id_content" name="content" rows="3"  data-processed="0"
+								data-config="{&quot;toolbar_Basic&quot;: [[&quot;Source&quot;, &quot;-&quot;, &quot;Bold&quot;, &quot;Italic&quot;]],
+								&quot;height&quot;: 200, &quot;toolbar&quot;: &quot;Full&quot;, &quot;skin&quot;: &quot;moono-lisa&quot;,
+								&quot;language&quot;: &quot;en-us&quot;, &quot;toolbar_Full&quot;: [[&quot;Styles&quot;, &quot;Format&quot;,
+								&quot;Bold&quot;, &quot;Italic&quot;, &quot;Underline&quot;, &quot;Strike&quot;, &quot;SpellChecker&quot;, &quot;Undo&quot;,
+								&quot;Redo&quot;], [&quot;Link&quot;, &quot;Unlink&quot;, &quot;Anchor&quot;], [ &quot;Table&quot;, &quot;HorizontalRule&quot;],
+								[&quot;TextColor&quot;, &quot;BGColor&quot;], [&quot;Smiley&quot;, &quot;SpecialChar&quot;]], &quot;filebrowserWindowHeight&quot;: 725,
+								&quot;filebrowserWindowWidth&quot;: 940}"
+								data-external-plugin-resources="[]" data-id="id_content" data-type="ckeditortype"> </textarea>
+							</div>
+							<p>
+							<!-- 
+							<textarea class="form-control" name="description" rows="10" cols="40" id="id_description" value="" required></textarea></p> -->
+							<label for="id_file" class="col-md-2 col-form-label form-control-label">Imagen o Documento Comprobante:</label> <br>
+							<input class="form-control" type="file" name="image" id="id_image" /></p>
+                            <br>
+							<button type="submit" class="save btn btn-default float-right">Enviar datos</button>
+							<!-- <input type="submit" name="" value="Send Support Ticket" > -->
+						</form>
+					</div>
+				</div> 
+<!-- ENDS FORM -->
+			</div>
+		</div>
+<!-- ENDS SUPPORT -->
+	</div>
+</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<!--
+ENDS CONTENT
+-->
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+       {% block content %}
+{% if error_messages %} 
+<div class="alert alert-danger">
+    <strong>{{ error_messages }}</strong>
+</div>  
+{% endif %}
+  <h2>registrate</h2>    
+    <form method="post" action="{% url 'register_user' %}"> 
+      {% csrf_token %}
+      
+      <p>
+        <label for="id_first_name">First name:</label><br>
+        <input type="text" name="first_name" id="id_first_name" maxlength="30">
+        
+        
+      </p>
+      
+      <p>
+        <label for="id_last_name">Last name:</label><br>
+        <input type="text" name="last_name" id="id_last_name" maxlength="150">
+        
+        
+      </p>
+      
+      <p>
+        <label for="id_email">Email address:</label><br>
+        <input type="email" name="email" id="id_email" maxlength="254">
+        
+        
+      </p>
+      
+      <p>
+        <label for="id_password">codigo alpha2020:</label><br>
+        <input type="text" name="password" required id="id_password" maxlength="128">
+        
+        
+      </p>
+          <button type="submit">Sign up</button>
+  </form>
+  </div>
+{% endblock %}

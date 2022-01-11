@@ -1,0 +1,27 @@
+{% block content %}
+ {% if error_messages %}
+                        <div class="alert alert-danger">
+                            <strong>{{ error_messages }}</strong>
+                        </div>
+              {% endif %}
+<body><h2>login</h2>
+  datos demo: user: test_1 password: Qwerty35$
+  <form method="post">
+    {% csrf_token %}
+      
+      <p>
+        <label for="id_username">Username:</label><br>
+        <input name="username" maxlength="200" required="" id="id_username">
+           Required 
+      </p>
+      
+      <p>
+        <label for="id_password">Password:</label><br>
+        <input type="password" name="password" required="" id="id_password">
+        
+      <p></p>
+          <button type="submit">Sign up</button>
+  </form>
+</body>
+
+{% endblock %}

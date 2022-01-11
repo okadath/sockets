@@ -1,0 +1,54 @@
+{% extends './base/base.html' %}
+{% load static	 %}
+{% load widget_tweaks %}
+{% block title %} Interacción en Vivo {% endblock %}
+{% block description %} JUNTA VP   {% endblock %}
+{% block content %}
+          <!--
+          BEGINS CONTENT
+          -->
+          <div class="container-fluid" style="margin-top: -20px">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- BEGINS Speakers -->
+                    <div class="card" style="background-color: rgba(255,255,255,0.75);">
+                        <div class="card-header" style="padding-bottom: 0;">
+                          <div class="card-icon">
+                              <h4 class="card-title text-dark"><i class="fa fa-comment" style="padding-right: 10px;"></i> Rooms de Interacción en Vivo</h4>
+                          </div>
+                        </div>
+                        <div class="card-body" style="padding: 0;">
+                            <style>
+                                .embed-container {
+                                    position: relative;
+                                    padding-bottom: 56.25%;
+                                    height: 0;
+                                    overflow: hidden;
+                                }
+                                .embed-container iframe {
+                                    position: absolute;
+                                    top:0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            </style>
+                            <div class="embed-container">
+                                <iframe src="https://www.wonder.me/r?id=067a4663-4040-402b-bf9f-2400ced2a1f7" frameborder="0" allowfullscreen allow="camera; microphone"></iframe>
+                            </div>
+                        </div>
+                        <div class="card-footer"></div>
+                  </div>
+                    <!--ENDS Speakers -->
+                </div>
+            </div>
+          </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+          <!--
+          ENDS CONTENT
+          -->
+{% endblock %}

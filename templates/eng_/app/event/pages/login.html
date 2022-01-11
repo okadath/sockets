@@ -1,0 +1,66 @@
+{% extends './base/base.html' %}
+{% load static	 %}
+{% load widget_tweaks %}
+{% block title %} Login {% endblock %}
+{% block description %} NAVIDAD NATURA{% endblock %}
+{% block content %}
+    <!--
+    BEGINS CONTENT
+    -->
+    <div class="page-header register-page header-filter" filter-color="black" style="background-image: url('{% static 'assets/img/EsteticaCAoLatamsinlogos.png' %}')">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
+            <form class="form" method="POST" action= "{% url 'login_mail' %}">
+              {% csrf_token %}
+              <div class="card card-login card-hidden">
+                <div class="card-header card-header-danger text-center">
+                  <h4 class="card-title text-dark">Login</h4>
+                </div>
+                  <br>
+                  {% if error_messages %} 
+                        <div class="alert alert-danger">
+                            <strong>{{ error_messages }}</strong>
+                        </div>  
+                        {% endif %}
+                <div class="card-body ">
+                  <span class="bmd-form-group">
+                  </span>
+                  <span class="bmd-form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="material-icons">email</i>
+                        </span>
+                      </div>
+                      <!-- <input type="email" class="form-control" placeholder="Email"> -->
+                      <input type="email" name="email" id="id_email" class="form-control" placeholder="Email">
+                    </div>
+                  </span>
+                    <br>
+                  <span class="bmd-form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="material-icons">lock_outline</i>
+                        </span>
+                      </div>
+                      <input type="password" class="form-control" placeholder="Ingresar Codigo: alpha2020">
+                    </div>
+                  </span>
+                </div>
+                <div class="card-footer justify-content-center">
+                  <!-- ponerle type="submit" es importante! -->
+                       <!--  <a href="#pablo" class="btn btn-danger mt-4">INGRESAR</a> -->
+                            <button  class="btn btn-danger mt-4" type="submit"> INGRESAR </button>
+                </div>
+              </div>
+            </form>
+          </div>
+            </div>
+          </div>
+        </div>
+    <!--
+    ENDS CONTENT
+    -->
+{% endblock %}

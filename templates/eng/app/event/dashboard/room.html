@@ -1,0 +1,190 @@
+{% extends './base/base.html' %}
+{% load tz %}
+{% load static	 %}
+{% load widget_tweaks %}
+{% block title %} Room {% endblock %}
+{% block description %} GLS Online Event {% endblock %}
+{% block content %}
+          <!--
+          BEGINS CONTENT
+          -->
+          <div class="container-fluid" style="margin-top: -20px">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- BEGINS LIVE PLAYER -->
+                    <div class="card" style="background-color: rgba(255,255,255,0.75);">
+                        <div class="card-header" style="padding-bottom: 0;">
+                          <div class="card-icon">
+                              <h4 class="card-title text-dark"><i class="fa fa-th-large" style="padding-right: 10px;"></i> {{ my_room.name }}</h4>
+                          </div>
+                        </div>
+                        <div class="card-body" style="padding: 0;">
+                                    {% if my_room.use_live_video == True and my_room.use_placeholder_video == True %}
+                                        {% if my_room.simulated_live_start.time > date_now.time %}
+                                            {% autoescape off %}
+                                            {{ my_room.placeholder_video }}
+                                            {% endautoescape %}
+                                        {% else %}
+                                            {% autoescape off %}
+                                            {{ my_room.live_video }}
+                                            {% endautoescape %}
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if my_room.use_simulated_live == True and my_room.use_placeholder_video == True %}
+                                        {% if my_room.simulated_live_start.time > date_now.time %}
+                                            {% autoescape off %}
+                                            {{ my_room.placeholder_video }}
+                                            {% endautoescape %}
+                                        {% else %}
+                                            {% autoescape off %}
+                                            {{ my_room.simulated_live }}
+                                            {% endautoescape %}
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if my_room.use_placeholder_video == True and my_room.use_simulated_live == False and my_room.use_live_video == False %}
+                                        {% autoescape off %}
+                                        {{ my_room.placeholder_video }}
+                                        {% endautoescape %}
+                                    {% endif %}
+                        </div>
+                    </div>
+                    <!-- ENDS LIVE PLAYER -->
+                    <!-- BEGINS SCHEDULE -->
+                </div>
+                <div class="col-lg-4">
+                    <div class="card" style="background-color: rgba(255,255,255,0.75);">
+                        <div class="card-header" style="padding-bottom: 0;">
+                          <div class="card-icon">
+                              <h4 class="card-title text-dark"><i class="fa fa-comment" style="padding-right: 10px;"></i> Interact</h4>
+                          </div>
+                        </div>
+                        <div class="card-body" style="padding: 0;">
+                                {% autoescape off %}
+                                {{ my_room.chat }}
+                                {% endautoescape %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+          <div class="row"> 
+            <div class="col-lg-12">
+                <!-- BEGINS Notes -->
+                <div class="card" style="background-color: rgba(255,255,255,0.75);">
+                        <div class="card-header" style="padding-bottom: 0;">
+                          <div class="card-icon">
+                              <h4 class="card-title text-dark"><i class="fa fa-file" style="padding-right: 10px;"></i> Notes</h4>
+                          </div>
+                        </div>
+                    <div class="card-body">
+                        {% if error_messages %}
+                            <div class="alert alert-danger">
+                                <strong>{{ error_messages }}</strong>
+                            </div>
+                        {% endif %}
+                        <center>
+                        <form method="POST" class="post-form">
+                                    {% csrf_token %}
+                                    <p>
+                                        <input placeholder="Title"  class="form-control" type="text" name="title" maxlength="149" id="id_title" required value="{{actual.title}}">
+                                    </p>
+                                    <script type="text/javascript" src="/static/ckeditor/ckeditor-init.js" data-ckeditor-basepath="/static/ckeditor/ckeditor/" id="ckeditor-init-script"></script>
+                                    <script type="text/javascript" src="/static/ckeditor/ckeditor/ckeditor.js"></script>
+                                    <div class="django-ckeditor-widget" data-field-id="id_text" style="width: auto !important;">
+                                        <textarea style="width: 100%;min-height: 75px;outline: none;resize: none;" id="id_text" name="text" rows="10" required data-processed="0"
+                                                  data-config="{&quot;toolbar_Basic&quot;: [[&quot;Source&quot;, &quot;-&quot;, &quot;Bold&quot;, &quot;Italic&quot;]],
+                                                                &quot;height&quot;: 291, &quot;toolbar&quot;: &quot;Full&quot;, &quot;skin&quot;: &quot;moono-lisa&quot;,
+                                                                &quot;language&quot;: &quot;en-us&quot;, &quot;toolbar_Full&quot;: [[&quot;Styles&quot;, &quot;Format&quot;,
+                                                                &quot;Bold&quot;, &quot;Italic&quot;, &quot;Underline&quot;, &quot;Strike&quot;, &quot;SpellChecker&quot;, &quot;Undo&quot;,
+                                                                &quot;Redo&quot;], [&quot;Link&quot;, &quot;Unlink&quot;, &quot;Anchor&quot;], [ &quot;Table&quot;, &quot;HorizontalRule&quot;],
+                                                                [&quot;TextColor&quot;, &quot;BGColor&quot;], [&quot;Smiley&quot;, &quot;SpecialChar&quot;]], &quot;filebrowserWindowHeight&quot;: 725,
+                                                                &quot;filebrowserWindowWidth&quot;: 940}"
+                                                                data-external-plugin-resources="[]" data-id="id_text" data-type="ckeditortype">{{actual.text}}</textarea>
+                                    </div>
+                                    <p>
+                                        <br>
+                                        <button type="submit" class="save btn btn-default">Save</button>
+                                    </p>
+                                </form>
+                            <br>
+                            <br>
+                            Edit your notes:
+                           {% for note in notes.all %}
+                            <li><a class="text-dark" href="{% url 'notes'  event.slug  note.title %}"><u>{{ note.title }}</u></a> - <a class="text-blue" href="{% url 'delete_note'  event.slug note.title %}">Delete Note</a> - <a class="text-blue" href="{% url 'create_pdf'  note.title %}"><b>Download Note</b></a></li>
+                        {% endfor %}
+                            </center>
+                    </div>
+                </div>
+            </div>
+          </div>
+          </div>
+          <!--
+          ENDS CONTENT
+          -->
+          <!--
+          ENDS CONTENT
+          -->
+    <!--BEGINS REFRESH SCRIPT -->
+        <script>
+            var hour = parseInt("{{ my_room.simulated_live_start.hour }}") - 5;
+            console.log(hour);
+            var minutes = parseInt("{{ my_room.simulated_live_start.minute }}");
+            console.log(minutes);
+            var reload_time =  String(hour) +  String(minutes) + String(0); // this is 15:06:00 - change to desired reload time
+            console.log(reload_time);
+            var reload_hour_diff = hour; // for cheking diff - change to desired hours
+            var reload_minute_diff = minutes; // for cheking diff - change to desired minutes
+            var time_zone_offset = "-5"; // globally looking from GMT time, change this according to DST
+
+            var reload_time_checker = setInterval(function(){reload_page()},300);
+            var diff = null;
+
+            function chk_reload_moment(offset) {
+                dat = new Date();
+                utc = dat.getTime() + (dat.getTimezoneOffset() * 60000);
+                default_date = new Date(utc + (3600000*offset));
+                var default_year = default_date.getFullYear();
+                var default_month = default_date.getMonth();
+                var default_day = default_date.getDate();
+                var default_hour = default_date.getHours();
+                var default_minutes = default_date.getMinutes();
+                var default_seconds = default_date.getSeconds();
+                user_date = new Date();
+                var user_year = user_date.getFullYear();
+                var user_month = user_date.getMonth();
+                var user_day = user_date.getDate();
+                var user_hour = user_date.getHours();
+                var user_minutes = user_date.getMinutes();
+                var user_seconds = user_date.getSeconds();
+                user_current = user_hour+""+user_minutes+""+user_seconds;
+                default_current_f = default_day+"/"+default_month+"/"+default_year+" "+default_hour+":"+default_minutes+":"+default_seconds;
+                user_current_f = user_day+"/"+user_month+"/"+user_year+" "+user_hour+":"+user_minutes+":"+user_seconds;
+                var timeEnd = new Date(user_current_f);
+                var timeEndH = timeEnd.getHours();
+                var timeEndM = timeEnd.getMinutes();
+                var new_reload_minute_diff = 60+reload_minute_diff;
+                diff = (timeEndH - reload_hour_diff + 12) + " hours " + (new_reload_minute_diff - timeEndM) + " minutes";
+
+                if (user_current == reload_time) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+
+            function reload_page() {
+                var chktime = chk_reload_moment(time_zone_offset);
+                if (chktime) {
+                    window.location.reload();
+                }
+                else {
+                    var timer_div = document.getElementById('timer');
+                    {#timer_div.innerHTML = "remaining: " + diff + " until new content";#}
+                }
+            }
+        </script>
+        <!--ENDS REFRESH SCRIPT -->
+    <br>
+    <br>
+    <br>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% block content %}
+
+<div style="background-color:#eb969c;"> 
+<h2>Notes</h2>
+	{% if error_messages %}
+		<div class="alert alert-danger">
+			<strong>{{ error_messages }}</strong>
+		</div>
+	{% endif %}
+	<ul>
+	{% for note in notes.all %}
+		<li><a href="{% url 'notes'  event.name  note.title %}">{{ note.title }}</a>  <a href="{% url 'delete_note'  event.name note.title %}">borrar</a>  <a href="{% url 'create_pdf'  note.title %}">imprimir</a></li>
+
+	{% endfor %}
+	</ul>
+    <h2>New post</h2>
+    <form method="POST" class="post-form">
+    	{% csrf_token %}
+
+
+        <p><label for="id_title">Title:</label> 
+        	<input type="text" name="title" maxlength="149" id="id_title" required value="{{actual.title}}">
+        </p>
+	    <script type="text/javascript" src="/static/ckeditor/ckeditor-init.js" data-ckeditor-basepath="/static/ckeditor/ckeditor/" id="ckeditor-init-script"></script>
+<script type="text/javascript" src="/static/ckeditor/ckeditor/ckeditor.js"></script>
+    <p><label for="id_text">Text:</label> <div class="django-ckeditor-widget" data-field-id="id_text" style="display: inline-block;">
+    <textarea cols="40" id="id_text" name="text" rows="10" required data-processed="0" data-config="{&quot;toolbar_Basic&quot;: [[&quot;Source&quot;, &quot;-&quot;, &quot;Bold&quot;, &quot;Italic&quot;]], &quot;height&quot;: 291, &quot;toolbar&quot;: &quot;Full&quot;, &quot;skin&quot;: &quot;moono-lisa&quot;, &quot;language&quot;: &quot;en-us&quot;, &quot;toolbar_Full&quot;: [[&quot;Styles&quot;, &quot;Format&quot;, &quot;Bold&quot;, &quot;Italic&quot;, &quot;Underline&quot;, &quot;Strike&quot;, &quot;SpellChecker&quot;, &quot;Undo&quot;, &quot;Redo&quot;], [&quot;Link&quot;, &quot;Unlink&quot;, &quot;Anchor&quot;], [ &quot;Table&quot;, &quot;HorizontalRule&quot;], [&quot;TextColor&quot;, &quot;BGColor&quot;], [&quot;Smiley&quot;, &quot;SpecialChar&quot;], [&quot;Source&quot;]], &quot;width&quot;: 835, &quot;filebrowserWindowHeight&quot;: 725, &quot;filebrowserWindowWidth&quot;: 940}" data-external-plugin-resources="[]" data-id="id_text" data-type="ckeditortype">{{actual.text}}</textarea>
+</div>
+<p>
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+
+    	<p>
+		</div>
+{% endblock %}

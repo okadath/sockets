@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %} 
+<h2>Events disponibles</h2>
+los primeros links van al lobby directamente, los segundos van a una ventana con la descripcoion del evento
+podrias eliminar los segundos y redirigir todo a see_event, que llevara a la url del loby de los eventos, lo hice para darte opciones por que le cliente parece que no sabia lo que queria 
+<ul>
+{% if user.is_authenticated %}
+mis eventos:
+	{% for event_user in my_events%}
+		<li> <a href="{% url 'see_event' event_user.event  %}">{{ event_user.event }}</a> <a href="{% url 'unregistry_event' event_user.event  %}">unregistrar</a></li>
+	{% endfor %}
+	Eventos disponibles
+	da click para acceder a cualquier evento
+
+	{% for event in events.all %}
+		<li><a href="{% url 'event' event.name  %}">{{ event.name }}</a>  <a href="{% url 'join_event' event.name   %}">unete</a></li></li>
+	{% endfor %}
+{% else %}
+	debes loguearte para acceder a los eventos
+
+	{% for event in events.all %}
+		<li><a href="{% url 'login'  %}">{{ event.name }}
+
+
+		</a></li>
+	{% endfor %}
+{% endif %}
+</ul>
+{% endblock %}

@@ -1,0 +1,262 @@
+{% extends './base/base.html' %}
+{% load tz %}
+{% load static	 %}
+{% load widget_tweaks %}
+{% block title %} Lobby {% endblock %}
+{% block description %} JUNTA VP {% endblock %}
+{% block content %}
+          <!--
+          BEGINS CONTENT
+          -->
+            <!-- BEGINS floating player -->
+            <div data-notify="container" class="alert alert-dismissible alert-info alert-notify animated fadeInDown" role="alert" data-notify-position="top-center"
+                 style=" display: inline-block; margin: 0px auto; position: fixed;
+                 transition: all 0.5s ease-in-out 0s; z-index: 1080;  animation-iteration-count: 1;
+                 max-width: 250px; right: 20px; bottom:10px; padding: 0; background-color: rgba(0,0,0,0.1);
+                 border-color: rgba(0,0,0,0.1)"
+            >
+                <span hidden class="alert-icon ni ni-bell-55" data-notify="icon"></span>
+                <div class="alert-text" <="" div="">
+                <span  class="alert-title" data-notify="title" style="width: 250px;"></span>
+                <span data-notify="message">
+                    {% autoescape off %}
+                        {{ live.live_video }}
+                    {% endautoescape %}
+                </span>
+            </div>
+            <button hidden type="button" class="close" data-notify="dismiss" aria-label="Close" style="position: absolute; right: 10px; top: 5px; z-index: 1082;">
+                <span aria-hidden="true">x</span>
+            </button>
+            </div>
+            <!-- ENDS floating player -->
+          <div class="container-fluid" style="margin-top: -20px">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- BEGINS LIVE PLAYER -->
+                    <div class="card" style="background-color: rgba(255,255,255,0.75);">
+                        <div class="card-header" style="padding-bottom: 0;">
+                          <div class="card-icon">
+                              <h4 class="card-title text-dark"><i class="fa fa-window-maximize" style="padding-right: 10px;"></i> Instrucciones</h4>
+                          </div>
+                        </div>
+                        <div class="card-body text-center" style="padding: 0;" id="player">
+                            <br>
+                                <h1>HOLA, BIENVENIDO!</h1>
+                                <h3>Por favor haz click para ingresar a la Main Room</h3>
+                                <br>
+                                <center>
+                                    <a class="btn btn-info" href="{% url 'room'  event.slug "main" %}">Main Room</a>
+                                </center>
+                            <br>
+                            <br>
+{#                            {% include './lobby_player.html' %}#}
+                        </div>
+                    </div>
+                    <!-- ENDS LIVE PLAYER -->
+                    <!-- BEGINS SCHEDULE -->
+                    <div class="card" style="background-color: rgba(255,255,255,0.75);">
+                        <div class="card-header" style="padding-bottom: 0;">
+                          <div class="card-icon">
+                              <h4 class="card-title text-dark"><i class="fa fa-calendar" style="padding-right: 10px;"></i> Program</h4>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                  <th hidden class="text-center">#</th>
+                                  <th>Descripción</th>
+                                  <th>Fecha</th>
+                                  <th>Hora</th>
+                                  <th class="">Room</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              {% for pe in programme_elements %}
+                                <tr>
+                                  <td hidden class="text-center">1</td>
+                                  <td>
+                                      {{ pe.title }}
+                                  </td>
+                                  <td>{{ pe.date }}</td>
+                                  <td>
+                                      {% autoescape off %}
+                                          {{ pe.time }}
+                                      {% endautoescape %}
+                                  </td>
+                                    <td class="">
+                                        <b><u>
+                                            {% if pe.has_external_link %}
+                                                <a href="{{ pe.external_link_url }}" class="text-dark">
+                                                    {{ pe.link_text }}
+                                                </a>
+                                            {% else %}
+                                                <a href="{% url 'room' pe.programme.event.slug pe.room.slug %}" class="text-dark">
+                                                    {{ pe.room.name }}
+                                                </a>
+                                            {% endif %}
+                                        </u></b>
+                                    </td>
+                                </tr>
+                              {% endfor %}
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                  </div>
+                    <!--ENDS SCHEDULE -->
+                </div>
+                <div class="col-lg-4">
+                    <!-- -->
+                    <div HIDDEN class="card" style="background-color: rgba(255,255,255,0.75);">
+                        <div class="card-header" style="padding-bottom: 0; ">
+                          <div class="card-icon">
+                              <h4 class="card-title text-dark"><i class="fa fa-comment" style="padding-right: 10px;"></i> Adquiere el Team Edition</h4>
+                          </div>
+                        </div>
+                        <div class="card-body" style="padding: 0;">
+                                <img class="img-fluid" src="https://glsteamedition.com/static/assets/img/V15.jpg">
+                                <center><a class="btn btn-default text-white" href="{% url 'teamedition' event.slug  %}">Ver Instrucciones</a></center>
+                        </div>
+                    </div>
+                    <!-- -->
+                    <div hidden class="card" style="background-color: rgba(255,255,255,0.75);">
+                        <div class="card-header" style="padding-bottom: 0; ">
+                          <div class="card-icon">
+                              <h4 class="card-title text-dark"><i class="fa fa-calendar" style="padding-right: 10px;"></i> Inscríbete a la Cumbre en tu Ciudad
+                                  <br>
+                                  <br>
+                                  <center>
+                                      <a class="btn btn-default text-white" target="_blank" href="https://mexico2020.gls.events">VER EVENTOS</a>
+                                  </center>
+                              </h4>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- -->
+                    <div class="card" style="background-color: rgba(255,255,255,0.75);">
+                        <div class="card-header" style="padding-bottom: 0; ">
+                          <div class="card-icon">
+                              <h4 class="card-title text-dark"><i class="fa fa-comment" style="padding-right: 10px;"></i> Rooms de Interacción en Vivo </h4>
+                          </div>
+                        </div>
+                        <div class="card-body" style="padding: 0;">
+                            <br>
+                            <center>
+                            </center>
+                            <br>
+                        </div>
+                    </div>
+                    <!-- -->
+                    <div class="card" style="background-color: rgba(255,255,255,1);">
+                        <div class="card-header" style="padding-bottom: 0;">
+                          <div class="card-icon">
+                              <h4 class="card-title text-dark"><i class="ni ni-building" style="padding-right: 10px;"></i> Sponsors</h4>
+                          </div>
+                        </div>
+                        <div class="card-body" >
+                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="4000">
+                              <div class="carousel-inner">
+                                  {% for sponsor in sponsors %}
+                                        {% if forloop.first %}
+                                            <div class="carousel-item active">
+                                              <img class="d-block w-100" src="{{ sponsor.banner_1.url }}" style=""  alt="First slide">
+                                                <br>
+                                                <center><a class="text-center text-primary" href="{{ sponsor.link_1 }}" target="_blank">{{ sponsor.link_1_text }}</a></center>
+                                            </div>
+                                        {% else %}
+                                            <div class="carousel-item">
+                                              <img class="d-block w-100" src="{{ sponsor.banner_1.url }}" style=""   alt="Second slide">
+                                                <br>
+                                                <center><a class="text-center text-primary" href="{{ sponsor.link_1 }}" target="_blank">{{ sponsor.link_1_text }}</a></center>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                              </div>
+                              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                              </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+          <!--
+          ENDS CONTENT
+          -->
+        <!--BEGINS REFRESH SCRIPT -->
+        <script>
+            var hour = parseInt("{{ live.simulated_live_start.hour }}") - 5;
+            console.log(hour);
+            var minutes = parseInt("{{ live.simulated_live_start.minute }}");
+            console.log(minutes);
+            var reload_time =  String(hour) +  String(minutes) + String(0); // this is 15:06:00 - change to desired reload time
+            console.log(reload_time);
+            var reload_hour_diff = hour; // for cheking diff - change to desired hours
+            var reload_minute_diff = minutes; // for cheking diff - change to desired minutes
+            var time_zone_offset = "-5"; // globally looking from GMT time, change this according to DST
+
+            var reload_time_checker = setInterval(function(){reload_page()},300);
+            var diff = null;
+
+            function chk_reload_moment(offset) {
+                dat = new Date();
+                utc = dat.getTime() + (dat.getTimezoneOffset() * 60000);
+                default_date = new Date(utc + (3600000*offset));
+                var default_year = default_date.getFullYear();
+                var default_month = default_date.getMonth();
+                var default_day = default_date.getDate();
+                var default_hour = default_date.getHours();
+                var default_minutes = default_date.getMinutes();
+                var default_seconds = default_date.getSeconds();
+                user_date = new Date();
+                var user_year = user_date.getFullYear();
+                var user_month = user_date.getMonth();
+                var user_day = user_date.getDate();
+                var user_hour = user_date.getHours();
+                var user_minutes = user_date.getMinutes();
+                var user_seconds = user_date.getSeconds();
+                user_current = user_hour+""+user_minutes+""+user_seconds;
+                default_current_f = default_day+"/"+default_month+"/"+default_year+" "+default_hour+":"+default_minutes+":"+default_seconds;
+                user_current_f = user_day+"/"+user_month+"/"+user_year+" "+user_hour+":"+user_minutes+":"+user_seconds;
+                var timeEnd = new Date(user_current_f);
+                var timeEndH = timeEnd.getHours();
+                var timeEndM = timeEnd.getMinutes();
+                var new_reload_minute_diff = 60+reload_minute_diff;
+                diff = (timeEndH - reload_hour_diff + 12) + " hours " + (new_reload_minute_diff - timeEndM) + " minutes";
+
+                if (user_current == reload_time) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+
+            function reload_page() {
+                var chktime = chk_reload_moment(time_zone_offset);
+                if (chktime) {
+                    window.location.reload();
+                    //$('#player').load(' #player>*')
+                }
+                else {
+                    var timer_div = document.getElementById('timer');
+                    {#timer_div.innerHTML = "remaining: " + diff + " until new content";#}
+                }
+            }
+        </script>
+
+        <!--ENDS REFRESH SCRIPT -->
+{% endblock %}

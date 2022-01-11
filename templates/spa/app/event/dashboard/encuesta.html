@@ -1,0 +1,180 @@
+{% extends './base/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block title %} JuntaVP {% endblock %}
+{% block description %} Bienvenidos a JuntaVP {% endblock %}
+{% block content %}
+    <style>
+    .radio.col-up {
+              display: inline-flex;
+              flex-direction: column-reverse;
+              align-items: center;
+                font-size: 12px;
+                font-weight: bold;
+            }
+            input[type="radio" i]{
+                background-color: black !important;
+                color: black !important;
+                cursor: default;
+                margin: 15px 5px 5px 10px;
+                padding: initial;
+            }
+            input[type=radio] {
+              border: 1px solid #fff;
+              padding: 0.5em;
+              -webkit-appearance: none;
+            }
+
+            input[type=radio]:checked {
+              background: url(data:image/gif;base64,R0lGODlhAQABAPAAAP///////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==) no-repeat center center;
+              background-size: 10px 10px;
+            }
+
+            input[type=radio]:focus {
+              outline-color: transparent;
+            }
+    </style>
+            <br>
+            <br>
+            <center class="mx-auto">
+                <img class="img-fluid d-none d-lg-block" src="{% static 'assets/img/juntavp/JUNTA-LOGO-LARGE.png' %}" style="max-height: 80px; min-height: 50px; z-index: 100; position: absolute; top: 10px; right: 5%">
+                <img class="img-fluid px-3" src="{% static 'assets/img/juntavp/LOGOS.png' %}" style="max-height: 80px;">
+            </center>
+            <br>
+    <div class="page-header register-page header-filter" filter-color="black" style=" padding-bottom: 50px;">
+        <div class="container">
+            <br>
+            <br>
+            <div class="row text-white">
+                <div class="col-lg-8 col-md-8 ml-auto mr-auto mx-3 mt-6 mb-6">
+                    <div class="card card-login card-hidden" style="background-color: rgba(255,255,255,0); border: 2px solid white; border-radius: 0">
+                        <div class="card-body">
+                            <section class="">
+                                <div class="">
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-md-8">
+                                            <div class="wizard">
+                                                <div HIDDEN class="wizard-inner">
+                                                    <div class="connecting-line"></div>
+                                                    <ul class="nav nav-tabs" role="tablist">
+                                                        <li role="presentation" class="active">
+                                                            <a href="#step1" data-toggle="tab" aria-controls="step1"
+                                                               role="tab" aria-expanded="true"><span
+                                                                    class="round-tab">1 </span> <i>Step 1</i></a>
+                                                        </li>
+                                                        <li role="presentation" class="disabled">
+                                                            <a href="#step2" data-toggle="tab" aria-controls="step2"
+                                                               role="tab" aria-expanded="false"><span class="round-tab">2</span>
+                                                                <i>Step 2</i></a>
+                                                        </li>
+                                                        <li role="presentation" class="disabled">
+                                                            <a href="#step3" data-toggle="tab" aria-controls="step3"
+                                                               role="tab"><span class="round-tab">3</span> <i>Step 3</i></a>
+                                                        </li>
+                                                        <li role="presentation" class="disabled">
+                                                            <a href="#step4" data-toggle="tab" aria-controls="step4"
+                                                               role="tab"><span class="round-tab">4</span> <i>Step 4</i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <form role="form" action="" method="post">
+                                                    {% csrf_token %}
+                                                    <div class="tab-content" id="main_form">
+                                                        <div class="tab-pane active" role="tabpanel" id="step1">
+                                                            <h5 class="text-center text-white">
+                                                                Contesta esta breve encuesta, en donde el 10 es la calificación minima y 100 la calificación máxima.
+                                                            </h5>
+                                                        <br>
+                                                            <h5 class="text-center text-white text-bold">
+                                                                1. ¿Cómo calificarías la información presentada?
+                                                            </h5>
+                                                            <div class="row pt-3" style="display: flex; justify-content: center; align-items: center;">
+                                                                {% for radio in form.q1_calificacion_de_informacion %}
+                                                                    <label for="{{ radio.id_for_label }}" class="p-0">
+                                                                        <div class="radio col-up">
+                                                                            <span class="radio col-up">
+                                                                                <input style="background-color: black !important; color: red" class="radio-vw" id="{{ radio.id_for_label }}" name="q1_calificacion_de_informacion" type="radio" value="{{ radio.choice_label }}" checked/>{{ radio.choice_label }}
+                                                                            </span>
+                                                                        </div>
+                                                                    </label>
+                                                                {% endfor %}
+                                                            </div>
+                                                            <br>
+                                                            <div class="pt-3 mx--1 px--1">
+                                                                    <span class="font-weight-bold">1/4</span>
+                                                                    <button type="button" class="btn text-white font-weight-bolder float-right next-step" style="margin-top: 0; padding-top: 0; right: -5%;">Siguiente</button>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="tab-pane" role="tabpanel" id="step2">
+                                                            <h5 class="text-center text-white text-bold">
+                                                                2. En términos de porcentaje ¿Crees que este evento agrega valor a las funciones que desempeñas?
+                                                            </h5>
+                                                            <div class="row pt-5" style="display: flex; justify-content: center; align-items: center;">
+                                                                {% for radio in form.q2_calificacion_de_valor %}
+                                                                    <label for="{{ radio.id_for_label }}" class="p-0">
+                                                                        <div class="radio col-up">
+                                                                            <span class="radio col-up">
+                                                                                <input style="background-color: black !important; color: red" class="radio-vw" id="{{ radio.id_for_label }}" name="q2_calificacion_de_valor" type="radio" value="{{ radio.choice_label }}" checked/>{{ radio.choice_label }}
+                                                                            </span>
+                                                                        </div>
+                                                                    </label>
+                                                                {% endfor %}
+                                                            </div>
+                                                            <br>
+                                                            <div class="pt-3 mx--1 px--1">
+                                                                    <span class="font-weight-bold">2/4</span>
+                                                                    <button type="button" class="btn text-white font-weight-bolder float-right next-step" style="margin-top: 0; padding-top: 0; right: -5%;">Siguiente</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane" role="tabpanel" id="step3">
+                                                            <h5 class="text-center text-white text-bold">
+                                                                3. La duración de la junta ¿te pareció adecuada?
+                                                            </h5>
+                                                            <div class="row pt-5" style="display: flex; justify-content: center; align-items: center;">
+                                                                {% for radio in form.q3_calificacion_de_duracion %}
+                                                                    <label for="{{ radio.id_for_label }}" class="px-3">
+                                                                        <div class="radio col-up">
+                                                                            <span class="radio col-up">
+                                                                                <input style="background-color: black !important; color: red;" class="radio-vw" id="{{ radio.id_for_label }}" name="q3_calificacion_de_duracion" type="radio" value="{{ radio.data.value }}" checked/>{{ radio.choice_label }}
+                                                                            </span>
+                                                                        </div>
+                                                                    </label>
+                                                                {% endfor %}
+                                                            </div>
+                                                            <br>
+                                                            <div class="pt-3 mx--1 px--1">
+                                                                    <span class="font-weight-bold">3/4</span>
+                                                                    <button type="button" class="btn text-white font-weight-bolder float-right next-step" style="margin-top: 0; padding-top: 0; right: -5%;">Siguiente</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane" role="tabpanel" id="step4">
+                                                            <br>
+                                                            <small class="text-white text-bold">4. Comentarios generales de la transmisión y de la información presentada</small>
+                                                            <center>
+                                                                {{ form.q4_comentarios |add_class:"form-control form-control-alternative" |attr:"rows:4" }}
+                                                            </center>
+                                                            <br>
+                                                            <div class="pt-3 mx--1 px--1">
+                                                                    <span class="font-weight-bold">4/4</span>
+                                                                    <button type="submit" class="btn text-white font-weight-bolder float-right next-step" style="margin-top: 0; padding-top: 0; right: -5%;">ENVIAR</button>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

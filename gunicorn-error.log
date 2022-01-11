@@ -1,0 +1,439 @@
+[2021-11-29 19:20:11 +0000] [54719] [INFO] Starting gunicorn 20.1.0
+[2021-11-29 19:20:11 +0000] [54719] [INFO] Listening at: unix:/run/gunicorn.sock (54719)
+[2021-11-29 19:20:11 +0000] [54719] [INFO] Using worker: sync
+[2021-11-29 19:20:11 +0000] [54721] [INFO] Booting worker with pid: 54721
+[2021-11-29 19:20:11 +0000] [54722] [INFO] Booting worker with pid: 54722
+[2021-11-29 19:20:11 +0000] [54723] [INFO] Booting worker with pid: 54723
+[2021-11-29 13:35:53 -0600] [54721] [INFO] Worker exiting (pid: 54721)
+[2021-11-29 13:35:53 -0600] [54722] [INFO] Worker exiting (pid: 54722)
+[2021-11-29 19:35:53 +0000] [54719] [INFO] Handling signal: term
+[2021-11-29 13:35:53 -0600] [54723] [INFO] Worker exiting (pid: 54723)
+[2021-11-29 19:35:53 +0000] [54719] [WARNING] Worker with pid 54721 was terminated due to signal 15
+[2021-11-29 19:35:53 +0000] [54719] [WARNING] Worker with pid 54722 was terminated due to signal 15
+[2021-11-29 19:35:54 +0000] [54719] [INFO] Shutting down: Master
+[2021-11-29 19:35:54 +0000] [54991] [INFO] Starting gunicorn 20.1.0
+[2021-11-29 19:35:54 +0000] [54991] [INFO] Listening at: unix:/run/gunicorn.sock (54991)
+[2021-11-29 19:35:54 +0000] [54991] [INFO] Using worker: sync
+[2021-11-29 19:35:54 +0000] [54993] [INFO] Booting worker with pid: 54993
+[2021-11-29 19:35:54 +0000] [54995] [INFO] Booting worker with pid: 54995
+[2021-11-29 19:35:54 +0000] [54996] [INFO] Booting worker with pid: 54996
+[2021-11-29 14:12:00 -0600] [54995] [INFO] Worker exiting (pid: 54995)
+[2021-11-29 14:12:00 -0600] [54993] [INFO] Worker exiting (pid: 54993)
+[2021-11-29 14:12:00 -0600] [54996] [INFO] Worker exiting (pid: 54996)
+[2021-11-29 20:12:00 +0000] [54991] [INFO] Handling signal: term
+[2021-11-29 20:12:00 +0000] [54991] [WARNING] Worker with pid 54993 was terminated due to signal 15
+[2021-11-29 20:12:00 +0000] [54991] [WARNING] Worker with pid 54995 was terminated due to signal 15
+[2021-11-29 20:12:00 +0000] [54991] [WARNING] Worker with pid 54996 was terminated due to signal 15
+[2021-11-29 20:12:00 +0000] [54991] [INFO] Shutting down: Master
+[2021-11-29 20:12:00 +0000] [55294] [INFO] Starting gunicorn 20.1.0
+[2021-11-29 20:12:00 +0000] [55294] [INFO] Listening at: unix:/run/gunicorn.sock (55294)
+[2021-11-29 20:12:00 +0000] [55294] [INFO] Using worker: sync
+[2021-11-29 20:12:00 +0000] [55297] [INFO] Booting worker with pid: 55297
+[2021-11-29 20:12:00 +0000] [55298] [INFO] Booting worker with pid: 55298
+[2021-11-29 20:12:00 +0000] [55299] [INFO] Booting worker with pid: 55299
+[2021-11-29 20:20:44 +0000] [55294] [INFO] Handling signal: term
+[2021-11-29 14:20:44 -0600] [55297] [INFO] Worker exiting (pid: 55297)
+[2021-11-29 14:20:44 -0600] [55298] [INFO] Worker exiting (pid: 55298)
+[2021-11-29 14:20:44 -0600] [55299] [INFO] Worker exiting (pid: 55299)
+[2021-11-29 20:20:44 +0000] [55294] [WARNING] Worker with pid 55298 was terminated due to signal 15
+[2021-11-29 20:20:44 +0000] [55294] [WARNING] Worker with pid 55297 was terminated due to signal 15
+[2021-11-29 20:20:44 +0000] [55294] [WARNING] Worker with pid 55299 was terminated due to signal 15
+[2021-11-29 20:20:44 +0000] [55294] [INFO] Shutting down: Master
+[2021-11-29 20:20:44 +0000] [55618] [INFO] Starting gunicorn 20.1.0
+[2021-11-29 20:20:44 +0000] [55618] [INFO] Listening at: unix:/run/gunicorn.sock (55618)
+[2021-11-29 20:20:44 +0000] [55618] [INFO] Using worker: sync
+[2021-11-29 20:20:44 +0000] [55626] [INFO] Booting worker with pid: 55626
+[2021-11-29 20:20:44 +0000] [55628] [INFO] Booting worker with pid: 55628
+[2021-11-29 20:20:45 +0000] [55629] [INFO] Booting worker with pid: 55629
+[2021-11-29 20:49:20 +0000] [55618] [INFO] Handling signal: term
+[2021-11-29 14:49:20 -0600] [55626] [INFO] Worker exiting (pid: 55626)
+[2021-11-29 14:49:20 -0600] [55629] [INFO] Worker exiting (pid: 55629)
+[2021-11-29 14:49:20 -0600] [55628] [INFO] Worker exiting (pid: 55628)
+[2021-11-29 20:49:21 +0000] [55618] [INFO] Shutting down: Master
+[2021-11-29 20:49:21 +0000] [55847] [INFO] Starting gunicorn 20.1.0
+[2021-11-29 20:49:21 +0000] [55847] [INFO] Listening at: unix:/run/gunicorn.sock (55847)
+[2021-11-29 20:49:21 +0000] [55847] [INFO] Using worker: sync
+[2021-11-29 20:49:21 +0000] [55849] [INFO] Booting worker with pid: 55849
+[2021-11-29 20:49:21 +0000] [55850] [INFO] Booting worker with pid: 55850
+[2021-11-29 20:49:21 +0000] [55851] [INFO] Booting worker with pid: 55851
+[2021-11-29 14:49:22 -0600] [55850] [INFO] Worker exiting (pid: 55850)
+[2021-11-29 14:49:22 -0600] [55849] [INFO] Worker exiting (pid: 55849)
+[2021-11-29 20:49:22 +0000] [55847] [INFO] Handling signal: term
+[2021-11-29 14:49:22 -0600] [55851] [INFO] Worker exiting (pid: 55851)
+[2021-11-29 20:49:22 +0000] [55847] [WARNING] Worker with pid 55849 was terminated due to signal 15
+[2021-11-29 20:49:22 +0000] [55847] [WARNING] Worker with pid 55850 was terminated due to signal 15
+[2021-11-29 20:49:22 +0000] [55847] [INFO] Shutting down: Master
+[2021-11-29 20:49:23 +0000] [55862] [INFO] Starting gunicorn 20.1.0
+[2021-11-29 20:49:23 +0000] [55862] [INFO] Listening at: unix:/run/gunicorn.sock (55862)
+[2021-11-29 20:49:23 +0000] [55862] [INFO] Using worker: sync
+[2021-11-29 20:49:23 +0000] [55864] [INFO] Booting worker with pid: 55864
+[2021-11-29 20:49:23 +0000] [55865] [INFO] Booting worker with pid: 55865
+[2021-11-29 20:49:23 +0000] [55866] [INFO] Booting worker with pid: 55866
+[2021-11-29 20:49:24 +0000] [55862] [INFO] Handling signal: term
+[2021-11-29 14:49:24 -0600] [55864] [INFO] Worker exiting (pid: 55864)
+[2021-11-29 14:49:24 -0600] [55865] [INFO] Worker exiting (pid: 55865)
+[2021-11-29 14:49:24 -0600] [55866] [INFO] Worker exiting (pid: 55866)
+[2021-11-29 20:49:24 +0000] [55862] [INFO] Shutting down: Master
+[2021-11-29 20:49:24 +0000] [55876] [INFO] Starting gunicorn 20.1.0
+[2021-11-29 20:49:24 +0000] [55876] [INFO] Listening at: unix:/run/gunicorn.sock (55876)
+[2021-11-29 20:49:24 +0000] [55876] [INFO] Using worker: sync
+[2021-11-29 20:49:24 +0000] [55878] [INFO] Booting worker with pid: 55878
+[2021-11-29 20:49:24 +0000] [55879] [INFO] Booting worker with pid: 55879
+[2021-11-29 20:49:24 +0000] [55880] [INFO] Booting worker with pid: 55880
+[2021-11-29 14:59:11 -0600] [55880] [INFO] Worker exiting (pid: 55880)
+[2021-11-29 14:59:11 -0600] [55878] [INFO] Worker exiting (pid: 55878)
+[2021-11-29 14:59:11 -0600] [55879] [INFO] Worker exiting (pid: 55879)
+[2021-11-29 20:59:11 +0000] [55876] [INFO] Handling signal: term
+[2021-11-29 20:59:11 +0000] [55876] [WARNING] Worker with pid 55878 was terminated due to signal 15
+[2021-11-29 20:59:11 +0000] [55876] [WARNING] Worker with pid 55880 was terminated due to signal 15
+[2021-11-29 20:59:11 +0000] [55876] [INFO] Shutting down: Master
+[2021-11-29 20:59:11 +0000] [56012] [INFO] Starting gunicorn 20.1.0
+[2021-11-29 20:59:11 +0000] [56012] [INFO] Listening at: unix:/run/gunicorn.sock (56012)
+[2021-11-29 20:59:11 +0000] [56012] [INFO] Using worker: sync
+[2021-11-29 20:59:11 +0000] [56035] [INFO] Booting worker with pid: 56035
+[2021-11-29 20:59:11 +0000] [56036] [INFO] Booting worker with pid: 56036
+[2021-11-29 20:59:11 +0000] [56037] [INFO] Booting worker with pid: 56037
+[2021-11-29 15:00:34 -0600] [56037] [INFO] Worker exiting (pid: 56037)
+[2021-11-29 21:00:34 +0000] [56012] [INFO] Handling signal: term
+[2021-11-29 15:00:34 -0600] [56036] [INFO] Worker exiting (pid: 56036)
+[2021-11-29 15:00:34 -0600] [56035] [INFO] Worker exiting (pid: 56035)
+[2021-11-29 21:00:35 +0000] [56012] [INFO] Shutting down: Master
+[2021-11-29 21:00:35 +0000] [56144] [INFO] Starting gunicorn 20.1.0
+[2021-11-29 21:00:35 +0000] [56144] [INFO] Listening at: unix:/run/gunicorn.sock (56144)
+[2021-11-29 21:00:35 +0000] [56144] [INFO] Using worker: sync
+[2021-11-29 21:00:35 +0000] [56146] [INFO] Booting worker with pid: 56146
+[2021-11-29 21:00:35 +0000] [56147] [INFO] Booting worker with pid: 56147
+[2021-11-29 21:00:35 +0000] [56148] [INFO] Booting worker with pid: 56148
+[2021-11-29 21:05:10 +0000] [56144] [INFO] Handling signal: term
+[2021-11-29 15:05:10 -0600] [56147] [INFO] Worker exiting (pid: 56147)
+[2021-11-29 15:05:10 -0600] [56148] [INFO] Worker exiting (pid: 56148)
+[2021-11-29 15:05:10 -0600] [56146] [INFO] Worker exiting (pid: 56146)
+[2021-11-29 21:05:10 +0000] [56144] [INFO] Shutting down: Master
+[2021-11-29 21:05:11 +0000] [56253] [INFO] Starting gunicorn 20.1.0
+[2021-11-29 21:05:11 +0000] [56253] [INFO] Listening at: unix:/run/gunicorn.sock (56253)
+[2021-11-29 21:05:11 +0000] [56253] [INFO] Using worker: sync
+[2021-11-29 21:05:11 +0000] [56278] [INFO] Booting worker with pid: 56278
+[2021-11-29 21:05:11 +0000] [56279] [INFO] Booting worker with pid: 56279
+[2021-11-29 21:05:11 +0000] [56280] [INFO] Booting worker with pid: 56280
+[2021-11-29 15:28:53 -0600] [56279] [INFO] Worker exiting (pid: 56279)
+[2021-11-29 21:28:53 +0000] [56253] [INFO] Handling signal: term
+[2021-11-29 15:28:53 -0600] [56280] [INFO] Worker exiting (pid: 56280)
+[2021-11-29 15:28:53 -0600] [56278] [INFO] Worker exiting (pid: 56278)
+[2021-11-29 21:28:54 +0000] [56253] [INFO] Shutting down: Master
+[2021-11-29 21:28:54 +0000] [56685] [INFO] Starting gunicorn 20.1.0
+[2021-11-29 21:28:54 +0000] [56685] [INFO] Listening at: unix:/run/gunicorn.sock (56685)
+[2021-11-29 21:28:54 +0000] [56685] [INFO] Using worker: sync
+[2021-11-29 21:28:54 +0000] [56688] [INFO] Booting worker with pid: 56688
+[2021-11-29 21:28:54 +0000] [56689] [INFO] Booting worker with pid: 56689
+[2021-11-29 21:28:54 +0000] [56690] [INFO] Booting worker with pid: 56690
+[2021-11-29 21:30:46 +0000] [56685] [INFO] Handling signal: term
+[2021-11-29 15:30:46 -0600] [56688] [INFO] Worker exiting (pid: 56688)
+[2021-11-29 15:30:46 -0600] [56689] [INFO] Worker exiting (pid: 56689)
+[2021-11-29 15:30:46 -0600] [56690] [INFO] Worker exiting (pid: 56690)
+[2021-11-29 21:30:46 +0000] [56685] [WARNING] Worker with pid 56688 was terminated due to signal 15
+[2021-11-29 21:30:46 +0000] [56685] [WARNING] Worker with pid 56689 was terminated due to signal 15
+[2021-11-29 21:30:46 +0000] [56685] [WARNING] Worker with pid 56690 was terminated due to signal 15
+[2021-11-29 21:30:46 +0000] [56685] [INFO] Shutting down: Master
+[2021-11-29 21:30:46 +0000] [56792] [INFO] Starting gunicorn 20.1.0
+[2021-11-29 21:30:46 +0000] [56792] [INFO] Listening at: unix:/run/gunicorn.sock (56792)
+[2021-11-29 21:30:46 +0000] [56792] [INFO] Using worker: sync
+[2021-11-29 21:30:46 +0000] [56794] [INFO] Booting worker with pid: 56794
+[2021-11-29 21:30:46 +0000] [56795] [INFO] Booting worker with pid: 56795
+[2021-11-29 21:30:46 +0000] [56796] [INFO] Booting worker with pid: 56796
+[2021-11-29 21:30:47 +0000] [56792] [INFO] Handling signal: term
+[2021-11-29 15:30:47 -0600] [56795] [INFO] Worker exiting (pid: 56795)
+[2021-11-29 15:30:47 -0600] [56794] [INFO] Worker exiting (pid: 56794)
+[2021-11-29 15:30:47 -0600] [56796] [INFO] Worker exiting (pid: 56796)
+[2021-11-29 21:30:48 +0000] [56792] [INFO] Shutting down: Master
+[2021-11-29 21:30:48 +0000] [56807] [INFO] Starting gunicorn 20.1.0
+[2021-11-29 21:30:48 +0000] [56807] [INFO] Listening at: unix:/run/gunicorn.sock (56807)
+[2021-11-29 21:30:48 +0000] [56807] [INFO] Using worker: sync
+[2021-11-29 21:30:48 +0000] [56809] [INFO] Booting worker with pid: 56809
+[2021-11-29 21:30:48 +0000] [56810] [INFO] Booting worker with pid: 56810
+[2021-11-29 21:30:48 +0000] [56811] [INFO] Booting worker with pid: 56811
+[2021-11-29 15:44:58 -0600] [56811] [INFO] Worker exiting (pid: 56811)
+[2021-11-29 15:44:58 -0600] [56809] [INFO] Worker exiting (pid: 56809)
+[2021-11-29 15:44:58 -0600] [56810] [INFO] Worker exiting (pid: 56810)
+[2021-11-29 21:44:58 +0000] [56807] [INFO] Handling signal: term
+[2021-11-29 21:44:58 +0000] [56807] [WARNING] Worker with pid 56809 was terminated due to signal 15
+[2021-11-29 21:44:58 +0000] [56807] [WARNING] Worker with pid 56811 was terminated due to signal 15
+[2021-11-29 21:44:58 +0000] [56807] [WARNING] Worker with pid 56810 was terminated due to signal 15
+[2021-11-29 21:44:58 +0000] [56807] [INFO] Shutting down: Master
+[2021-11-29 21:44:58 +0000] [56951] [INFO] Starting gunicorn 20.1.0
+[2021-11-29 21:44:58 +0000] [56951] [INFO] Listening at: unix:/run/gunicorn.sock (56951)
+[2021-11-29 21:44:58 +0000] [56951] [INFO] Using worker: sync
+[2021-11-29 21:44:58 +0000] [56953] [INFO] Booting worker with pid: 56953
+[2021-11-29 21:44:58 +0000] [56954] [INFO] Booting worker with pid: 56954
+[2021-11-29 21:44:58 +0000] [56955] [INFO] Booting worker with pid: 56955
+[2021-11-29 21:56:37 +0000] [56951] [INFO] Handling signal: term
+[2021-11-29 15:56:37 -0600] [56954] [INFO] Worker exiting (pid: 56954)
+[2021-11-29 15:56:37 -0600] [56953] [INFO] Worker exiting (pid: 56953)
+[2021-11-29 15:56:37 -0600] [56955] [INFO] Worker exiting (pid: 56955)
+[2021-11-29 21:56:38 +0000] [56951] [INFO] Shutting down: Master
+[2021-11-29 21:56:38 +0000] [57084] [INFO] Starting gunicorn 20.1.0
+[2021-11-29 21:56:38 +0000] [57084] [INFO] Listening at: unix:/run/gunicorn.sock (57084)
+[2021-11-29 21:56:38 +0000] [57084] [INFO] Using worker: sync
+[2021-11-29 21:56:38 +0000] [57107] [INFO] Booting worker with pid: 57107
+[2021-11-29 21:56:38 +0000] [57108] [INFO] Booting worker with pid: 57108
+[2021-11-29 21:56:38 +0000] [57109] [INFO] Booting worker with pid: 57109
+[2021-11-29 15:56:58 -0600] [57109] [INFO] Worker exiting (pid: 57109)
+[2021-11-29 15:56:58 -0600] [57107] [INFO] Worker exiting (pid: 57107)
+[2021-11-29 15:56:58 -0600] [57108] [INFO] Worker exiting (pid: 57108)
+[2021-11-29 21:56:58 +0000] [57084] [INFO] Handling signal: term
+[2021-11-29 21:56:58 +0000] [57084] [WARNING] Worker with pid 57107 was terminated due to signal 15
+[2021-11-29 21:56:58 +0000] [57084] [WARNING] Worker with pid 57109 was terminated due to signal 15
+[2021-11-29 21:56:58 +0000] [57084] [WARNING] Worker with pid 57108 was terminated due to signal 15
+[2021-11-29 21:56:58 +0000] [57084] [INFO] Shutting down: Master
+[2021-11-29 21:56:58 +0000] [57210] [INFO] Starting gunicorn 20.1.0
+[2021-11-29 21:56:58 +0000] [57210] [INFO] Listening at: unix:/run/gunicorn.sock (57210)
+[2021-11-29 21:56:58 +0000] [57210] [INFO] Using worker: sync
+[2021-11-29 21:56:58 +0000] [57212] [INFO] Booting worker with pid: 57212
+[2021-11-29 21:56:58 +0000] [57213] [INFO] Booting worker with pid: 57213
+[2021-11-29 21:56:58 +0000] [57214] [INFO] Booting worker with pid: 57214
+[2021-11-29 16:25:37 -0600] [57212] [INFO] Worker exiting (pid: 57212)
+[2021-11-29 16:25:37 -0600] [57214] [INFO] Worker exiting (pid: 57214)
+[2021-11-29 16:25:37 -0600] [57213] [INFO] Worker exiting (pid: 57213)
+[2021-11-29 22:25:37 +0000] [57210] [INFO] Handling signal: term
+[2021-11-29 22:25:37 +0000] [57210] [WARNING] Worker with pid 57212 was terminated due to signal 15
+[2021-11-29 22:25:37 +0000] [57210] [WARNING] Worker with pid 57214 was terminated due to signal 15
+[2021-11-29 22:25:37 +0000] [57210] [WARNING] Worker with pid 57213 was terminated due to signal 15
+[2021-11-29 22:25:38 +0000] [57210] [INFO] Shutting down: Master
+[2021-11-29 22:25:38 +0000] [57851] [INFO] Starting gunicorn 20.1.0
+[2021-11-29 22:25:38 +0000] [57851] [INFO] Listening at: unix:/run/gunicorn.sock (57851)
+[2021-11-29 22:25:38 +0000] [57851] [INFO] Using worker: sync
+[2021-11-29 22:25:38 +0000] [57853] [INFO] Booting worker with pid: 57853
+[2021-11-29 22:25:38 +0000] [57854] [INFO] Booting worker with pid: 57854
+[2021-11-29 22:25:38 +0000] [57855] [INFO] Booting worker with pid: 57855
+[2021-11-29 22:26:38 +0000] [57851] [INFO] Handling signal: term
+[2021-11-29 16:26:38 -0600] [57853] [INFO] Worker exiting (pid: 57853)
+[2021-11-29 16:26:38 -0600] [57854] [INFO] Worker exiting (pid: 57854)
+[2021-11-29 16:26:38 -0600] [57855] [INFO] Worker exiting (pid: 57855)
+[2021-11-29 22:26:38 +0000] [57851] [WARNING] Worker with pid 57854 was terminated due to signal 15
+[2021-11-29 22:26:38 +0000] [57851] [WARNING] Worker with pid 57855 was terminated due to signal 15
+[2021-11-29 22:26:39 +0000] [57851] [INFO] Shutting down: Master
+[2021-11-29 22:26:39 +0000] [57910] [INFO] Starting gunicorn 20.1.0
+[2021-11-29 22:26:39 +0000] [57910] [INFO] Listening at: unix:/run/gunicorn.sock (57910)
+[2021-11-29 22:26:39 +0000] [57910] [INFO] Using worker: sync
+[2021-11-29 22:26:39 +0000] [57912] [INFO] Booting worker with pid: 57912
+[2021-11-29 22:26:39 +0000] [57913] [INFO] Booting worker with pid: 57913
+[2021-11-29 22:26:39 +0000] [57914] [INFO] Booting worker with pid: 57914
+[2021-11-30 10:33:47 -0600] [57913] [INFO] Worker exiting (pid: 57913)
+[2021-11-30 10:33:47 -0600] [57914] [INFO] Worker exiting (pid: 57914)
+[2021-11-30 10:33:47 -0600] [57912] [INFO] Worker exiting (pid: 57912)
+[2021-11-30 16:33:47 +0000] [57910] [INFO] Handling signal: term
+[2021-11-30 16:33:47 +0000] [57910] [WARNING] Worker with pid 57913 was terminated due to signal 15
+[2021-11-30 16:33:47 +0000] [57910] [WARNING] Worker with pid 57914 was terminated due to signal 15
+[2021-11-30 16:33:47 +0000] [57910] [WARNING] Worker with pid 57912 was terminated due to signal 15
+[2021-11-30 16:33:47 +0000] [57910] [INFO] Shutting down: Master
+[2021-11-30 16:33:48 +0000] [71916] [INFO] Starting gunicorn 20.1.0
+[2021-11-30 16:33:48 +0000] [71916] [INFO] Listening at: unix:/run/gunicorn.sock (71916)
+[2021-11-30 16:33:48 +0000] [71916] [INFO] Using worker: sync
+[2021-11-30 16:33:48 +0000] [71919] [INFO] Booting worker with pid: 71919
+[2021-11-30 16:33:48 +0000] [71920] [INFO] Booting worker with pid: 71920
+[2021-11-30 16:33:48 +0000] [71921] [INFO] Booting worker with pid: 71921
+[2021-11-30 13:35:57 -0600] [71920] [INFO] Worker exiting (pid: 71920)
+[2021-11-30 13:35:57 -0600] [71919] [INFO] Worker exiting (pid: 71919)
+[2021-11-30 13:35:57 -0600] [71921] [INFO] Worker exiting (pid: 71921)
+[2021-11-30 19:35:57 +0000] [71916] [INFO] Handling signal: term
+[2021-11-30 19:35:57 +0000] [71916] [WARNING] Worker with pid 71920 was terminated due to signal 15
+[2021-11-30 19:35:57 +0000] [71916] [WARNING] Worker with pid 71919 was terminated due to signal 15
+[2021-11-30 19:35:57 +0000] [71916] [WARNING] Worker with pid 71921 was terminated due to signal 15
+[2021-11-30 19:35:57 +0000] [71916] [INFO] Shutting down: Master
+[2021-11-30 19:35:57 +0000] [73570] [INFO] Starting gunicorn 20.1.0
+[2021-11-30 19:35:57 +0000] [73570] [INFO] Listening at: unix:/run/gunicorn.sock (73570)
+[2021-11-30 19:35:57 +0000] [73570] [INFO] Using worker: sync
+[2021-11-30 19:35:57 +0000] [73572] [INFO] Booting worker with pid: 73572
+[2021-11-30 19:35:57 +0000] [73573] [INFO] Booting worker with pid: 73573
+[2021-11-30 19:35:57 +0000] [73574] [INFO] Booting worker with pid: 73574
+[2021-11-30 13:47:27 -0600] [73574] [INFO] Worker exiting (pid: 73574)
+[2021-11-30 13:47:27 -0600] [73572] [INFO] Worker exiting (pid: 73572)
+[2021-11-30 13:47:27 -0600] [73573] [INFO] Worker exiting (pid: 73573)
+[2021-11-30 19:47:27 +0000] [73570] [INFO] Handling signal: term
+[2021-11-30 19:47:27 +0000] [73570] [WARNING] Worker with pid 73574 was terminated due to signal 15
+[2021-11-30 19:47:27 +0000] [73570] [WARNING] Worker with pid 73572 was terminated due to signal 15
+[2021-11-30 19:47:27 +0000] [73570] [WARNING] Worker with pid 73573 was terminated due to signal 15
+[2021-11-30 19:47:27 +0000] [73570] [INFO] Shutting down: Master
+[2021-11-30 19:47:27 +0000] [73926] [INFO] Starting gunicorn 20.1.0
+[2021-11-30 19:47:27 +0000] [73926] [INFO] Listening at: unix:/run/gunicorn.sock (73926)
+[2021-11-30 19:47:27 +0000] [73926] [INFO] Using worker: sync
+[2021-11-30 19:47:27 +0000] [73929] [INFO] Booting worker with pid: 73929
+[2021-11-30 19:47:27 +0000] [73930] [INFO] Booting worker with pid: 73930
+[2021-11-30 19:47:27 +0000] [73931] [INFO] Booting worker with pid: 73931
+[2021-12-02 09:08:48 +0000] [73926] [INFO] Handling signal: term
+[2021-12-02 03:08:48 -0600] [73929] [INFO] Worker exiting (pid: 73929)
+[2021-12-02 03:08:48 -0600] [73931] [INFO] Worker exiting (pid: 73931)
+[2021-12-02 03:08:48 -0600] [73930] [INFO] Worker exiting (pid: 73930)
+[2021-12-02 09:08:49 +0000] [73926] [INFO] Shutting down: Master
+[2021-12-02 09:08:49 +0000] [85668] [INFO] Starting gunicorn 20.1.0
+[2021-12-02 09:08:49 +0000] [85668] [INFO] Listening at: unix:/run/gunicorn.sock (85668)
+[2021-12-02 09:08:49 +0000] [85668] [INFO] Using worker: sync
+[2021-12-02 09:08:49 +0000] [85671] [INFO] Booting worker with pid: 85671
+[2021-12-02 09:08:49 +0000] [85672] [INFO] Booting worker with pid: 85672
+[2021-12-02 09:08:49 +0000] [85673] [INFO] Booting worker with pid: 85673
+[2021-12-02 03:11:32 -0600] [85672] [INFO] Worker exiting (pid: 85672)
+[2021-12-02 03:11:32 -0600] [85673] [INFO] Worker exiting (pid: 85673)
+[2021-12-02 03:11:32 -0600] [85671] [INFO] Worker exiting (pid: 85671)
+[2021-12-02 09:11:32 +0000] [85668] [INFO] Handling signal: term
+[2021-12-02 09:11:32 +0000] [85668] [WARNING] Worker with pid 85672 was terminated due to signal 15
+[2021-12-02 09:11:32 +0000] [85668] [WARNING] Worker with pid 85673 was terminated due to signal 15
+[2021-12-02 09:11:32 +0000] [85668] [WARNING] Worker with pid 85671 was terminated due to signal 15
+[2021-12-02 09:11:32 +0000] [85668] [INFO] Shutting down: Master
+[2021-12-02 09:11:33 +0000] [85771] [INFO] Starting gunicorn 20.1.0
+[2021-12-02 09:11:33 +0000] [85771] [INFO] Listening at: unix:/run/gunicorn.sock (85771)
+[2021-12-02 09:11:33 +0000] [85771] [INFO] Using worker: sync
+[2021-12-02 09:11:33 +0000] [85773] [INFO] Booting worker with pid: 85773
+[2021-12-02 09:11:33 +0000] [85774] [INFO] Booting worker with pid: 85774
+[2021-12-02 09:11:33 +0000] [85775] [INFO] Booting worker with pid: 85775
+[2021-12-02 09:12:27 +0000] [85771] [INFO] Handling signal: term
+[2021-12-02 03:12:27 -0600] [85773] [INFO] Worker exiting (pid: 85773)
+[2021-12-02 03:12:27 -0600] [85775] [INFO] Worker exiting (pid: 85775)
+[2021-12-02 03:12:27 -0600] [85774] [INFO] Worker exiting (pid: 85774)
+[2021-12-02 09:12:27 +0000] [85771] [WARNING] Worker with pid 85775 was terminated due to signal 15
+[2021-12-02 09:12:27 +0000] [85771] [WARNING] Worker with pid 85773 was terminated due to signal 15
+[2021-12-02 09:12:27 +0000] [85771] [WARNING] Worker with pid 85774 was terminated due to signal 15
+[2021-12-02 09:12:27 +0000] [85771] [INFO] Shutting down: Master
+[2021-12-02 09:12:28 +0000] [85856] [INFO] Starting gunicorn 20.1.0
+[2021-12-02 09:12:28 +0000] [85856] [INFO] Listening at: unix:/run/gunicorn.sock (85856)
+[2021-12-02 09:12:28 +0000] [85856] [INFO] Using worker: sync
+[2021-12-02 09:12:28 +0000] [85858] [INFO] Booting worker with pid: 85858
+[2021-12-02 09:12:28 +0000] [85859] [INFO] Booting worker with pid: 85859
+[2021-12-02 09:12:28 +0000] [85860] [INFO] Booting worker with pid: 85860
+[2021-12-02 09:14:33 +0000] [85856] [INFO] Handling signal: term
+[2021-12-02 03:14:33 -0600] [85860] [INFO] Worker exiting (pid: 85860)
+[2021-12-02 03:14:33 -0600] [85859] [INFO] Worker exiting (pid: 85859)
+[2021-12-02 03:14:33 -0600] [85858] [INFO] Worker exiting (pid: 85858)
+[2021-12-02 09:14:34 +0000] [85856] [INFO] Shutting down: Master
+[2021-12-02 09:14:34 +0000] [85943] [INFO] Starting gunicorn 20.1.0
+[2021-12-02 09:14:34 +0000] [85943] [INFO] Listening at: unix:/run/gunicorn.sock (85943)
+[2021-12-02 09:14:34 +0000] [85943] [INFO] Using worker: sync
+[2021-12-02 09:14:34 +0000] [85946] [INFO] Booting worker with pid: 85946
+[2021-12-02 09:14:34 +0000] [85947] [INFO] Booting worker with pid: 85947
+[2021-12-02 09:14:34 +0000] [85948] [INFO] Booting worker with pid: 85948
+[2021-12-02 09:16:26 +0000] [85943] [INFO] Handling signal: term
+[2021-12-02 03:16:26 -0600] [85947] [INFO] Worker exiting (pid: 85947)
+[2021-12-02 03:16:26 -0600] [85946] [INFO] Worker exiting (pid: 85946)
+[2021-12-02 03:16:26 -0600] [85948] [INFO] Worker exiting (pid: 85948)
+[2021-12-02 09:16:26 +0000] [85943] [INFO] Shutting down: Master
+[2021-12-02 09:16:26 +0000] [86031] [INFO] Starting gunicorn 20.1.0
+[2021-12-02 09:16:26 +0000] [86031] [INFO] Listening at: unix:/run/gunicorn.sock (86031)
+[2021-12-02 09:16:26 +0000] [86031] [INFO] Using worker: sync
+[2021-12-02 09:16:26 +0000] [86033] [INFO] Booting worker with pid: 86033
+[2021-12-02 09:16:27 +0000] [86034] [INFO] Booting worker with pid: 86034
+[2021-12-02 09:16:27 +0000] [86035] [INFO] Booting worker with pid: 86035
+[2021-12-02 09:16:27 +0000] [86031] [INFO] Handling signal: term
+[2021-12-02 03:16:27 -0600] [86033] [INFO] Worker exiting (pid: 86033)
+[2021-12-02 03:16:27 -0600] [86034] [INFO] Worker exiting (pid: 86034)
+[2021-12-02 03:16:27 -0600] [86035] [INFO] Worker exiting (pid: 86035)
+[2021-12-02 09:16:28 +0000] [86031] [INFO] Shutting down: Master
+[2021-12-02 09:16:28 +0000] [86045] [INFO] Starting gunicorn 20.1.0
+[2021-12-02 09:16:28 +0000] [86045] [INFO] Listening at: unix:/run/gunicorn.sock (86045)
+[2021-12-02 09:16:28 +0000] [86045] [INFO] Using worker: sync
+[2021-12-02 09:16:28 +0000] [86047] [INFO] Booting worker with pid: 86047
+[2021-12-02 09:16:28 +0000] [86048] [INFO] Booting worker with pid: 86048
+[2021-12-02 09:16:28 +0000] [86049] [INFO] Booting worker with pid: 86049
+[2021-12-02 03:17:28 -0600] [86049] [INFO] Worker exiting (pid: 86049)
+[2021-12-02 03:17:28 -0600] [86048] [INFO] Worker exiting (pid: 86048)
+[2021-12-02 09:17:28 +0000] [86045] [INFO] Handling signal: term
+[2021-12-02 03:17:28 -0600] [86047] [INFO] Worker exiting (pid: 86047)
+[2021-12-02 09:17:28 +0000] [86045] [WARNING] Worker with pid 86049 was terminated due to signal 15
+[2021-12-02 09:17:28 +0000] [86045] [WARNING] Worker with pid 86048 was terminated due to signal 15
+[2021-12-02 09:17:28 +0000] [86045] [INFO] Shutting down: Master
+[2021-12-02 09:17:28 +0000] [86136] [INFO] Starting gunicorn 20.1.0
+[2021-12-02 09:17:28 +0000] [86136] [INFO] Listening at: unix:/run/gunicorn.sock (86136)
+[2021-12-02 09:17:28 +0000] [86136] [INFO] Using worker: sync
+[2021-12-02 09:17:28 +0000] [86138] [INFO] Booting worker with pid: 86138
+[2021-12-02 09:17:28 +0000] [86139] [INFO] Booting worker with pid: 86139
+[2021-12-02 09:17:28 +0000] [86140] [INFO] Booting worker with pid: 86140
+[2021-12-02 12:21:35 -0600] [86140] [INFO] Worker exiting (pid: 86140)
+[2021-12-02 12:21:35 -0600] [86139] [INFO] Worker exiting (pid: 86139)
+[2021-12-02 12:21:35 -0600] [86138] [INFO] Worker exiting (pid: 86138)
+[2021-12-02 18:21:35 +0000] [86136] [INFO] Handling signal: term
+[2021-12-02 18:21:35 +0000] [86136] [WARNING] Worker with pid 86139 was terminated due to signal 15
+[2021-12-02 18:21:35 +0000] [86136] [WARNING] Worker with pid 86138 was terminated due to signal 15
+[2021-12-02 18:21:35 +0000] [86136] [WARNING] Worker with pid 86140 was terminated due to signal 15
+[2021-12-02 18:21:35 +0000] [86136] [INFO] Shutting down: Master
+[2021-12-02 18:21:35 +0000] [88330] [INFO] Starting gunicorn 20.1.0
+[2021-12-02 18:21:35 +0000] [88330] [INFO] Listening at: unix:/run/gunicorn.sock (88330)
+[2021-12-02 18:21:35 +0000] [88330] [INFO] Using worker: sync
+[2021-12-02 18:21:35 +0000] [88332] [INFO] Booting worker with pid: 88332
+[2021-12-02 18:21:35 +0000] [88333] [INFO] Booting worker with pid: 88333
+[2021-12-02 18:21:35 +0000] [88334] [INFO] Booting worker with pid: 88334
+[2021-12-02 12:51:06 -0600] [88332] [INFO] Worker exiting (pid: 88332)
+[2021-12-02 12:51:06 -0600] [88333] [INFO] Worker exiting (pid: 88333)
+[2021-12-02 12:51:06 -0600] [88334] [INFO] Worker exiting (pid: 88334)
+[2021-12-02 18:51:06 +0000] [88330] [INFO] Handling signal: term
+[2021-12-02 18:51:06 +0000] [88330] [WARNING] Worker with pid 88332 was terminated due to signal 15
+[2021-12-02 18:51:06 +0000] [88330] [WARNING] Worker with pid 88333 was terminated due to signal 15
+[2021-12-02 18:51:06 +0000] [88330] [WARNING] Worker with pid 88334 was terminated due to signal 15
+[2021-12-02 18:51:06 +0000] [88330] [INFO] Shutting down: Master
+[2021-12-02 18:51:06 +0000] [88751] [INFO] Starting gunicorn 20.1.0
+[2021-12-02 18:51:06 +0000] [88751] [INFO] Listening at: unix:/run/gunicorn.sock (88751)
+[2021-12-02 18:51:06 +0000] [88751] [INFO] Using worker: sync
+[2021-12-02 18:51:06 +0000] [88753] [INFO] Booting worker with pid: 88753
+[2021-12-02 18:51:06 +0000] [88754] [INFO] Booting worker with pid: 88754
+[2021-12-02 18:51:07 +0000] [88755] [INFO] Booting worker with pid: 88755
+[2021-12-02 12:57:13 -0600] [88753] [INFO] Worker exiting (pid: 88753)
+[2021-12-02 12:57:13 -0600] [88754] [INFO] Worker exiting (pid: 88754)
+[2021-12-02 12:57:13 -0600] [88755] [INFO] Worker exiting (pid: 88755)
+[2021-12-02 18:57:13 +0000] [88751] [INFO] Handling signal: term
+[2021-12-02 18:57:13 +0000] [88751] [WARNING] Worker with pid 88753 was terminated due to signal 15
+[2021-12-02 18:57:13 +0000] [88751] [WARNING] Worker with pid 88755 was terminated due to signal 15
+[2021-12-02 18:57:13 +0000] [88751] [WARNING] Worker with pid 88754 was terminated due to signal 15
+[2021-12-02 18:57:13 +0000] [88751] [INFO] Shutting down: Master
+[2021-12-02 18:57:13 +0000] [88880] [INFO] Starting gunicorn 20.1.0
+[2021-12-02 18:57:13 +0000] [88880] [INFO] Listening at: unix:/run/gunicorn.sock (88880)
+[2021-12-02 18:57:13 +0000] [88880] [INFO] Using worker: sync
+[2021-12-02 18:57:13 +0000] [88882] [INFO] Booting worker with pid: 88882
+[2021-12-02 18:57:13 +0000] [88883] [INFO] Booting worker with pid: 88883
+[2021-12-02 18:57:13 +0000] [88884] [INFO] Booting worker with pid: 88884
+[2021-12-02 13:13:18 -0600] [88883] [INFO] Worker exiting (pid: 88883)
+[2021-12-02 13:13:18 -0600] [88882] [INFO] Worker exiting (pid: 88882)
+[2021-12-02 19:13:18 +0000] [88880] [INFO] Handling signal: term
+[2021-12-02 19:13:18 +0000] [88880] [WARNING] Worker with pid 88883 was terminated due to signal 15
+[2021-12-02 13:13:18 -0600] [88884] [INFO] Worker exiting (pid: 88884)
+[2021-12-02 19:13:18 +0000] [88880] [INFO] Shutting down: Master
+[2021-12-02 19:13:18 +0000] [89081] [INFO] Starting gunicorn 20.1.0
+[2021-12-02 19:13:18 +0000] [89081] [INFO] Listening at: unix:/run/gunicorn.sock (89081)
+[2021-12-02 19:13:18 +0000] [89081] [INFO] Using worker: sync
+[2021-12-02 19:13:18 +0000] [89084] [INFO] Booting worker with pid: 89084
+[2021-12-02 19:13:18 +0000] [89085] [INFO] Booting worker with pid: 89085
+[2021-12-02 19:13:18 +0000] [89086] [INFO] Booting worker with pid: 89086
+[2021-12-03 23:00:20 +0000] [89081] [INFO] Handling signal: term
+[2021-12-03 17:00:20 -0600] [89084] [INFO] Worker exiting (pid: 89084)
+[2021-12-03 17:00:20 -0600] [89085] [INFO] Worker exiting (pid: 89085)
+[2021-12-03 17:00:20 -0600] [89086] [INFO] Worker exiting (pid: 89086)
+[2021-12-03 23:00:20 +0000] [89081] [WARNING] Worker with pid 89084 was terminated due to signal 15
+[2021-12-03 23:00:20 +0000] [89081] [WARNING] Worker with pid 89086 was terminated due to signal 15
+[2021-12-03 23:00:20 +0000] [89081] [WARNING] Worker with pid 89085 was terminated due to signal 15
+[2021-12-03 23:00:20 +0000] [89081] [INFO] Shutting down: Master
+[2021-12-03 23:00:20 +0000] [95193] [INFO] Starting gunicorn 20.1.0
+[2021-12-03 23:00:20 +0000] [95193] [INFO] Listening at: unix:/run/gunicorn.sock (95193)
+[2021-12-03 23:00:20 +0000] [95193] [INFO] Using worker: sync
+[2021-12-03 23:00:20 +0000] [95195] [INFO] Booting worker with pid: 95195
+[2021-12-03 23:00:21 +0000] [95196] [INFO] Booting worker with pid: 95196
+[2021-12-03 23:00:21 +0000] [95197] [INFO] Booting worker with pid: 95197
+[2021-12-03 17:15:51 -0600] [95195] [INFO] Worker exiting (pid: 95195)
+[2021-12-03 23:15:51 +0000] [95193] [INFO] Handling signal: term
+[2021-12-03 17:15:51 -0600] [95196] [INFO] Worker exiting (pid: 95196)
+[2021-12-03 17:15:51 -0600] [95197] [INFO] Worker exiting (pid: 95197)
+[2021-12-03 23:15:51 +0000] [95193] [WARNING] Worker with pid 95195 was terminated due to signal 15
+[2021-12-03 23:15:51 +0000] [95193] [INFO] Shutting down: Master
+[2021-12-03 23:15:51 +0000] [95353] [INFO] Starting gunicorn 20.1.0
+[2021-12-03 23:15:51 +0000] [95353] [INFO] Listening at: unix:/run/gunicorn.sock (95353)
+[2021-12-03 23:15:51 +0000] [95353] [INFO] Using worker: sync
+[2021-12-03 23:15:51 +0000] [95355] [INFO] Booting worker with pid: 95355
+[2021-12-03 23:15:51 +0000] [95356] [INFO] Booting worker with pid: 95356
+[2021-12-03 23:15:51 +0000] [95357] [INFO] Booting worker with pid: 95357
+[2021-12-06 11:14:08 -0600] [95357] [INFO] Worker exiting (pid: 95357)
+[2021-12-06 11:14:08 -0600] [95355] [INFO] Worker exiting (pid: 95355)
+[2021-12-06 17:14:08 +0000] [95353] [INFO] Handling signal: term
+[2021-12-06 11:14:08 -0600] [95356] [INFO] Worker exiting (pid: 95356)
+[2021-12-06 17:14:08 +0000] [95353] [WARNING] Worker with pid 95355 was terminated due to signal 15
+[2021-12-06 17:14:08 +0000] [95353] [WARNING] Worker with pid 95357 was terminated due to signal 15
+[2021-12-06 17:14:09 +0000] [95353] [INFO] Shutting down: Master
+[2021-12-06 17:14:09 +0000] [112681] [INFO] Starting gunicorn 20.1.0
+[2021-12-06 17:14:09 +0000] [112681] [INFO] Listening at: unix:/run/gunicorn.sock (112681)
+[2021-12-06 17:14:09 +0000] [112681] [INFO] Using worker: sync
+[2021-12-06 17:14:09 +0000] [112683] [INFO] Booting worker with pid: 112683
+[2021-12-06 17:14:09 +0000] [112684] [INFO] Booting worker with pid: 112684
+[2021-12-06 17:14:09 +0000] [112685] [INFO] Booting worker with pid: 112685

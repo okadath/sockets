@@ -1,0 +1,146 @@
+{% extends './base/base.html' %}
+{% load static	 %}
+{% load widget_tweaks %}
+{% block title %} Registro {% endblock %}
+{% block description %} NAVIDAD NATURA{% endblock %}
+{% block content %}
+    <style>
+        @font-face {
+        font-family: 'AvantGardEF-Demi';
+        src: local('AvantGardEF-Demi'),
+             url('{% static 'fonts/AvantGardEF-Demi.eot?#iefix' %}') format('embedded-opentype'),
+             url('{% static 'fonts/AvantGardEF-Demi.woff' %}') format('woff'),
+             url('{% static 'fonts/AvantGardEF-Demi.ttf' %}') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-strecht: condensed;
+    }
+        body{
+            font-family: AvantGardEF-Demi;
+        }
+    </style>
+    <!--
+    BEGINS CONTENT
+    -->
+    <div class="page-header register-page header-filter" filter-color="black" style="background-image: url('{% static 'assets/img/EsteticaCAoLatamsinlogos.png' %}')">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 ml-auto mr-auto">
+            <div class="card card-signup">
+              <h2 class="card-title text-center" style="font-family: AvantGardEF-Demi;"><b>Welcome! /  BEM-VINDOS!</b></h2>
+                <br>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-5 ml-auto">
+                    <div class="info info-horizontal">
+                      <div class="icon icon-rose" HIDDEN>
+                        <i class="material-icons">timeline</i>
+                      </div>
+                      <div class="description">
+
+                        <h4 class="info-title" style="font-weight: 900">CONFERENCIA ALPHA ONLINE</h4>
+
+                        {% if error_messages %} 
+                        <div class="alert alert-danger">
+                            <strong>{{ error_messages }}</strong>
+                        </div>  
+                        {% endif %}
+                        <p class="info-text text-dark" style="font-size: 16px;">
+                          Ingresa tu nombre y el correo con el que hiciste el registro previamente.
+                            <br>
+                            <br>
+                            <span class="text-danger">Utiliza el codigo:</span> <b>alpha2020</b>
+                            <br>
+                            <br>
+                            Si no has hecho tu registro, <a class="text-danger" href="https://latam.alpha.org/inscripcion" target="_blank">hazlo aqui</a>
+                        </p>
+                      <h4 class="info-title" style="font-weight: 900">CONFERÊNCIA ALPHA ONLINE</h4>
+                      <p class="info-text text-dark" style="font-size: 16px;">
+                          Insira seu nome e o email com o qual registrou-se anteriormente para a conferência.
+                            <br>
+                            <br>
+                            <span class="text-danger">Utilize o código:</span> <b>alpha2020</b>
+                            <br>
+                            <br>
+                            Se ainda não se registrou, <a class="text-danger" href="http://brasil.alpha.org/inscreva-se" target="_blank">registre-se aqui</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-5 mr-auto">
+                      <center>
+                          <img class="img-fluid" src="https://images.squarespace-cdn.com/content/v1/528f4dc0e4b09ee35b2107d7/1471968355142-4RX5FMN50O2WAI6TDTAD/ke17ZwdGBToddI8pDm48kNjpXgdB2GQ4GXsvq_1og8aoCXeSvxnTEQmG4uwOsdIceAoHiyRoc52GMN5_2H8Wp6_MLhNeL9yWw1amyLjdgohmCNS_LeH4t9qD0d_SmSPc_VumPslpQQgM4-VHAcYf4g/favicon.ico?format=">
+                      </center>
+                    <form method="post" action="{% url 'register_user' %}">
+                      {% csrf_token %}
+                      <div class="form-group has-default">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="material-icons">face</i>
+                            </span>
+                          </div>
+                          <input type="text" name="first_name" id="id_first_name" class="form-control" placeholder="Nombre">
+                        </div>
+                      </div>
+                        <div class="form-group has-default">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="material-icons">face</i>
+                            </span>
+                          </div>
+                          <input type="text" name="last_name" id="id_last_name" class="form-control" placeholder="Apellido">
+                        </div>
+                      </div>
+                      <div class="form-group has-default">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="material-icons">mail</i>
+                            </span>
+                          </div>
+                          <input type="text" name="email" id="id_email" class="form-control" placeholder="Email"> 
+                        </div>
+                      </div>
+                      <div class="form-group has-default">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="material-icons">lock_outline</i>
+                            </span>
+                          </div>
+                          <input type="password" name="password" required id="id_password" placeholder="Ingresar codigo: alpha2020" class="form-control">
+                        </div>
+                      </div>
+                      <div class="form-check" hidden>
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox" value="" checked="">
+                          <span class="form-check-sign">
+                            <span class="check"></span>
+                          </span>
+                          Acepto
+                          <a  class="text-danger" href="#something">terminos y condiciones</a>.
+                        </label>
+                      </div>
+                      <div class="text-center">
+                        <!-- ponerle type="submit" es importante! -->
+                       <!--  <a href="#pablo" class="btn btn-danger mt-4">INGRESAR</a> -->
+                            <button  class="btn btn-danger mt-4" type="submit"> INGRESAR </button>
+                          <br>
+                          <br>
+                          Ya habias ingresado antes? <br><a class="text-danger" href="{% url 'login_mail' %}"><u>Click Aqui para Login</u></s>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+    ENDS CONTENT
+    -->
+{% endblock %}

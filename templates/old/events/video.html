@@ -1,0 +1,21 @@
+<p style="background-color:#9fedb4;">
+	LIVES EXISTENTES EN ESTE EVENTO :
+	<ul>
+	{% for live in lives%}
+	nombre live 
+	<li> {{ live.event }}  </li>
+	type live 
+	<li> {{ live.live_video }}  </li>
+	video live 
+	<li> {{ live.live_video }}  </li>
+	simulated live 
+	<li> {{ live.simmulated_live }}  </li>
+	thumbnail
+	<li> {{ live.thumbnail }}  </li>
+	pre_live_video
+	<li> {{ live.pre_live_video }}  </li>
+
+		{% endfor %}
+	</ul>
+	<p>
+		
