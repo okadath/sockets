@@ -1,0 +1,14 @@
+[Unit]
+Description=WebSocket Daphne Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/sockets
+ExecStart=/home/sockets/venv/bin/python3.8 /home/sockets/venv/bin/daphne -b 0.0.0.0 -p 8001 Porsche.asgi:application
+#ExecStart=/home/sockets/venv/bin/python3.8 /home/sockets/venv/bin/daphne  -e ssl:8001:privateKey=/etc/letsencrypt/live/open-chat-demo.xyz/privkey.pem:certKey=/etc/letsencrypt/live/open-chat-demo.xyz/fullchain.pem Porsche.asgi:application  
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
