@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "rest_framework", 
     'channels',
     "weasyprint",
+    "channels_redis",
 ]
 
 MIDDLEWARE = [
