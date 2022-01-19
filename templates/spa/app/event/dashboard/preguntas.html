@@ -6,147 +6,148 @@
 {% block content %}
     <!--
     BEGINS CONTENT
-    -->
-    <style>
+-->
+<style>
     table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
+        border: 1px solid black;
+        border-collapse: collapse;
     }
     .calculator br {display:none;width:0;}
     .calculator tr td.br {display:none}
 
     @media all and (max-width:768px) {
-    .calculator tr {display: table;width:100%;}
-    .calculator td {width:50%;}
-    .calculator th {width:50%;}
-    .calculator tr td.br {display:table-row;}
-    .calculator tr th.br {display:table-row;}
+        .calculator tr {display: table;width:100%;}
+        .calculator td {width:50%;}
+        .calculator th {width:50%;}
+        .calculator tr td.br {display:table-row;}
+        .calculator tr th.br {display:table-row;}
     }
     table, th, td {
       border: 1px solid white;
-    }
-    </style>
-    <div class="container-fluid" style="margin-top: 20px">
-            <br>
-            <center class="mx-auto">
-                <img class="img-fluid d-none d-lg-block" src="{% static 'assets/img/juntavp/JUNTA-LOGO-LARGE.png' %}" style="max-height: 80px; min-height: 50px; z-index: 100; position: absolute; top: 10px; right: 5%">                <img class="img-fluid px-3" src="{% static 'assets/img/juntavp/LOGOS.png' %}" style="max-height: 80px;">
-            </center>
-            <br>
-            <br>
-            <br>
-        <div class="row">
-            <div class="col-lg-11 mx-auto">
-                <!-- BEGINS VIDEO -->
-                <div class="card" style="background-color: rgba(255,255,255,0); border: 2px solid white; border-radius: 0">
-                    <div class="card-header" style="padding-bottom: 0;">
-                        <div class="card-icon">
-                            <h4 class="card-title text-dark"><i style="padding-right: 10px;"></i> Preguntas</h4>
-                        </div>
+  }
+</style>
+<div class="container-fluid" style="margin-top: 20px">
+    <br>
+    <center class="mx-auto">
+        <img class="img-fluid d-none d-lg-block" src="{% static 'assets/img/juntavp/JUNTA-LOGO-LARGE.png' %}" style="max-height: 80px; min-height: 50px; z-index: 100; position: absolute; top: 10px; right: 5%">                <img class="img-fluid px-3" src="{% static 'assets/img/juntavp/LOGOS.png' %}" style="max-height: 80px;">
+    </center>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-11 mx-auto">
+            <!-- BEGINS VIDEO -->
+            <div class="card" style="background-color: rgba(255,255,255,0); border: 2px solid white; border-radius: 0">
+                <div class="card-header" style="padding-bottom: 0;">
+                    <div class="card-icon">
+                        <h4 class="card-title text-dark"><i style="padding-right: 10px;"></i> Preguntas</h4>
                     </div>
-                    <div class="card-body" x-data="addRemove()">
-                        <table border="1" class="calculator text-white" style="width: 100%; padding-top: 10px;">
-                            <tbody>
+                </div>
+
+
+                <div class="card-body" x-data="$store.addRemove">
+                    <table border="1" class="calculator text-white" style="width: 100%; padding-top: 10px;">
+                        <tbody>
                             <tr style="background-color: rgba(255,255,255,0.2);">
                               <th scope="col" class="text-bold">Speaker</th>
                               <th scope="col" class="text-bold">Pregunta</th>
                               <th HIDDEN scope="col" class="text-bold">User</th>
+                          </tr>
+                          {% for i in questions %}
+                          <tr>
+                            <td>{{ i.speakerdosha }}</td>
+                            <!-- hay que limitar la longitud del td -->
+                            <td>{{ i.text }}</td>
+                            <td HIDDEN>{{ i.user }}</td>
+                        </tr>
+                        {% endfor %}
+
+                        <template x-for="field in $store.addRemove.fields" :key="field.id">
+                            <tr>
+                                <td x-text="field.id">speakerdosha</td>
+                                <!-- hay que limitar la longitud del td -->
+                                <td x-text="field.id"></td>
+                                <td HIDDEN x-text="field.id">user</td>
                             </tr>
-                            {% for i in questions %}
-                                <tr>
-                                    <td>{{ i.speakerdosha }}</td>
-                                    <!-- hay que limitar la longitud del td -->
-                                    <td>{{ i.text }}</td>
-                                    <td HIDDEN>{{ i.user }}</td>
-                                </tr>
-                            {% endfor %}
+                        </template>
+                        <button  id="addrow" type="button" @click="addNewField"> Add Row</button>
 
-                              <template x-for="field in fields" :key="field.id">
-                                    <tr>
-                                        <td x-text="field.id">speakerdosha</td>
-                                        <!-- hay que limitar la longitud del td -->
-                                        <td x-text="field.id"></td>
-                                        <td HIDDEN x-text="field.id">user</td>
-                                    </tr>
-                              </template>
-                              <button  id="addrow" type="button" @click="addNewField()">+ Add Row</button>
-
-                            </tbody>
-                        </table>
+                    </tbody>
+                </table>
 
 
-                    </div>
-                </div>
             </div>
-            <!--ENDS SCHEDULE -->
         </div>
     </div>
-    </div>
+    <!--ENDS SCHEDULE -->
+</div>
+</div>
+</div>
 
+<textarea id="chat-log" cols="20" rows="5"></textarea><br>
+<input id="chat-message-input" type="text" size="20"><br>
+<input id="chat-message-submit" type="button" value="Send">
+{{ room_name|json_script:"room-name" }}
 
 <script>
-        function addRemove() {
-            return {
-                fields: [],
-                addNewField() {
+
+    document.addEventListener('alpine:init', () => {
+        Alpine.store('addRemove', {
+            fields: [],
+
+            addNewField() {
                 console.log(this.fields);
+                this.fields.push({id: new Date().getTime() + this.fields.length});
+            },
+            removeField(field) {
+                this.fields.splice(this.fields.indexOf(field), 1);
+            },
+        })
+    })
 
-                    this.fields.push({id: new Date().getTime() + this.fields.length});
-                },
-                removeField(field) {
-                    this.fields.splice(this.fields.indexOf(field), 1);
-                }
-            }
-        }
-</script>
 
-<textarea id="chat-log" cols="100" rows="20"></textarea><br>
-    <input id="chat-message-input" type="text" size="100"><br>
-    <input id="chat-message-submit" type="button" value="Send">
-    {{ room_name|json_script:"room-name" }}
+    const roomName = JSON.parse(document.getElementById('room-name').textContent);
 
-<script>
-        const roomName = JSON.parse(document.getElementById('room-name').textContent);
-
-        const chatSocket = new WebSocket(
-            'ws://'
-            + window.location.host
-            + '/test_ws_preguntas/'
+    const chatSocket = new WebSocket(
+        'ws://'
+        + window.location.host
+        + '/test_ws_preguntas/'
         );
 
- chatSocket.onmessage = function(e) {
-            const data = JSON.parse(e.data);
-            document.querySelector('#chat-log').value += (data.message + '\n');
-            // addRemove.addNewField();
-            document.querySelector('#addrow').click();
+    chatSocket.onmessage = function(e) {
+        const data = JSON.parse(e.data);
+        document.querySelector('#chat-log').value += (data.message + '\n');
+        Alpine.store('addRemove').addNewField()
+        console.log('button :v');
+    };
+
+    chatSocket.onclose = function(e) {
+        console.error('Chat socket closed unexpectedly');
+        alert("se cerro la conexion");
+    };
+
+    document.querySelector('#chat-message-input').focus();
+    document.querySelector('#chat-message-input').onkeyup = function(e) {
+        if (e.keyCode === 13) {  // enter, return
+            document.querySelector('#chat-message-submit').click();
+        }
         };
 
-        chatSocket.onclose = function(e) {
-            console.error('Chat socket closed unexpectedly');
-            alert("se cerro la conexion");
-        };
-
-        document.querySelector('#chat-message-input').focus();
-        document.querySelector('#chat-message-input').onkeyup = function(e) {
-            if (e.keyCode === 13) {  // enter, return
-                document.querySelector('#chat-message-submit').click();
-            }
-        };
-
-        document.querySelector('#chat-message-submit').onclick = function(e) {
-            const messageInputDom = document.querySelector('#chat-message-input');
-            const message = messageInputDom.value;
-            chatSocket.send(JSON.stringify({
-                'message': message
-            }));
-            messageInputDom.value = '';
-        };
-    </script>
+    document.querySelector('#chat-message-submit').onclick = function(e) {
+        const messageInputDom = document.querySelector('#chat-message-input');
+        const message = messageInputDom.value;
+        chatSocket.send(JSON.stringify({
+            'message': message
+        }));
+        messageInputDom.value = '';
+    };
+</script>
 
 
     <center>
-    <form>
-        <a href="{% url 'getfile' %}" class="btn btn-lg btn-darker" style="border-radius: 0">Descargar</a>
-    </form>
+        <form>
+            <a href="{% url 'getfile' %}" class="btn btn-lg btn-darker" style="border-radius: 0">Descargar</a>
+        </form>
     </center>
 
     <br>
@@ -157,5 +158,5 @@
     <br>
     <!--
     ENDS CONTENT
-    -->
+-->
 {% endblock %}
