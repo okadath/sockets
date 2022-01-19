@@ -70,7 +70,7 @@
                                 <td HIDDEN x-text="field.id">user</td>
                             </tr>
                         </template>
-                        <button  id="addrow" type="button" @click="addNewField"> Add Row</button>
+<!--                         <button  id="addrow" type="button" @click="addNewField"> Add Row</button> -->
 
                     </tbody>
                 </table>
@@ -109,8 +109,8 @@
     const roomName = JSON.parse(document.getElementById('room-name').textContent);
 
 
-    function connect() {
-        const chatSocket = new WebSocket(
+    // function connect() {
+        const chatSocket = new ReconnectingWebSocket(
             'ws://'
             + window.location.host
             + '/test_ws_preguntas/'
@@ -126,10 +126,12 @@
         chatSocket.onclose = function(e) {
             console.error('Chat socket closed unexpectedly');
             // alert("se cerro la conexion");
+
+            // hay que reescribir la conexion
             setTimeout(function() {
               connect();
               // poner el timeout en el admin
-            }, 1000);
+            }, 10);
           };
 
         document.querySelector('#chat-message-input').focus();
@@ -147,8 +149,8 @@
             }));
             messageInputDom.value = '';
         };
-    }
-    connect()
+    // }
+    // connect()
 </script>
 
 
