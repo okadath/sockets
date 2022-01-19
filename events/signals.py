@@ -10,9 +10,10 @@ from events.models import *
 def create_question(sender, instance, created, **kwargs):
 	print(instance)
 	if created:
-		print(instance.text)
+		# print(instance.text)
 		channel_layer = channels.layers.get_channel_layer()
 		async_to_sync(channel_layer.group_send)('chat_default_preguntas', {
 			'type': 'chat_message', 
-			"message":instance.text
+			"text":instance.text,
+			"speaker":instance.speakerdosha.name,
 			})
