@@ -108,39 +108,47 @@
 
     const roomName = JSON.parse(document.getElementById('room-name').textContent);
 
-    const chatSocket = new WebSocket(
-        'ws://'
-        + window.location.host
-        + '/test_ws_preguntas/'
-        );
 
-    chatSocket.onmessage = function(e) {
-        const data = JSON.parse(e.data);
-        document.querySelector('#chat-log').value += (data.message + '\n');
-        Alpine.store('addRemove').addNewField()
-        console.log('button :v');
-    };
+    function connect() {
+        const chatSocket = new WebSocket(
+            'ws://'
+            + window.location.host
+            + '/test_ws_preguntas/'
+            );
 
-    chatSocket.onclose = function(e) {
-        console.error('Chat socket closed unexpectedly');
-        alert("se cerro la conexion");
-    };
-
-    document.querySelector('#chat-message-input').focus();
-    document.querySelector('#chat-message-input').onkeyup = function(e) {
-        if (e.keyCode === 13) {  // enter, return
-            document.querySelector('#chat-message-submit').click();
-        }
+        chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            document.querySelector('#chat-log').value += (data.message + '\n');
+            Alpine.store('addRemove').addNewField()
+            console.log('button :v');
         };
 
-    document.querySelector('#chat-message-submit').onclick = function(e) {
-        const messageInputDom = document.querySelector('#chat-message-input');
-        const message = messageInputDom.value;
-        chatSocket.send(JSON.stringify({
-            'message': message
-        }));
-        messageInputDom.value = '';
-    };
+        chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+            // alert("se cerro la conexion");
+            setTimeout(function() {
+              connect();
+              // poner el timeout en el admin
+            }, 1000);
+          };
+
+        document.querySelector('#chat-message-input').focus();
+        document.querySelector('#chat-message-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {  // enter, return
+                document.querySelector('#chat-message-submit').click();
+            }
+            };
+
+        document.querySelector('#chat-message-submit').onclick = function(e) {
+            const messageInputDom = document.querySelector('#chat-message-input');
+            const message = messageInputDom.value;
+            chatSocket.send(JSON.stringify({
+                'message': message
+            }));
+            messageInputDom.value = '';
+        };
+    }
+    connect()
 </script>
 
 
