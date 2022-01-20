@@ -24,11 +24,38 @@ supervised systemd
 sudo systemctl restart redis.service
 
 
+
+sudo cp daphne.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable daphne.service
+sudo systemctl start daphne.service
+sudo systemctl status daphne.service
+
+
+sudo cp boot.sh /root/
+sudo chmod u+x /root/boot.sh
+
+
+sudo cp on_boot.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable on_boot
+sudo systemctl start on_boot
+
+
+
+# logs
+# sudo journalctl -u on_boot.service // for on_boot.service
+# sudo journalctl -u daphne.service // for daphne.service
+
+
 sudo cp sockets /etc/nginx/sites-available/
 sudo ln -s /etc/nginx/sites-available/sockets /etc/nginx/sites-enabled
 
 
 sudo systemctl restart nginx
 sudo ufw allow 'Nginx Full'
+sudo ufw allow 8001
+
+
 sudo certbot --nginx -d example.com 
 sudo systemctl restart gunicorn
