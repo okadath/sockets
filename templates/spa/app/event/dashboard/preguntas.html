@@ -117,7 +117,7 @@
         const chatSocket = new ReconnectingWebSocket(
             'ws://'
             + window.location.host
-            + '/test_ws_preguntas/'
+            + ':8001/test_ws_preguntas/'
             );
 
         chatSocket.onmessage = function(e) {

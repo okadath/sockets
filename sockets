@@ -9,13 +9,13 @@ server {
     #location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
         autoindex on;
-        alias /home/juntavp/static/;#el nombre al final debe ir con /
+        alias /home/sockets/static/;#el nombre al final debe ir con /
     }
 
 
     location /files/ {
         autoindex on;
-        alias /home/juntavp/files/;
+        alias /home/sockets/files/;
     }
     location / {
         include proxy_params;
