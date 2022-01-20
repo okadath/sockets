@@ -38,8 +38,8 @@ sudo chmod u+x /root/boot.sh
 
 sudo cp on_boot.service /etc/systemd/system/
 sudo systemctl daemon-reload
-sudo systemctl enable on_boot
-sudo systemctl start on_boot
+sudo systemctl enable on_boot.service
+sudo systemctl start on_boot.service
 
 
 
