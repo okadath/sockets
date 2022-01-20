@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name   143.244.180.108;
+    server_name   165.227.2.192;
     
     #esto es para permitir archivos de maximo de 100 MB
     client_max_body_size 100M;
